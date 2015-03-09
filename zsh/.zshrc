@@ -7,7 +7,7 @@ export ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="robbyrussell"
 #ZSH_THEME="avit"
-ZSH_THEME="minimal-path-git-host"
+ZSH_THEME="../../minimal/minimal-path-git-host"
 #ZSH_THEME="kardan"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -93,3 +93,4 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias ll="ls -al"
