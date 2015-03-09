@@ -1,5 +1,5 @@
 #medmonds34 dotfiles
-Personal dotfiles for Linu/Unix systems
+Personal dotfiles for Linux/Unix systems
 
 ##Installation
 To install, run:
@@ -19,7 +19,7 @@ git submodule update --init --recursive
 ```
 
 ##Symlinking to ~/
-After installing, the symlinks still need to be created. I use ```stow```, but you can manually link or use other helpers such as ```homesick``` or ```homeshick```
+After installing, the symlinks still need to be created. I use ```stow```, but you can manually link or use other helpers such as ```homesick``` or ```homeshick```.
 
 ```
 stow vim
@@ -30,15 +30,22 @@ stow tmuxinator
 stow git
 ```
 
-##Updating Submodules
-Updating submodules:
+##Updating and Adding Submodules
+
+To update all submodules, run:
 
 ```
 git submodule update --init --recursive
 ```
 
+To add another git repo, ```cd``` to the appropiate directory and run:
+
+```
+git submodule add git://github.com/foo/bar.git
+```
+
 ##Plugin Installation
-Some plugins still need to be installed on new systems. 
+Some plugins still need to be installed on new systems. These instructions were copied from plugin sources.
 
 ###Command-t
 
