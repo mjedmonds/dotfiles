@@ -1,0 +1,24 @@
+pane	0	0	:~	1	:*	0	:/Users/mark	1	zsh	:
+pane	1	0	:~	1	:*	0	:/Users/mark	1	zsh	:
+pane	10	0	:~	1	:*	0	:/Users/mark	1	zsh	:
+pane	2	0	:~	1	:*	0	:/Users/mark	1	zsh	:
+pane	3	0	:~	1	:*	0	:/Users/mark	1	zsh	:
+pane	4	0	:~	1	:*	0	:/Users/mark	1	zsh	:
+pane	6	0	:~	1	:*	0	:/Users/mark	1	zsh	:
+pane	7	0	:~	1	:*	0	:/Users/mark	1	zsh	:
+pane	8	0	:~	1	:*	0	:/Users/mark	1	zsh	:
+pane	9	0	:~	1	:*	0	:/Users/mark	1	zsh	:
+pane	ADM	0	:fg	1	:*	0	:/Users/mark	1	Vim	:/usr/local/Cellar/macvim/7.4-73_1/MacVim.app/Contents/MacOS/Vim
+pane	ADM	0	:fg	1	:*	1	:/Users/mark	0	vim	:vim
+window	0	0	1	:*	b35d,272x70,0,0,0
+window	1	0	1	:*	b35e,272x70,0,0,1
+window	10	0	1	:*	59e2,272x70,0,0,13
+window	2	0	1	:*	b35f,272x70,0,0,2
+window	3	0	1	:*	b360,272x70,0,0,3
+window	4	0	1	:*	b361,272x70,0,0,4
+window	6	0	1	:*	b364,272x70,0,0,7
+window	7	0	1	:*	59df,272x70,0,0,10
+window	8	0	1	:*	59e0,272x70,0,0,11
+window	9	0	1	:*	59e1,272x70,0,0,12
+window	ADM	0	1	:*	3905,272x70,0,0{128x70,0,0,5,143x70,129,0,8}
+state	ADM	1

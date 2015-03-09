@@ -1,0 +1,8 @@
+pane	ADM	0	:vim	1	:*	0	:/Users/mark	0	vim	:vim
+vim /Users/mark/SpiderOak Hive/Honors Thesis/Pseudocode/top_down_mark_for_activation.txt
+pane	ADM	0	:vim	1	:*	1	:/Users/mark	0	vim	:vim /Users/mark/SpiderOak Hive/Honors Thesis/Pseudocode/spreadingactivation.txt
+pane	ADM	0	:vim	1	:*	2	:/Users/mark	1	vim	:vim
+pane	_default	0	:zsh	1	:*	0	:/Users/mark	1	zsh	:
+window	ADM	0	1	:*	2d64,270x61,0,0{131x61,0,0[131x34,0,0,1,131x26,0,35,3],138x61,132,0,2}
+window	_default	0	1	:*	b35d,272x70,0,0,0
+state	ADM	

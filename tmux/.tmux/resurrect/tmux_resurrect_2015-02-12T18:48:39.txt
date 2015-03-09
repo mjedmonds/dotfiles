@@ -1,0 +1,8 @@
+pane	15	0	:~	1	:*	0	:	0	zsh	:sudo tcpdump -n -e -ttt -i pflog0
+pane	15	0	:~	1	:*	1	:/Users/mark	1	zsh	:
+pane	ADM	0	:fg	1	:*	0	:/Users/mark	0	nvim	:nvim
+pane	ADM	0	:fg	1	:*	1	:/Users/mark	0	nvim	:nvim /Volumes/_HonorsThesisDynamic/ADM_preCUDA7/CUDAserver/src/CUDAserver.cu
+pane	ADM	0	:fg	1	:*	2	:/Users/mark	1	nvim	:nvim
+window	15	0	1	:*	509a,133x63,0,0[133x31,0,0,16,133x31,0,32,20]
+window	ADM	0	1	:*	6e53,272x70,0,0{132x70,0,0[132x65,0,0,10,132x4,0,66,21],139x70,133,0,11}
+state	ADM	
