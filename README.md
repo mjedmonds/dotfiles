@@ -4,7 +4,7 @@ Personal dotfiles for *nix
 To install, run:
 
 ```
-git clone --recursive git://github.com/foo/bar.git
+git clone --recursive git://github.com/medmonds34/dotfiles.git
 ```
 
 Or:
