@@ -1,0 +1,63 @@
+[submodule "zsh/.oh-my-zsh"]
+	path = zsh/.oh-my-zsh
+	url = https://github.com/robbyrussell/oh-my-zsh
+[submodule "zsh/minimal"]
+	path = zsh/minimal
+	url = https://github.com/S1cK94/minimal
+[submodule "vim/.vim/bundle/auto-pairs"]
+	path = vim/.vim/bundle/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs
+[submodule "vim/.vim/bundle/Command-T"]
+	path = vim/.vim/bundle/Command-T
+	url = https://github.com/wincent/Command-T
+[submodule "vim/.vim/bundle/guicolorscheme.vim"]
+	path = vim/.vim/bundle/guicolorscheme.vim
+	url = https://github.com/vim-scripts/guicolorscheme.vim
+[submodule "vim/.vim/bundle/indentLine"]
+	path = vim/.vim/bundle/indentLine
+	url = https://github.com/Yggdroot/indentLine
+[submodule "vim/.vim/bundle/lightline.vim"]
+	path = vim/.vim/bundle/lightline.vim
+	url = https://github.com/itchyny/lightline.vim
+[submodule "vim/.vim/bundle/molokai"]
+	path = vim/.vim/bundle/molokai
+	url = https://github.com/tomasr/molokai
+[submodule "vim/.vim/bundle/nerdcommenter"]
+	path = vim/.vim/bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter
+[submodule "vim/.vim/bundle/nerdtree"]
+	path = vim/.vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree
+[submodule "vim/.vim/bundle/smartpairs.vim"]
+	path = vim/.vim/bundle/smartpairs.vim
+	url = https://github.com/gorkunov/smartpairs.vim
+[submodule "vim/.vim/bundle/syntastic"]
+	path = vim/.vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic
+[submodule "vim/.vim/bundle/targets.vim"]
+	path = vim/.vim/bundle/targets.vim
+	url = https://github.com/wellle/targets.vim
+[submodule "vim/.vim/bundle/vim-colors-solarized"]
+	path = vim/.vim/bundle/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized
+[submodule "vim/.vim/bundle/vim-easymotion"]
+	path = vim/.vim/bundle/vim-easymotion
+	url = https://github.com/Lokaltog/vim-easymotion
+[submodule "vim/.vim/bundle/vim-lengthmatters"]
+	path = vim/.vim/bundle/vim-lengthmatters
+	url = https://github.com/whatyouhide/vim-lengthmatters
+[submodule "vim/.vim/bundle/vim-misc"]
+	path = vim/.vim/bundle/vim-misc
+	url = https://github.com/xolox/vim-misc
+[submodule "vim/.vim/bundle/vim-session"]
+	path = vim/.vim/bundle/vim-session
+	url = https://github.com/xolox/vim-session
+[submodule "vim/.vim/bundle/neocomplcache.vim"]
+	path = vim/.vim/bundle/neocomplcache.vim
+	url = https://github.com/Shougo/neocomplcache.vim
+[submodule "tmux/.tmux/plugins/tmux-sensible"]
+	path = tmux/.tmux/plugins/tmux-sensible
+	url = https://github.com/tmux-plugins/tmux-sensible
+[submodule "tmux/.tmux/plugins/tmux-resurrect"]
+	path = tmux/.tmux/plugins/tmux-resurrect
+	url = https://github.com/tmux-plugins/tmux-resurrect
