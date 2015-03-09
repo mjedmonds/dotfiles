@@ -1,6 +1,7 @@
 #medmonds34 dotfiles
-Personal dotfiles for *nix
+Personal dotfiles for Linu/Unix systems
 
+##Installation
 To install, run:
 
 ```
@@ -17,7 +18,8 @@ cd dotfiles
 git submodule update --init --recursive
 ```
 
-After installing, the symlinks still need to be created. I use ```stow```.
+##Symlinking to ~/
+After installing, the symlinks still need to be created. I use ```stow```, but you can manually link or use other helpers such as ```homesick``` or ```homeshick```
 
 ```
 stow vim
@@ -28,13 +30,17 @@ stow tmuxinator
 stow git
 ```
 
+##Updating Submodules
 Updating submodules:
 
 ```
 git submodule update --init --recursive
 ```
 
-Some plugins still need to be installed on new systems. For Command-t
+##Plugin Installation
+Some plugins still need to be installed on new systems. 
+
+###Command-t
 
 ```
 cd ~/.vim/bundle/command-t/ruby/command-t
