@@ -1,5 +1,9 @@
 #medmonds34 dotfiles
-Personal dotfiles for Linux/Unix systems
+Personal dotfiles for Linux/Unix systems. 
+
+####Why?
+
+This enables reconfiguring my daily setup on new Linux/Unix systems substainially easier while providing a backup for my confiuration. 
 
 ##Installation
 To install, run:
