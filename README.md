@@ -1,5 +1,5 @@
 # dotfiles
-dotfiles for *nix
+Personal dotfiles for *nix
 
 To install, run:
 
