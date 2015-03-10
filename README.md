@@ -23,7 +23,7 @@ git submodule update --init --recursive
 ```
 
 ##Symlinking to ~/
-After installing, the symlinks still need to be created. I use ```stow```, but you can manually link or use other helpers such as ```homesick``` or ```homeshick```.
+After installing, the symlinks still need to be created. I use ```stow```, but you can manually link or use other helpers such as ```homesick``` or ```homeshick```. You do not have to stow everything, only what you need on the current system.
 
 ```
 stow vim
@@ -61,7 +61,7 @@ make
 
 ##Easy Install
 
-The script ```install.sh``` will automatically install this dotfile configuration. The script relies of ```git``` and ```stow```.
+The script ```install.sh``` will automatically install this dotfile configuration. The script relies of ```git``` and ```stow```. It will link the entire configuration, so if you don't need everything, do not use this script.
 
 To run, simply execute the script:
 
