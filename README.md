@@ -54,7 +54,7 @@ Some plugins still need to be installed on new systems. These instructions were 
 ###Command-t
 
 ```
-cd ~/.vim/bundle/command-t/ruby/command-t
+cd ~/.vim/bundle/Command-T/ruby/command-t
 ruby extconf.rb
 make
 ```

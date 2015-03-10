@@ -10,6 +10,6 @@ stow tmuxinator
 stow git
 
 #Plugin installations
-cd ~/.vim/bundle/Command-t/ruby/command-t
+cd ~/.vim/bundle/Command-T/ruby/command-t
 ruby extconf.rb
 make
