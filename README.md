@@ -45,7 +45,7 @@ ruby extconf.rb
 make
 ```
 
-##Updating and Adding Submodules
+##Updating, Adding, and Removing Submodules
 
 To update all submodules, run:
 
@@ -57,6 +57,14 @@ To add another git repo, ```cd``` to the appropiate directory and run:
 
 ```
 git submodule add git://github.com/foo/bar.git
+```
+
+To remove a submodule, we need to deinit it and cleanse it from our repo.
+
+```
+git submodule deinit module_name
+git rm path/to/module_name
+rm -rf ~/dotfiles/.git/modules/path/to/module_name
 ```
 
 ##Easy Install
