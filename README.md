@@ -61,7 +61,7 @@ git submodule add git://github.com/foo/bar.git
 
 ##Easy Install
 
-The script ```easy-install.sh``` will automatically install this dotfile configuration. The script relies of ```git``` and ```stow```. It will link the entire configuration. If you don't need everything or would like to use parts of your existing configuration, do not use this script.
+The script ```easy-install.sh``` will automatically install this dotfile configuration. The script relies on ```git```, ```stow```, and ```ruby```. It will link the entire configuration. If you don't need everything or would like to use parts of your existing configuration, do not use this script.
 
 To run, clone the repo and simply execute the script:
 
