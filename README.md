@@ -68,5 +68,6 @@ To run, clone the repo and simply execute the script:
 ```
 cd ~/
 git clone --recursive git://github.com/medmonds34/dotfiles.git
+cd ~/dotfiles
 ./easy-install.sh
 ```
