@@ -1,6 +1,7 @@
 #!/bin/sh
 
 #add symlinks through stow
+cd ~/dotfiles
 stow vim
 stow zsh
 stow bash
