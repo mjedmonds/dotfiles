@@ -3,7 +3,7 @@ Personal dotfiles for Linux/Unix systems.
 
 ####Why?
 
-This enables reconfiguring my daily setup on new Linux/Unix systems substainially easier while providing a backup for my confiuration. You can use this setup to create your own dotfile repo!
+This enables reconfiguring my daily setup on new Linux/Unix systems substainially easier while providing a backup for my confiuration. I can't honestly recomend blindly using this as your configuration, however it may give you inspiration for yours. You can use this setup to create your own dotfile repo!
 
 ##Installation
 To install, run:
@@ -49,7 +49,7 @@ git submodule add git://github.com/foo/bar.git
 ```
 
 ##Plugin Installation
-Some plugins still need to be installed on new systems. These instructions were copied from plugin sources.
+Some plugins need further steps to install on new systems. These instructions were copied from plugin sources.
 
 ###Command-t
 
@@ -61,7 +61,7 @@ make
 
 ##Easy Install
 
-The script ```easy-install.sh``` will automatically install this dotfile configuration. The script relies of ```git``` and ```stow```. It will link the entire configuration, so if you don't need everything, do not use this script.
+The script ```easy-install.sh``` will automatically install this dotfile configuration. The script relies of ```git``` and ```stow```. It will link the entire configuration. If you don't need everything or would like to use parts of your existing configuration, do not use this script.
 
 To run, clone the repo and simply execute the script:
 
