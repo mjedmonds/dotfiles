@@ -61,13 +61,13 @@ To update all submodules, run:
 git submodule update --init --recursive
 ```
 
-To add another git repo, ```cd``` to the appropiate directory and run:
+To add another git repo, ```cd``` to the appropiate directory and add the submodule:
 
 ```
 git submodule add git://github.com/foo/bar.git
 ```
 
-To remove a submodule, we need to deinit it and cleanse it from our repo.
+To remove a submodule, we need to deinititalize it and cleanse it from our repo:
 
 ```
 git submodule deinit module_name

@@ -13,3 +13,7 @@ stow --ignore ".DS_Store" git
 cd ~/.vim/bundle/Command-T/ruby/command-t
 ruby extconf.rb
 make
+
+cd ~/.vim/bundle/YouCompleteMe
+git submodule update --init --recursive
+./install.sh --clang-completer
