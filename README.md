@@ -6,7 +6,7 @@ Personal dotfiles for Linux/Unix systems.
 This enables reconfiguring my daily setup on new Linux/Unix systems substainially easier while providing a backup for my confiuration. I can't honestly recomend blindly using this as your configuration, however it may give you inspiration for yours. You can use this setup to create your own dotfile repo!
 
 ##Installation
-To install, run:
+To clone the entire repo, including submodules, run:
 
 ```
 cd ~/
@@ -23,7 +23,7 @@ git submodule update --init --recursive
 ```
 
 ###Symlinking to ~/
-After installing, the symlinks still need to be created. I use ```stow```, but you can manually link or use other helpers such as ```homesick``` or ```homeshick```. You do not have to stow everything, only what you need on the current system.
+After cloning, the symlinks still need to be created to link your home directory to this repo. I use ```stow```, but you can manually link or use other helpers such as ```homesick``` or ```homeshick```. You do not have to stow everything, only what you need on the current system.
 
 ```
 stow vim
