@@ -37,7 +37,7 @@ stow git
 ###Plugin Installation
 Some plugins need further steps to install on new systems. These instructions were copied from plugin sources.
 
-####Command-t
+####Vim - Command-t
 
 ```
 cd ~/.vim/bundle/Command-T/ruby/command-t
