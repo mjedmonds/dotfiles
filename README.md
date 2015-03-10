@@ -58,3 +58,13 @@ cd ~/.vim/bundle/command-t/ruby/command-t
 ruby extconf.rb
 make
 ```
+
+##Easy Install
+
+The script ```install.sh``` will automatically install this dotfile configuration. The script relies of ```git``` and ```stow```.
+
+To run, simply execute the script:
+
+```
+./install.sh
+```
