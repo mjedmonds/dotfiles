@@ -3,7 +3,7 @@ Personal dotfiles for Linux/Unix systems.
 
 ####Why?
 
-This enables reconfiguring my daily setup on new Linux/Unix systems substainially easier while providing a backup for my configuration. I can't honestly recommend blindly using this as your configuration, however it may give you inspiration for yours. You can use this setup to create your own dotfile repo!
+A dotfile repo enables reconfiguring my daily setup on new Linux/Unix systems substainially easier while providing a backup for my configuration. I can't honestly recommend blindly using this as your configuration, however it may give you inspiration for yours. You can use this setup to create your own dotfile repo!
 
 ##Installation
 To clone the entire repo, including submodules, run:
