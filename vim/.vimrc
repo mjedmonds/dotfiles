@@ -84,6 +84,8 @@ hi link EasyMotionShade Comment
 hi link EasyMotionTarget2First Search
 hi link EasyMotionTarget2Second Search
 
+"YCM settings
+let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 
 
 "SuperTab settings

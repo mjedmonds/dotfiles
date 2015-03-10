@@ -45,6 +45,14 @@ ruby extconf.rb
 make
 ```
 
+####Vim - YouCompleteMe
+
+```
+cd ~/.vim/bundle/YouCompleteMe
+git submodule update --init --recursive
+./install.sh --clang-completer
+```
+
 ##Updating, Adding, and Removing Submodules
 
 To update all submodules, run:
