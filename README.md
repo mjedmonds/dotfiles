@@ -61,7 +61,7 @@ make
 
 ##Easy Install
 
-The script ```install.sh``` will automatically install this dotfile configuration. The script relies of ```git``` and ```stow```. It will link the entire configuration, so if you don't need everything, do not use this script.
+The script ```easy-install.sh``` will automatically install this dotfile configuration. The script relies of ```git``` and ```stow```. It will link the entire configuration, so if you don't need everything, do not use this script.
 
 To run, clone the repo and simply execute the script:
 
