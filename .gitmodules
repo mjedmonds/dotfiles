@@ -31,6 +31,7 @@
 [submodule "vim/.vim/bundle/smartpairs.vim"]
 	path = vim/.vim/bundle/smartpairs.vim
 	url = https://github.com/gorkunov/smartpairs.vim
+	ignore = dirty
 [submodule "vim/.vim/bundle/syntastic"]
 	path = vim/.vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic
