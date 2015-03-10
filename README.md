@@ -22,7 +22,7 @@ cd dotfiles
 git submodule update --init --recursive
 ```
 
-##Symlinking to ~/
+###Symlinking to ~/
 After installing, the symlinks still need to be created. I use ```stow```, but you can manually link or use other helpers such as ```homesick``` or ```homeshick```. You do not have to stow everything, only what you need on the current system.
 
 ```
@@ -32,6 +32,17 @@ stow bash
 stow tmux
 stow tmuxinator
 stow git
+```
+
+###Plugin Installation
+Some plugins need further steps to install on new systems. These instructions were copied from plugin sources.
+
+####Command-t
+
+```
+cd ~/.vim/bundle/Command-T/ruby/command-t
+ruby extconf.rb
+make
 ```
 
 ##Updating and Adding Submodules
@@ -46,17 +57,6 @@ To add another git repo, ```cd``` to the appropiate directory and run:
 
 ```
 git submodule add git://github.com/foo/bar.git
-```
-
-##Plugin Installation
-Some plugins need further steps to install on new systems. These instructions were copied from plugin sources.
-
-###Command-t
-
-```
-cd ~/.vim/bundle/Command-T/ruby/command-t
-ruby extconf.rb
-make
 ```
 
 ##Easy Install
