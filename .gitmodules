@@ -53,12 +53,12 @@
 [submodule "vim/.vim/bundle/vim-session"]
 	path = vim/.vim/bundle/vim-session
 	url = https://github.com/xolox/vim-session
-[submodule "vim/.vim/bundle/neocomplcache.vim"]
-	path = vim/.vim/bundle/neocomplcache.vim
-	url = https://github.com/Shougo/neocomplcache.vim
 [submodule "tmux/.tmux/plugins/tmux-sensible"]
 	path = tmux/.tmux/plugins/tmux-sensible
 	url = https://github.com/tmux-plugins/tmux-sensible
 [submodule "tmux/.tmux/plugins/tmux-resurrect"]
 	path = tmux/.tmux/plugins/tmux-resurrect
 	url = https://github.com/tmux-plugins/tmux-resurrect
+[submodule "vim/.vim/bundle/supertab"]
+	path = vim/.vim/bundle/supertab
+	url = https://github.com/ervandew/supertab
