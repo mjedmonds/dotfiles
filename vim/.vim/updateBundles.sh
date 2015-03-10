@@ -4,6 +4,6 @@ cd ~/.vim/bundle
 ls >> ../InstalledPlugins.txt
 for i in `ls`; do
   cd "$i"
-  git pull
+  git submodule update --recursive
   cd ..
 done
