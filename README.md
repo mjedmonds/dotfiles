@@ -63,8 +63,10 @@ make
 
 The script ```install.sh``` will automatically install this dotfile configuration. The script relies of ```git``` and ```stow```. It will link the entire configuration, so if you don't need everything, do not use this script.
 
-To run, simply execute the script:
+To run, clone the repo and simply execute the script:
 
 ```
+cd ~/
+git clone --recursive git://github.com/medmonds34/dotfiles.git
 ./install.sh
 ```
