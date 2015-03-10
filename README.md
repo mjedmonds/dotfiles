@@ -26,12 +26,12 @@ git submodule update --init --recursive
 After cloning, symlinks still need to be created to link your home directory to this repo. I use ```stow```, but you can manually link or use other helpers such as ```homesick``` or ```homeshick```. You do not have to stow everything, only what you need on the current system.
 
 ```
-stow vim
-stow zsh
-stow bash
-stow tmux
-stow tmuxinator
-stow git
+stow --ignore ".DS_Store" vim
+stow --ignore ".DS_Store" zsh
+stow --ignore ".DS_Store" bash
+stow --ignore ".DS_Store" tmux
+stow --ignore ".DS_Store" tmuxinator
+stow --ignore ".DS_Store" git
 ```
 
 ###Plugin Installation
