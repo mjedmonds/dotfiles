@@ -56,7 +56,7 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/loca
 # export MANPATH="/usr/local/man:$MANPATH"
 
 #alias vim='/usr/local/bin/vim'
-#export VIMRUNTIME='/usr/local/Cellar/macvim/7.4-73_1/MacVim.app/Contents/Resources/vim/runtime'
+export VIMRUNTIME='/usr/local/Cellar/macvim/7.4-73_1/MacVim.app/Contents/Resources/vim/runtime'
 
 source $ZSH/oh-my-zsh.sh
 
@@ -84,6 +84,9 @@ fi
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+# colored completion - use my LS_COLORS
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh

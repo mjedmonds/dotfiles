@@ -86,14 +86,29 @@ hi link EasyMotionTarget2Second Search
 
 "YCM settings
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
-
+let g:ycm_complete_in_comments = 1
+let g:yc_complete_in_strings = 1
+"jump to definition/declaration
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
+let g:ycm_filetype_blacklist = {
+      \ 'tagbar' : 1,
+      \ 'qf' : 1,
+      \ 'notes' : 1,
+      \ 'markdown' : 1,
+      \ 'unite' : 1,
+      \ 'text' : 0,
+      \ 'vimwiki' : 1,
+      \ 'pandoc' : 1,
+      \ 'infolog' : 1,
+      \ 'mail' : 1
+      \}
 
 "SuperTab settings
 "tell subertab to use eclim autocomplete if possible
-let g:SuperTabDefaultCompletionType = 'context'
+"let g:SuperTabDefaultCompletionType = 'context'
 "DO NOT REMOVE ^ OR \s
-let g:SuperTabNoCompleteAfter = ['^', '\s', ';']
-let g:SuperTabClosePreviewOnPopupClose = 1
+"let g:SuperTabNoCompleteAfter = ['^', '\s', ';']
+"let g:SuperTabClosePreviewOnPopupClose = 1
 "ignore includes in autocomplete
 "set complete-=i
 
