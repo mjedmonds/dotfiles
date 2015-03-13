@@ -159,7 +159,7 @@ hi CursorLine term=none cterm=none ctermbg=3
 autocmd colorscheme * hi clear SpellBad
 autocmd colorscheme * hi SpellBad gui=undercurl guisp=red
 
-set guifont=Inconsolata:h15
+set guifont=Inconsolata:h14
 
 set expandtab
 set softtabstop=3

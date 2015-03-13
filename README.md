@@ -1,4 +1,4 @@
-#medmonds34 dotfiles
+#mjedmonds dotfiles
 Personal dotfiles for Linux/Unix systems. 
 
 ####Why?
