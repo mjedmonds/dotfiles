@@ -1,6 +1,6 @@
-vim/.vim/tmp/*
-vim/.vim/undo/*
-vim/.vim/backup/*
-vim/.vim/sessions/*
+vim/.vim/tmp
+vim/.vim/undo
+vim/.vim/backup
+vim/.vim/sessions
 vim/.vim/.netrwhist
 vim/.vim/.ycm_extra_conf.pyc
