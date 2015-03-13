@@ -1,6 +1,9 @@
-vim/.vim/tmp
-vim/.vim/undo
-vim/.vim/backup
+vim/.vim/tmp/*
+!vim/.vim/tmp/.dummy
+vim/.vim/undo/*
+!vim/.vim/undo/.dummy
+vim/.vim/backup/*
+!vim/.vim/backup/.dummy
 vim/.vim/sessions
 vim/.vim/.netrwhist
 vim/.vim/.ycm_extra_conf.pyc
