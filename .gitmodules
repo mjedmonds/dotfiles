@@ -1,8 +1,8 @@
 [submodule "zsh/.oh-my-zsh"]
 	path = zsh/.oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh
-[submodule "zsh/minimal"]
-	path = zsh/minimal
+[submodule "zsh-extra/minimal"]
+	path = zsh-extra/minimal
 	url = https://github.com/S1cK94/minimal
 [submodule "vim/.vim/bundle/auto-pairs"]
 	path = vim/.vim/bundle/auto-pairs
@@ -63,3 +63,6 @@
 	path = vim/.vim/bundle/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe
 	ignore = dirty
+[submodule "zsh-extra/zsh-syntax-highlighting"]
+	path = zsh-extra/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting
