@@ -1,4 +1,3 @@
-"
 "pathogen infection!
 execute pathogen#infect()
 execute pathogen#helptags()
@@ -10,6 +9,8 @@ syntax on
 "enable mouse and no highlight search
 set mouse=a
 set nohls
+
+"relative line numbers
 set relativenumber
 
 "Make backspace key delete current line
@@ -27,7 +28,6 @@ set backup
 set undodir=~/.vim/undo
 set backupdir=~/.vim/backup
 set directory=~/.vim/tmp
-"set spell
 
 "confirm quitting when attempting to quit without saving
 set confirm
@@ -71,12 +71,6 @@ let g:session_autosave='no'
 let g:session_autoload='no'
 let g:session_autoload_periodic = 1
 let g:session_command_aliases = 1
-
-"Eclim settings
-"let g:EclimInfoHighlight = 'Statement'
-"let g:EclimWarningHighlight = 'WarningMsg'
-"let g:EclimErrorHighlight = 'Error'
-"let g:EclimSignLevel = 2
 
 "EasyMotion settings
 hi link EasyMotionTarget ErrorMsg
@@ -123,15 +117,10 @@ nmap <F9> :TagbarToggle<CR>
 "backspace)
 nmap <Help> <nop>
 
-"CtrlP
-"nmap <F7> :CtrlP<CR>
-"let g:ctrlp_show_hidden=1
-"let g:ctrlp_user_command = 'find %s -type f'        " Mac OSX/Linux
-
 "delete whitespace at the end of lines on <F5>
 noremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
-"auto fix indentation
+"auto fix indentation in entire file
 nmap <F7> mzgg=G`z<CR>
 
 "Airline options
@@ -148,10 +137,7 @@ let g:lengthmatters_start_at_column=81
 "Custom Snippet dir so pathogen can update it without losing them
 "let g:snippets_dir = "~/.vim/snippets"
 
-"Relative line numbers
-"set relativenumber
-
-"cursorline
+"cursorline settings
 set cursorline
 hi CursorLine term=none cterm=none ctermbg=3
 
@@ -159,8 +145,10 @@ hi CursorLine term=none cterm=none ctermbg=3
 autocmd colorscheme * hi clear SpellBad
 autocmd colorscheme * hi SpellBad gui=undercurl guisp=red
 
+"Font selection
 set guifont=Inconsolata:h14
 
+"Tab Settings
 set expandtab
 set softtabstop=3
 set shiftwidth=3
@@ -225,15 +213,9 @@ let g:syntastic_check_on_wq = 0
 "   cd /
 "endif
 
-"enable powerline
-"source /Users/mark/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim/plugin/powerline.vim
-"set laststatus=2
-
+"specific file type settings
 autocmd FileType make set noexpandtab
 autocmd BufNewFile,BufRead *.cu set ft=cuda
 autocmd BufNewFile,BufRead *.cuh set ft=cuda
 "autocmd BufEnter * if &filetype == "" | setlocal ft=txt | endif
 
-"autocmd FileType text colorscheme bw
-"autocmd FileType text setlocal spell
-"autocmd FileType text setlocal colorcolumn=
