@@ -85,7 +85,7 @@ hi link EasyMotionTarget2Second Search
 "YCM settings
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 let g:ycm_complete_in_comments = 1
-let g:yc_complete_in_strings = 1
+let g:ycm_complete_in_strings = 1
 "jump to definition/declaration
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
 let g:ycm_filetype_blacklist = {
