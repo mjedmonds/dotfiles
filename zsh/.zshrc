@@ -55,6 +55,8 @@ plugins=(git brew)
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/usr/local/MacGPG2/bin:/usr/texbin:/usr/local/sbin:/Users/mark/bin:/Developer/NVIDIA/CUDA-7.0/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
+export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-7.0/lib:$DYLD_LIBRARY_PATH
+
 #alias vim='/usr/local/bin/vim'
 export VIMRUNTIME='/usr/local/Cellar/macvim/7.4-73_1/MacVim.app/Contents/Resources/vim/runtime'
 

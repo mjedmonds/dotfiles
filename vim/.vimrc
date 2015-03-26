@@ -31,6 +31,10 @@ set directory=~/.vim/tmp
 
 "confirm quitting when attempting to quit without saving
 set confirm
+
+
+"set the folding option to syntax
+"set foldmethod=syntax
  
 "menu expansion settings
 set wildmenu
@@ -123,6 +127,12 @@ noremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 "auto fix indentation in entire file
 nmap <F7> mzgg=G`z<CR>
 
+"Gundo
+nnoremap <F6> :GundoToggle<CR>
+let g:gundo_width = 80
+let g:gundo_preview_height = 60
+let g:gundo_right = 1
+
 "Airline options
 "let g:airline_powerline_fonts = 1
 let g:lightline = {
@@ -182,8 +192,11 @@ if (&t_Co == 256 || &t_Co == 88) && !has('gui_running') &&
 set background=dark
 
 "enable different cursors based on the mode
-let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\""
+"Versions including tmux; are for tmux configurations
+"let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+let &t_SI = "\<Esc>P\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+"let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\""
+let &t_EI = "\<Esc>P\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\""
 
 "indent guides settings
 let g:indent_guides_guide_size = 1
