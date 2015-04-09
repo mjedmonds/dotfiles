@@ -32,6 +32,7 @@ stow --ignore ".DS_Store" bash
 stow --ignore ".DS_Store" tmux
 stow --ignore ".DS_Store" tmuxinator
 stow --ignore ".DS_Store" git
+stow --ignore ".DS_Store" slate
 ```
 
 ###Plugin Installation

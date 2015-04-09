@@ -55,7 +55,8 @@ set clipboard=unnamed
 
 "latex setup
 let g:tex_flavor='latex'
-let g:tex_conceal = ""
+let g:tex_conceal=""
+"let g:LatexBox_latexmk_options="-pdflatex=lualatex"
 
 "Auto pairs configuration
 let g:AutoPairsUseInsertedCount = 1
