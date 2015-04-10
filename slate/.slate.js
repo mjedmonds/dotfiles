@@ -1,17 +1,17 @@
-var gap, mod1, mod2, mod3, nudge, nudge_amt, pos, presets, resize, resize_amt, size, sox, soy, ssx, ssy;
 
-sox = "screenOriginX";
+var sox = "screenOriginX";
 
-soy = "screenOriginY";
+var soy = "screenOriginY";
 
-ssx = "screenSizeX";
+var ssx = "screenSizeX";
 
-ssy = "screenSizeY";
+var ssy = "screenSizeY";
 
 S.configAll({
    "gridRoundedCornerSize" : 2,
    "gridCellRoundedCornerSize" : 2,
    "windowHintsFontSize" : 72,
+   "windowHintsFontColor" : "200;200;200;1.0",
    "nudgePercentOf" : 'screenSize',
    "resizePercentOf" : 'screenSize',
    "windowHintsIgnoreHiddenWindows" : false,
@@ -20,27 +20,27 @@ S.configAll({
 });
 
 
-nudge_amt = "3%";
+var nudge_amt = "3%";
 
-resize_amt = "3%";
+var resize_amt = "3%";
 
-gap = "14";
+var gap = "10";
 
-pos = {
+var pos = {
    origin_x: sox + "+" + gap,
    origin_y: soy + "+" + gap,
    middle_x: sox + "+" + ssx + "/2+" + gap + "/2",
    middle_y: soy + "+" + ssy + "/2+" + gap + "/2"
 };
 
-size = {
+var size = {
    full_width: ssx + "-" + gap + "*2",
    full_height: ssy + "-" + gap + "*2",
    half_width: ssx + "/2-" + gap + "-" + gap + "/2",
    half_height: ssy + "/2-" + gap + "-" + gap + "/2"
 };
 
-presets = {
+var presets = {
    fullscreen: {
       x: pos.origin_x,
       y: pos.origin_y,
@@ -97,66 +97,77 @@ presets = {
    }
 };
 
-nudge = {
+var nudge = {
    left: S.op("nudge", {
       x: "-" + nudge_amt,
       y: "+0"
-
    }),
    right: S.op("nudge", {
       x: "+" + nudge_amt,
       y: "+0"
-
    }),
    up: S.op("nudge", {
       x: "+0",
       y: "-" + nudge_amt
-
    }),
    down: S.op("nudge", {
       x: "+0",
       y: "+" + nudge_amt
-
    })
 };
 
-resize = {
+var resize = {
    left: S.op("resize", {
       width: "-" + resize_amt,
       height: "+0"
-
    }),
    right: S.op("resize", {
       width: "+" + resize_amt,
       height: "+0"
-
    }),
    up: S.op("resize", {
       width: "+0",
       height: "-" + resize_amt
-
    }),
    down: S.op("resize", {
       width: "+0",
       height: "+" + resize_amt
-
    })
 };
 
-mod1 = function(k) {
+var focus = {
+   right: S.op("focus", {
+      "direction": "right"
+   }),
+   left: S.op("focus", {
+      "direction": "left"
+   }),
+   up: S.op("focus", {
+      "direction": "up"
+   }),
+   down: S.op("focus", {
+      "direction": "down"
+   })
+};
+
+var mod1 = function(k) {
    return k + ":ctrl,shift";
 };
 
-mod2 = function(k) {
+var mod2 = function(k) {
    return k + ":ctrl,alt";
 };
 
-mod3 = function(k) {
+var mod3 = function(k) {
    return k + ":ctrl,cmd";
 };
 
-S.bind(mod2("q"), S.op("hint", {
-   characters: "QWERTYUIOP"
+var mod4 = function(k) {
+   return k + ":cmd";
+};
+
+S.bind(mod2("/"), S.op("hint", {
+   characters: "ASDFGHJKLQWERTYUIOP"
 }));
 
 S.bind(mod2("o"), S.op("move", presets.fullscreen));
@@ -192,6 +203,14 @@ S.bind(mod2("right"), resize.right);
 S.bind(mod2("up"), resize.up);
 
 S.bind(mod2("down"), resize.down);
+
+S.bind(mod4("left"), focus.left);
+
+S.bind(mod4("right"), focus.right);
+
+S.bind(mod4("up"), focus.up);
+
+S.bind(mod4("down"), focus.down);
 
 S.bind(mod3("left"), S.op("throw", {
    screen: "0"
