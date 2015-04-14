@@ -41,6 +41,12 @@ set wildmenu
 set wildmode=full
 "set wildmode=longest:full,full
 
+" Disable annoying beeping
+set noerrorbells
+set vb t_vb=
+if has("gui_running")
+   autocmd GUIEnter * set vb t_vb=
+
 "leader key
 let g:mapleader=","
 
