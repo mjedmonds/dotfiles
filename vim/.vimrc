@@ -44,8 +44,22 @@ set wildmode=full
 " Disable annoying beeping
 set noerrorbells
 set vb t_vb=
+
+"spelling colors/options
+autocmd colorscheme * hi clear SpellBad
+
+" Diable annoying beep and enable transparency on gui
 if has("gui_running")
+   set transparency=5
    autocmd GUIEnter * set vb t_vb=
+   " Set undercurl as error indicator in gui
+   autocmd colorscheme * hi SpellBad gui=undercurl guisp=red
+   "Font selection
+   set guifont=Inconsolata:h14
+" Terminal specific settings
+else
+   autocmd colorscheme * hi SpellBad cterm=undercurl
+endif
 
 "leader key
 let g:mapleader=","
@@ -68,13 +82,19 @@ let g:tex_conceal=""
 let g:AutoPairsUseInsertedCount = 1
 let g:AutoPairsFlyMode = 0
 let g:AutoPairsShortcutToggle = '' 
-let g:AutoPairsShortcutJump = '<Esc>n'
-let g:AutoPairsShortcutFastWrap = '<Esc>e'
-let g:AutoPairsShortcutBackInsert = '<Esc>b'
 
 "Enable meta key as alt for autopairs for OS X
 if has ("gui_macvim")
    set macmeta
+   let g:AutoPairsShortcutJump = '<M-n>'
+   let g:AutoPairsShortcutFastWrap = '<M-e>'
+   let g:AutoPairsShortcutBackInsert = '<M-b>'
+   "alternate settings for a terminal vim, relies on terminal forwarding the
+   "option key as +Esc (for iTerm)
+else
+   let g:AutoPairsShortcutJump = '<Esc>n'
+   let g:AutoPairsShortcutFastWrap = '<Esc>e'
+   let g:AutoPairsShortcutBackInsert = '<Esc>b'
 endif
 
 "Session settings
@@ -157,13 +177,6 @@ let g:lengthmatters_start_at_column=81
 "cursorline settings
 set cursorline
 hi CursorLine term=none cterm=none ctermbg=3
-
-"spelling colors/options
-autocmd colorscheme * hi clear SpellBad
-autocmd colorscheme * hi SpellBad gui=undercurl guisp=red
-
-"Font selection
-set guifont=Inconsolata:h14
 
 "Tab Settings
 set expandtab

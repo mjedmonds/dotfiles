@@ -99,5 +99,6 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ll="ls -al"
+alias vim="vim --servername vimserver"
 
 source ~/dotfiles/zsh-extra/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
