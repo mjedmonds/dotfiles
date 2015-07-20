@@ -58,7 +58,7 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/loca
 export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-7.0/lib:$DYLD_LIBRARY_PATH
 
 #alias vim='/usr/local/bin/vim'
-export VIMRUNTIME='/usr/local/Cellar/macvim/7.4-73_1/MacVim.app/Contents/Resources/vim/runtime'
+export VIMRUNTIME='/usr/local/Cellar/macvim/7.4-76/MacVim.app/Contents/Resources/vim/runtime'
 
 source $ZSH/oh-my-zsh.sh
 
@@ -102,3 +102,4 @@ alias ll="ls -al"
 alias vim="vim --servername vimserver"
 
 source ~/dotfiles/zsh-extra/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+export ANDROID_HOME=/usr/local/opt/android-sdk
