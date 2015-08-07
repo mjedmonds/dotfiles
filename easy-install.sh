@@ -9,6 +9,7 @@ stow --ignore ".DS_Store" tmux
 stow --ignore ".DS_Store" tmuxinator
 stow --ignore ".DS_Store" git
 stow --ignore ".DS_Store" slate
+ln -s ./.clang_format ~/.clang_format
 
 #Plugin installations
 cd ~/.vim/bundle/Command-T/ruby/command-t

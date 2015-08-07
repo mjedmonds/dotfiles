@@ -146,6 +146,9 @@ let g:ycm_filetype_blacklist = {
 nnoremap <F8> :NERDTreeToggle /<CR>
 let g:NERDTreeShowHidden=1
 
+"NERDCommenter
+"nmap <leader>ch <plug>NERDCommenterInsert
+
 "Tagbar
 nmap <F9> :TagbarToggle<CR>
 
@@ -174,10 +177,19 @@ set laststatus=2
 
 "Length Matters Settings
 let g:lengthmatters_on_by_default=0
-let g:lengthmatters_start_at_column=81
+let g:lengthmatters_start_at_column=121
 
 "Custom Snippet dir so pathogen can update it without losing them
 "let g:snippets_dir = "~/.vim/snippets"
+
+"Clang-format setting
+function! FormatFile()
+  let l:lines="all"
+  pyf ~/dotfiles/clang-format.py
+endfunction
+
+map <C-K> :call FormatFile()<cr>
+imap <C-K> <c-o>:call FormatFile()<cr>
 
 "cursorline settings
 set cursorline
@@ -185,8 +197,8 @@ hi CursorLine term=none cterm=none ctermbg=3
 
 "Tab Settings
 set expandtab
-set softtabstop=3
-set shiftwidth=3
+set softtabstop=2
+set shiftwidth=2
 "auto return after 80 characters
 "set textwidth=79
 "set formatoptions+=t
@@ -255,5 +267,8 @@ let g:syntastic_check_on_wq = 0
 autocmd FileType make set noexpandtab
 autocmd BufNewFile,BufRead *.cu set ft=cuda
 autocmd BufNewFile,BufRead *.cuh set ft=cuda
+autocmd BufNewFile,BufRead *.ypp set ft=yacc
+autocmd FileType tex :NoMatchParen
+au FileType tex setlocal nocursorline
 "autocmd BufEnter * if &filetype == "" | setlocal ft=txt | endif
 
