@@ -59,10 +59,6 @@
 [submodule "tmux/.tmux/plugins/tmux-resurrect"]
 	path = tmux/.tmux/plugins/tmux-resurrect
 	url = https://github.com/tmux-plugins/tmux-resurrect
-[submodule "vim/.vim/bundle/YouCompleteMe"]
-	path = vim/.vim/bundle/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe
-	ignore = dirty
 [submodule "zsh-extra/zsh-syntax-highlighting"]
 	path = zsh-extra/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
@@ -75,3 +71,12 @@
 [submodule "vim/.vim/bundle/vim-abolish"]
 	path = vim/.vim/bundle/vim-abolish
 	url = git://github.com/tpope/vim-abolish.git
+[submodule "vim/.vim/bundle/FastFold"]
+	path = vim/.vim/bundle/FastFold
+	url = https://github.com/Konfekt/FastFold
+[submodule "vim/.vim/neocomplete.vim"]
+	path = vim/.vim/neocomplete.vim
+	url = https://github.com/Shougo/neocomplete.vim
+[submodule "vim/.vim/bundle/neocomplete.vim"]
+	path = vim/.vim/bundle/neocomplete.vim
+	url = https://github.com/Shougo/neocomplete.vim

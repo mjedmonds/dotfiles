@@ -13,10 +13,12 @@ endif
 
 " USER DEFINED PYTHON SECTION
 
-set tabstop=4
-set noexpandtab
-set list lcs=tab:\|\
-nnoremap <silent> <buffer> <cr> :PythonSearchContext<cr>
+setlocal tabstop=2
+setlocal softtabstop=2
+setlocal shiftwidth=2
+setlocal smarttab
+setlocal expandtab
+"nnoremap <silent> <buffer> <cr> :PythonSearchContext<cr>
 
 " ---------------------------
 

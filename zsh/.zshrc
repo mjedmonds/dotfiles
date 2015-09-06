@@ -55,10 +55,11 @@ plugins=(git brew)
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/usr/local/MacGPG2/bin:/usr/texbin:/usr/local/sbin:/Users/mark/bin:/Developer/NVIDIA/CUDA-7.0/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
-export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-7.0/lib:$DYLD_LIBRARY_PATH
+export DYLD_FALLBACK_LIBRARY_PATH=/Developer/NVIDIA/CDUA-7.0/lib:$DYLD_FALLBACK_LIBRARY_PATH 
+launchctl setenv DYLD_FALLBACK_LIBRARY_PATH $DYLD_FALLBACK_LIBRARY_PATH
 
 #alias vim='/usr/local/bin/vim'
-export VIMRUNTIME='/usr/local/Cellar/macvim/7.4-76/MacVim.app/Contents/Resources/vim/runtime'
+export VIMRUNTIME='/Applications/MacVim.app/Contents/Resources/vim/runtime'
 
 source $ZSH/oh-my-zsh.sh
 
@@ -101,5 +102,5 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 alias ll="ls -al"
 alias vim="vim --servername vimserver"
 
-source ~/dotfiles/zsh-extra/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.dotfiles/zsh-extra/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export ANDROID_HOME=/usr/local/opt/android-sdk

@@ -6,6 +6,10 @@ filetype on
 filetype plugin indent on
 syntax on
 
+"set shell for neovim/YCM support
+let g:python_host_prog = '/usr/local/bin/python2.7'
+set shell=/bin/bash
+
 "enable mouse and no highlight search
 set mouse=a
 set nohls
@@ -36,8 +40,11 @@ set confirm
 map <Esc><Esc> :w<CR>
 
 "set the folding option to syntax
-"set foldmethod=syntax
+set foldmethod=syntax
+"only fold the top level by default
+set foldnestmax=1
  
+
 "menu expansion settings
 set wildmenu
 set wildmode=full
@@ -111,27 +118,67 @@ hi link EasyMotionShade Comment
 hi link EasyMotionTarget2First Search
 hi link EasyMotionTarget2Second Search
 
+"neocomplete settings
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+
+" Define dictionary.
+let g:neocomplete#sources#dictionary#dictionaries = {
+    \ 'default' : '',
+    \ 'vimshell' : $HOME.'/.vimshell_hist',
+    \ 'scheme' : $HOME.'/.gosh_completions'
+        \ }
+
+" Define keyword.
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
+" Plugin key-mappings.
+inoremap <expr><C-g>     neocomplete#undo_completion()
+inoremap <expr><C-l>     neocomplete#complete_common_string()
+
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  ""return neocomplete#close_popup() . "\<CR>"
+  " For no inserting <CR> key.
+  return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+endfunction
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
 "YCM settings
-let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
-let g:ycm_complete_in_comments = 1
-let g:ycm_complete_in_strings = 1
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_confirm_extra_conf = 0 
-"jump to definition/declaration
-nnoremap <leader>jd :YcmCompleter GoTo<CR>
-let g:ycm_filetype_blacklist = {
-      \ 'tagbar' : 1,
-      \ 'qf' : 1,
-      \ 'notes' : 1,
-      \ 'markdown' : 1,
-      \ 'unite' : 1,
-      \ 'text' : 0,
-      \ 'vimwiki' : 1,
-      \ 'pandoc' : 1,
-      \ 'infolog' : 1,
-      \ 'mail' : 1
-      \}
+"let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+"let g:ycm_complete_in_comments = 1
+"let g:ycm_complete_in_strings = 1
+"let g:ycm_autoclose_preview_window_after_completion = 1
+"let g:ycm_autoclose_preview_window_after_insertion = 1
+"let g:ycm_confirm_extra_conf = 0 
+""jump to definition/declaration
+"nnoremap <leader>jd :YcmCompleter GoTo<CR>
+"let g:ycm_filetype_blacklist = {
+"      \ 'tagbar' : 1,
+"      \ 'qf' : 1,
+"      \ 'notes' : 1,
+"      \ 'markdown' : 1,
+"      \ 'unite' : 1,
+"      \ 'text' : 0,
+"      \ 'vimwiki' : 1,
+"      \ 'pandoc' : 1,
+"      \ 'infolog' : 1,
+"      \ 'mail' : 1
+"      \}
 
 "SuperTab settings
 "tell subertab to use eclim autocomplete if possible
@@ -185,7 +232,7 @@ let g:lengthmatters_start_at_column=121
 "Clang-format setting
 function! FormatFile()
   let l:lines="all"
-  pyf ~/dotfiles/clang-format.py
+  pyf ~/.dotfiles/clang-format.py
 endfunction
 
 map <C-K> :call FormatFile()<cr>
@@ -250,7 +297,7 @@ let g:syntastic_c_compiler_options = '-std=c99'
 
 "c++ settings
 let g:syntastic_cpp_compiler = 'clang++'
-let g:syntastic_cpp_compiler_options = '-std=c++0x'
+let g:syntastic_cpp_compiler_options = '-std=c++14'
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
