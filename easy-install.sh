@@ -12,7 +12,5 @@ stow --ignore ".DS_Store" slate
 #ln -s ./.clang_format ~/.clang_format
 
 #Plugin installations
-cd ~/.vim/bundle/Command-T/ruby/command-t
-ruby extconf.rb
-make
+
 

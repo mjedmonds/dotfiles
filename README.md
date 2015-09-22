@@ -38,6 +38,8 @@ stow --ignore ".DS_Store" slate
 ###Plugin Installation
 Some plugins need further steps to install on new systems. These instructions were copied from plugin sources.
 
+NOTE: both of these plugins are no longer a part of my dotfiles, but they serve as a useful example.
+
 ####Vim - Command-t
 
 ```
