@@ -7,9 +7,6 @@
 [submodule "vim/.vim/bundle/auto-pairs"]
 	path = vim/.vim/bundle/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs
-[submodule "vim/.vim/bundle/Command-T"]
-	path = vim/.vim/bundle/Command-T
-	url = https://github.com/wincent/Command-T
 [submodule "vim/.vim/bundle/guicolorscheme.vim"]
 	path = vim/.vim/bundle/guicolorscheme.vim
 	url = https://github.com/vim-scripts/guicolorscheme.vim
