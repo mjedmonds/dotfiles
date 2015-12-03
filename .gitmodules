@@ -75,3 +75,6 @@
 [submodule "vim/.vim/bundle/neocomplete.vim"]
 	path = vim/.vim/bundle/neocomplete.vim
 	url = https://github.com/Shougo/neocomplete.vim
+[submodule "vim/.vim/bundle/Spacegray.vim"]
+	path = vim/.vim/bundle/Spacegray.vim
+	url = https://github.com/ajh17/Spacegray.vim

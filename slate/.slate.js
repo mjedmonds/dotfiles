@@ -180,10 +180,10 @@ var mod5 = function(k) {
 };
 
 
-S.bind(mod1("h"), nudge.left);
-S.bind(mod1("l"), nudge.right);
-S.bind(mod1("k"), nudge.up);
-S.bind(mod1("j"), nudge.down);
+//S.bind(mod1("h"), nudge.left);
+//S.bind(mod1("l"), nudge.right);
+//S.bind(mod1("k"), nudge.up);
+//S.bind(mod1("j"), nudge.down);
 
 S.bind(mod2("/"), S.op("hint", {
    characters: "ASDFGHJKLQWERTYUIOP"
@@ -207,13 +207,13 @@ S.bind(mod3("l"), S.op("throw", {
    screen: "1"
 }));
 
-S.bind(mod4("h"), focus.left);
-S.bind(mod4("l"), focus.right);
-S.bind(mod4("k"), focus.up);
-S.bind(mod4("j"), focus.down);
+//S.bind(mod4("h"), focus.left);
+//S.bind(mod4("l"), focus.right);
+//S.bind(mod4("k"), focus.up);
+//S.bind(mod4("j"), focus.down);
 
-S.bind(mod5("h"), resize.left);
-S.bind(mod5("l"), resize.right);
-S.bind(mod5("k"), resize.up);
-S.bind(mod5("j"), resize.down);
+//S.bind(mod5("h"), resize.left);
+//S.bind(mod5("l"), resize.right);
+//S.bind(mod5("k"), resize.up);
+//S.bind(mod5("j"), resize.down);
 

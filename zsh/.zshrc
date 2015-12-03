@@ -52,7 +52,7 @@ plugins=(git brew)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/usr/local/MacGPG2/bin:/usr/texbin:/usr/local/sbin:/Users/mark/bin:/Developer/NVIDIA/CUDA-7.0/bin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/usr/local/sbin:/Library/TeX/texbin:/Users/mark/bin:/Developer/NVIDIA/CUDA-7.0/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 #
 if [[ :$DYLD_FALLBACK_LIBRARY_PATH: != *:"/Developer/NVIDIA/CDUA-7.0/lib":* ]] ; then
@@ -61,9 +61,12 @@ if [[ :$DYLD_FALLBACK_LIBRARY_PATH: != *:"/Developer/NVIDIA/CDUA-7.0/lib":* ]] ;
 fi
 
 #alias vim='/usr/local/bin/vim'
-export VIMRUNTIME='/Applications/MacVim.app/Contents/Resources/vim/runtime'
+if [[ "$OSTYPE" = "darwin"* ]]; then
+  export VIMRUNTIME='/Applications/MacVim.app/Contents/Resources/vim/runtime'
+fi
 
 source $ZSH/oh-my-zsh.sh
+export CFLAGS=-I/usr/lib/python2.7/site-packages/numpy/core/include/
 
 # Share history aross zsh sessions
 # Appends every command to the history file once it is executed
@@ -103,6 +106,12 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ll="ls -al"
 alias vim="vim --servername vimserver"
+alias matlab="/Applications/MATLAB_R2015b.app/bin/matlab -nodesktop"
+alias python="python3.5"
+
+
+# Virtualenv/VirtualenvWrapper
+source /usr/local/bin/virtualenvwrapper.sh
 
 source ~/.dotfiles/zsh-extra/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export ANDROID_HOME=/usr/local/opt/android-sdk
