@@ -44,7 +44,6 @@ set foldmethod=syntax
 "only fold the top level by default
 set foldnestmax=1
 
-
 "menu expansion settings
 set wildmenu
 set wildmode=full
@@ -59,14 +58,19 @@ autocmd colorscheme * hi clear SpellBad
 
 " Diable annoying beep and enable transparency on gui
 if has("gui_running")
+  " OS X specific 
   if has("gui_MacVim")
     set transparency=2
+    "Font selection for OS X
+    set guifont=Inconsolata:h14
+  else 
+    "Font selection for gvim
+    set guifont=Monospace:h11
   endif
+    
   autocmd GUIEnter * set vb t_vb=
   " Set undercurl as error indicator in gui
   autocmd colorscheme * hi SpellBad gui=undercurl guisp=red
-  "Font selection
-  set guifont=Inconsolata:h14
   " Terminal specific settings
 else
   autocmd colorscheme * hi SpellBad cterm=undercurl
