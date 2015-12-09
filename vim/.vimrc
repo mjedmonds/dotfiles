@@ -65,7 +65,7 @@ if has("gui_running")
     set guifont=Inconsolata:h14
   else 
     "Font selection for gvim
-    set guifont=Monospace:h11
+    set guifont=Monospace\ 11
   endif
     
   autocmd GUIEnter * set vb t_vb=
