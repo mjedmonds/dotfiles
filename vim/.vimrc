@@ -43,7 +43,7 @@ map <Esc><Esc> :w<CR>
 set foldmethod=syntax
 "only fold the top level by default
 set foldnestmax=1
- 
+
 
 "menu expansion settings
 set wildmenu
@@ -59,15 +59,17 @@ autocmd colorscheme * hi clear SpellBad
 
 " Diable annoying beep and enable transparency on gui
 if has("gui_running")
-   set transparency=5
-   autocmd GUIEnter * set vb t_vb=
-   " Set undercurl as error indicator in gui
-   autocmd colorscheme * hi SpellBad gui=undercurl guisp=red
-   "Font selection
-   set guifont=Inconsolata:h14
-" Terminal specific settings
+  if has("gui_MacVim")
+    set transparency=2
+  endif
+  autocmd GUIEnter * set vb t_vb=
+  " Set undercurl as error indicator in gui
+  autocmd colorscheme * hi SpellBad gui=undercurl guisp=red
+  "Font selection
+  set guifont=Inconsolata:h14
+  " Terminal specific settings
 else
-   autocmd colorscheme * hi SpellBad cterm=undercurl
+  autocmd colorscheme * hi SpellBad cterm=undercurl
 endif
 
 "leader key
@@ -94,16 +96,16 @@ let g:AutoPairsShortcutToggle = ''
 
 "Enable meta key as alt for autopairs for OS X
 if has ("gui_macvim")
-   set macmeta
-   let g:AutoPairsShortcutJump = '<M-n>'
-   let g:AutoPairsShortcutFastWrap = '<M-e>'
-   let g:AutoPairsShortcutBackInsert = '<M-b>'
-   "alternate settings for a terminal vim, relies on terminal forwarding the
-   "option key as +Esc (for iTerm)
+  set macmeta
+  let g:AutoPairsShortcutJump = '<M-n>'
+  let g:AutoPairsShortcutFastWrap = '<M-e>'
+  let g:AutoPairsShortcutBackInsert = '<M-b>'
+  "alternate settings for a terminal vim, relies on terminal forwarding the
+  "option key as +Esc (for iTerm)
 else
-   let g:AutoPairsShortcutJump = '<Esc>n'
-   let g:AutoPairsShortcutFastWrap = '<Esc>e'
-   let g:AutoPairsShortcutBackInsert = '<Esc>b'
+  let g:AutoPairsShortcutJump = '<Esc>n'
+  let g:AutoPairsShortcutFastWrap = '<Esc>e'
+  let g:AutoPairsShortcutBackInsert = '<Esc>b'
 endif
 
 "Session settings
@@ -131,14 +133,14 @@ let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
 " Define dictionary.
 let g:neocomplete#sources#dictionary#dictionaries = {
-    \ 'default' : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
+      \ 'default' : '',
+      \ 'vimshell' : $HOME.'/.vimshell_hist',
+      \ 'scheme' : $HOME.'/.gosh_completions'
+      \ }
 
 " Define keyword.
 if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns = {}
+  let g:neocomplete#keyword_patterns = {}
 endif
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
@@ -218,7 +220,7 @@ let g:gundo_right = 1
 "Airline options
 "let g:airline_powerline_fonts = 1
 let g:lightline = {
-      \ 'colorscheme': 'solarized_dark',
+      \ 'colorscheme': 'wombat',
       \ }
 set laststatus=2
 
@@ -240,7 +242,7 @@ imap <C-K> <c-o>:call FormatFile()<cr>
 
 "cursorline settings
 set cursorline
-hi CursorLine term=none cterm=none ctermbg=3
+"hi CursorLine term=none cterm=none ctermbg=3
 
 "Tab Settings
 set expandtab
@@ -261,16 +263,16 @@ set cindent
 set t_Co=256
 "set t_Co=88
 if (&t_Co == 256 || &t_Co == 88) && !has('gui_running') &&
-  \ filereadable(expand("$HOME/.vim/plugin/guicolorscheme.vim"))
-   " Use the guicolorscheme plugin to makes 256-color or 88-color
-   " terminal use GUI colors rather than cterm colors.
-   runtime! plugin/guicolorscheme.vim
-   GuiColorScheme rastafari
- else
-   " For 8-color 16-color terminals or for gvim, just use the
-   " regular :colorscheme command.
-   colorscheme solarized
-   endif
+      \ filereadable(expand("$HOME/.vim/plugin/guicolorscheme.vim"))
+  " Use the guicolorscheme plugin to makes 256-color or 88-color
+  " terminal use GUI colors rather than cterm colors.
+  runtime! plugin/guicolorscheme.vim
+  GuiColorScheme rastafari
+else
+  " For 8-color 16-color terminals or for gvim, just use the
+  " regular :colorscheme command.
+  colorscheme base16-ocean
+endif
 
 
 set background=dark

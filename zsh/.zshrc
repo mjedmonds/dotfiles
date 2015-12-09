@@ -55,10 +55,13 @@ plugins=(git brew)
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/usr/local/sbin:/Library/TeX/texbin:/Users/mark/bin:/Developer/NVIDIA/CUDA-7.0/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 #
-if [[ :$DYLD_FALLBACK_LIBRARY_PATH: != *:"/Developer/NVIDIA/CDUA-7.0/lib":* ]] ; then
-  export DYLD_FALLBACK_LIBRARY_PATH=/Developer/NVIDIA/CDUA-7.0/lib:$DYLD_FALLBACK_LIBRARY_PATH 
-  launchctl setenv DYLD_FALLBACK_LIBRARY_PATH $DYLD_FALLBACK_LIBRARY_PATH
+if [[ "$OSTYPE" = "darwin"* ]]; then
+  if [[ :$DYLD_FALLBACK_LIBRARY_PATH: != *:"/Developer/NVIDIA/CDUA-7.0/lib":* ]] ; then
+    export DYLD_FALLBACK_LIBRARY_PATH=/Developer/NVIDIA/CDUA-7.0/lib:$DYLD_FALLBACK_LIBRARY_PATH 
+    launchctl setenv DYLD_FALLBACK_LIBRARY_PATH $DYLD_FALLBACK_LIBRARY_PATH
+  fi
 fi
+
 
 #alias vim='/usr/local/bin/vim'
 if [[ "$OSTYPE" = "darwin"* ]]; then
@@ -107,11 +110,14 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 alias ll="ls -al"
 alias vim="vim --servername vimserver"
 alias matlab="/Applications/MATLAB_R2015b.app/bin/matlab -nodesktop"
-alias python="python3.5"
-
+if [[ "$OSTYPE" = "darwin"* ]]; then
+  alias python="python3.5"
+fi
 
 # Virtualenv/VirtualenvWrapper
-source /usr/local/bin/virtualenvwrapper.sh
+if [[ "$OSTYPE" = "darwin"* ]]; then
+  source /usr/local/bin/virtualenvwrapper.sh
+fi
 
 source ~/.dotfiles/zsh-extra/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export ANDROID_HOME=/usr/local/opt/android-sdk
