@@ -121,3 +121,6 @@ fi
 
 source ~/.dotfiles/zsh-extra/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export ANDROID_HOME=/usr/local/opt/android-sdk
+if [[ "$OSTYPE" = "linux"* ]]; then
+  source /opt/ros/jade/setup.zsh
+fi
