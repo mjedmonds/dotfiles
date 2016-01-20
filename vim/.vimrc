@@ -15,7 +15,7 @@ set mouse=a
 set nohls
 
 "relative line numbers
-set relativenumber
+"set relativenumber
 
 "Make backspace key delete current line
 set backspace=indent,eol,start
@@ -37,7 +37,7 @@ set directory=~/.vim/tmp
 set confirm
 
 "double tapping escape saves
-map <Esc><Esc> :w<CR>
+"map <Esc><Esc> :w<CR>
 
 "set the folding option to syntax
 set foldmethod=syntax

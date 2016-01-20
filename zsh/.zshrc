@@ -100,6 +100,7 @@ alias ll="ls -al"
 if [[ "$OSTYPE" = "darwin"* ]]; then
   export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/usr/local/sbin:/Library/TeX/texbin:/Users/mark/bin:/Developer/NVIDIA/CUDA-7.0/bin"
   alias python="python3.5"
+  alias pip="pip3.5"
   alias matlab="/Applications/MATLAB_R2015b.app/bin/matlab -nodesktop"
 
   export VIMRUNTIME='/Applications/MacVim.app/Contents/Resources/vim/runtime'
@@ -116,7 +117,12 @@ fi
 
 #linux specific settings 
 if [[ "$OSTYPE" = "linux"* ]]; then
-  source /opt/ros/jade/setup.zsh
+  if [[ -e /opt/ros/indigo/setup.zsh ]]; then 
+    source /opt/ros/indigo/setup.zsh
+  fi
+  if [[ -e ~/catkin_ws/devel/setup.zsh ]]; then
+    source ~/catkin_ws/devel/setup.zsh
+  fi
 fi
 
 
