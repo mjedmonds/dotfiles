@@ -102,6 +102,7 @@ if [[ "$OSTYPE" = "darwin"* ]]; then
   alias python="python3.5"
   alias pip="pip3.5"
   alias matlab="/Applications/MATLAB_R2015b.app/bin/matlab -nodesktop"
+  alias spideroak="/Applications/SpiderOakONE.app/Contents/MacOS/SpiderOakONE"
 
   export VIMRUNTIME='/Applications/MacVim.app/Contents/Resources/vim/runtime'
 
@@ -110,8 +111,13 @@ if [[ "$OSTYPE" = "darwin"* ]]; then
     launchctl setenv DYLD_FALLBACK_LIBRARY_PATH $DYLD_FALLBACK_LIBRARY_PATH
   fi
 
+  #OpenCV dir
+  export OpenCV=/usr/local/include/opencv
+
   # Virtualenv/VirtualenvWrapper
   source /usr/local/bin/virtualenvwrapper.sh
+
+  #Android SDK info
   export ANDROID_HOME=/usr/local/opt/android-sdk
 fi
 
