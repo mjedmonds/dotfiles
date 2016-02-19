@@ -1,6 +1,6 @@
 [user]
 	name = Mark Edmonds
-	email = medmonds34@gmail.com
+	email = mark@mjedmonds.com
 [filter "media"]
    clean = git-media-clean %f
    smudge = git-media-smudge %f
