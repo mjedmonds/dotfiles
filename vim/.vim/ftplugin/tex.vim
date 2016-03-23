@@ -1,7 +1,7 @@
 "colorscheme twilight
 setlocal spell
 setlocal spelllang=en_us
-setlocal softtabstop=4
-setlocal shiftwidth=4
+setlocal softtabstop=2
+setlocal shiftwidth=2
 setlocal colorcolumn=
 "setlocal background=light

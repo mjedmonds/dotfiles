@@ -99,8 +99,8 @@ alias ll="ls -al"
 # OS X sepcific settings
 if [[ "$OSTYPE" = "darwin"* ]]; then
   export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/usr/local/sbin:/Library/TeX/texbin:/Users/mark/bin:/Developer/NVIDIA/CUDA-7.0/bin"
-  alias python="python3.5"
-  alias pip="pip3.5"
+  #alias python="python3.5"
+  #alias pip="pip3.5"
   alias matlab="/Applications/MATLAB_R2015b.app/bin/matlab -nodesktop"
   alias spideroak="/Applications/SpiderOakONE.app/Contents/MacOS/SpiderOakONE"
 
