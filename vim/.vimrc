@@ -195,6 +195,11 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 "ignore includes in autocomplete
 "set complete-=i
 
+"Markdown
+let g:vim_markdown_preview_hotkey='<C-m>'
+let g:vim_markdown_preview_browser='Safari'
+let g:vim_markdown_preview_toggle=2
+
 "NERDTree
 nnoremap <F8> :NERDTreeToggle /<CR>
 let g:NERDTreeShowHidden=1
