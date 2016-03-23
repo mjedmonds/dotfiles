@@ -320,6 +320,7 @@ autocmd FileType make set noexpandtab
 autocmd BufNewFile,BufRead *.cu set ft=cuda
 autocmd BufNewFile,BufRead *.cuh set ft=cuda
 autocmd BufNewFile,BufRead *.ypp set ft=yacc
+autocmd BufNewFile,BufRead *.launch set ft=xml
 autocmd FileType tex :NoMatchParen
 au FileType tex setlocal nocursorline
 "autocmd BufEnter * if &filetype == "" | setlocal ft=txt | endif

@@ -34,7 +34,7 @@ import vim
 
 # set g:clang_format_path to the path to clang-format if it is not on the path
 # Change this to the full path if clang-format is not on the path.
-binary = 'clang-format'
+binary = 'clang-format-3.6'
 if vim.eval('exists("g:clang_format_path")') == "1":
   binary = vim.eval('g:clang_format_path')
 
@@ -42,7 +42,7 @@ if vim.eval('exists("g:clang_format_path")') == "1":
 # 'clang-format --help' for a list of supported styles. The default looks for
 # a '.clang-format' or '_clang-format' file to indicate the style that should be
 # used.
-style = '{BasedOnStyle: Chromium, ColumnLimit: 120, BreakBeforeBraces: Allman}'
+style = '{BasedOnStyle: Chromium, ColumnLimit: 80, BreakBeforeBraces: Allman}'
 #fallback_style = 'Chromium'
 fallback_style = None
 if vim.eval('exists("g:clang_format_fallback_style")') == "1":
