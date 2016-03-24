@@ -87,6 +87,7 @@
 [submodule "vim/.vim/bundle/vim-markdown-preview"]
 	path = vim/.vim/bundle/vim-markdown-preview
 	url = https://github.com/JamshedVesuna/vim-markdown-preview
+	ignore = dirty
 [submodule "vim/.vim/bundle/vimtex"]
 	path = vim/.vim/bundle/vimtex
 	url = https://github.com/lervag/vimtex
