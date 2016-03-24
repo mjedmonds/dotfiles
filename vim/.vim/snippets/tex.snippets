@@ -1,60 +1,4 @@
-# \begin{}...\end{}
-snippet guru
-	\documentclass[12pt, letterpaper]{article}
-	\usepackage[english]{babel}
-	\usepackage[utf8x]{inputenc}
-	\usepackage{amsmath}
-	\usepackage{tikz}
-	\usepackage{fullpage} %uses more of the page margins
-	\usepackage{graphicx} %allows graphics, figures, etc
-	\usepackage{float} %place figures and table immediately
-	\usepackage{array} %imports array, used for table formatting
-	\usepackage{fancyhdr} %enables better headers, footers
-	\setlength\parindent{15pt}
 
-	\begin{document}
-
-	%title page
-	\title{}
-	\date{\today}
-	\author{}	
-	\maketitle
-	\thispagestyle{empty}  %excludes title page from page numbering
-	\newpage
-
-
-
-	%page numbering setup
-	\pagestyle{fancy}
-	\setcounter{page}{1}
-	\fancyhf{}
-	\fancyhead[R]{\thepage}
-	\renewcommand{\headrulewidth}{0pt}
-
-	%------------------------------------------------------------------------------
-	%     Start of document body, use above settings all the time (edit title)
-	%------------------------------------------------------------------------------
-
-	\section{Objective}
-		\hspace{15pt} %indent
-	
-	
-	\section{Circuit Operation}
-		\hspace{15pt} %indent
-
-	\section{Calculations}
-		\hspace{15pt} %indent
-	
-	\section{Simulation Results}
-		\hspace{15pt} %indent
-
-	\section{Experimental Results}
-		\hspace{15pt} %indent
-
-	\section{Conclusion}
-		\hspace{15pt} %indent
-
-	\end{document}
 #indent
 snippet indent
 	\hspace{15pt} %indent
@@ -69,10 +13,27 @@ snippet begin
 		${2}
 	\end{$1}
 # Tabular
-snippet tab
+snippet tabu
 	\begin{${1:tabular}}{${2:c}}
 	${3}
 	\end{$1}
+
+
+# Table
+snippet tab
+	\begin{table}[H]
+		\caption{\label{${2}}${1}}
+		\centering
+		\vspace{5pt}
+		\begin{tabular}{${3:c}}
+			\toprule
+			${4}
+			\midrule
+			${5}
+			\bottomrule
+		\end{tabular}
+	\end{table}
+
 # Align(ed)
 snippet ali
 	\begin{align${1:ed}}
@@ -93,6 +54,7 @@ snippet eq*
 	\begin{equation*}
 		${1}
 	\end{equation*}
+
 snippet \
 	\\[
 		${1}
@@ -170,6 +132,8 @@ snippet subp
 	\label{subp:${2:$1}}
 	${3}
 	% subparagraph $2 (end)
+
+# Numbered figure
 snippet fig
 	\begin{figure}[H]
 		\centering
@@ -177,6 +141,16 @@ snippet fig
 		\caption{${3}}
 		\label{fig:${4}}
 	\end{figure}
+
+# Unnumbered figure
+snippet nfig
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width = ${2} \linewidth]{${1}}
+		\caption*{${3}}
+		\label{fig:${4}}
+	\end{figure}
+
 snippet itd
 	\item[${1:description}] ${2:item}
 snippet figure

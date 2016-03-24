@@ -220,6 +220,17 @@ let g:vim_markdown_preview_toggle=2
 let g:vim_markdown_preview_github=1
 "-----------------------------------------------------------------------
 
+"
+"-----------------------------------------------------------------------
+" Utilsnips
+"-----------------------------------------------------------------------
+let g:UltiSnipsSnippetsDir="~/.vim/snippets"
+" Set ultisnips triggers
+let g:UltiSnipsExpandTrigger="<tab>"                                            
+let g:UltiSnipsJumpForwardTrigger="<tab>"                                       
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"  
+"-----------------------------------------------------------------------
+
 
 "-----------------------------------------------------------------------
 " NERDTree
@@ -340,7 +351,6 @@ set background=dark
 "-----------------------------------------------------------------------
 " File type autocommands
 "-----------------------------------------------------------------------
-autocmd FileType make set noexpandtab
 autocmd BufNewFile,BufRead *.cu set ft=cuda
 autocmd BufNewFile,BufRead *.cuh set ft=cuda
 autocmd BufNewFile,BufRead *.ypp set ft=yacc
@@ -432,7 +442,6 @@ autocmd FileType tex :NoMatchParen
 "-----------------------------------------------------------------------
 "let g:snippets_dir = "~/.vim/snippets"
 "-----------------------------------------------------------------------
-
 
 
 "-----------------------------------------------------------------------

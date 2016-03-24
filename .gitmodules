@@ -91,3 +91,6 @@
 [submodule "vim/.vim/bundle/vimtex"]
 	path = vim/.vim/bundle/vimtex
 	url = https://github.com/lervag/vimtex
+[submodule "vim/.vim/bundle/ultisnips"]
+	path = vim/.vim/bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips
