@@ -64,6 +64,10 @@ setopt inc_append_history
 # Reloads the history whenever you use it
 setopt share_history
 
+# bind the up/down arrows to complete the previous command matching up tot eh cursor
+bindkey '\e[A' history-beginning-search-backward
+bindkey '\e[B' history-beginning-search-forward
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
