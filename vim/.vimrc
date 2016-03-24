@@ -1,14 +1,16 @@
-"pathogen infection!
+"-----------------------------------------------------------------------
+" Pathogen
+"-----------------------------------------------------------------------
 execute pathogen#infect()
 execute pathogen#helptags()
+"-----------------------------------------------------------------------
 
+"-----------------------------------------------------------------------
+" General 
+"-----------------------------------------------------------------------
 filetype on
 filetype plugin indent on
 syntax on
-
-"set shell for neovim/YCM support
-let g:python_host_prog = '/usr/local/bin/python2.7'
-set shell=/bin/bash
 
 "enable mouse and no highlight search
 set mouse=a
@@ -56,6 +58,82 @@ set vb t_vb=
 "spelling colors/options
 autocmd colorscheme * hi clear SpellBad
 
+"leader key
+let g:mapleader=","
+
+"cursorline settings
+set cursorline
+"hi CursorLine term=none cterm=none ctermbg=3
+
+"Tab Settings
+set expandtab
+set softtabstop=2
+set shiftwidth=2
+"auto return after 80 characters
+"set textwidth=79
+"set formatoptions+=t
+set ruler
+set number
+set autoindent
+set cindent
+
+
+"Disable help menu (hits on insert key - super annoying when you miss
+"backspace)
+nmap <Help> <nop>
+
+"delete whitespace at the end of lines on <F5>
+noremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+
+"auto fix indentation in entire file
+nmap <F7> mzgg=G`z<CR>
+
+"enable different cursors based on the mode
+"Versions including tmux; are for tmux configurations
+"let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+"let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\""
+let &t_SI = "\<Esc>P\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+let &t_EI = "\<Esc>P\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\""
+"-----------------------------------------------------------------------
+
+
+"-----------------------------------------------------------------------
+" Latex
+"-----------------------------------------------------------------------
+let g:tex_flavor='latex'
+let g:tex_conceal=""
+let g:vimtex_view_general_viewer = '/Applications/Skim.app/Contents/SharedSupport/displayline'
+let g:vimtex_view_general_options = '-r @line @pdf @tex'
+let g:vimtex_view_general_options_latexmk = '-r 1'
+"let g:LatexBox_latexmk_options="-pdflatex=lualatex"
+"-----------------------------------------------------------------------
+
+
+"-----------------------------------------------------------------------
+" Auto pairs
+"-----------------------------------------------------------------------
+let g:AutoPairsUseInsertedCount = 1
+let g:AutoPairsFlyMode = 0
+let g:AutoPairsShortcutToggle = '' 
+"-----------------------------------------------------------------------
+
+"-----------------------------------------------------------------------
+" OS/GUI-specific settings
+"-----------------------------------------------------------------------
+"Enable meta key as alt for autopairs for OS X
+if has ("gui_macvim")
+  set macmeta
+  let g:AutoPairsShortcutJump = '<M-n>'
+  let g:AutoPairsShortcutFastWrap = '<M-e>'
+  let g:AutoPairsShortcutBackInsert = '<M-b>'
+  "alternate settings for a terminal vim, relies on terminal forwarding the
+  "option key as +Esc (for iTerm)
+else
+  let g:AutoPairsShortcutJump = '<Esc>n'
+  let g:AutoPairsShortcutFastWrap = '<Esc>e'
+  let g:AutoPairsShortcutBackInsert = '<Esc>b'
+endif
+
 " Diable annoying beep and enable transparency on gui
 if has("gui_running")
   " OS X specific 
@@ -75,56 +153,22 @@ if has("gui_running")
 else
   autocmd colorscheme * hi SpellBad cterm=undercurl
 endif
+"-----------------------------------------------------------------------
 
-"leader key
-let g:mapleader=","
 
-"This allows vim clipboard to play nicely with tmux's clipboard
-set clipboard=unnamed
-
-"NOTE - obselete with LengthMatters plugin 
-"column at 81 charatcers
-"set colorcolumn=81
-"set colorcolumn=+1  " highlight one column after 'textwidth'
-"highlight ColorColumn ctermfg=darkgray
-
-"latex setup
-let g:tex_flavor='latex'
-let g:tex_conceal=""
-"let g:LatexBox_latexmk_options="-pdflatex=lualatex"
-
-"Auto pairs configuration
-let g:AutoPairsUseInsertedCount = 1
-let g:AutoPairsFlyMode = 0
-let g:AutoPairsShortcutToggle = '' 
-
-"Enable meta key as alt for autopairs for OS X
-if has ("gui_macvim")
-  set macmeta
-  let g:AutoPairsShortcutJump = '<M-n>'
-  let g:AutoPairsShortcutFastWrap = '<M-e>'
-  let g:AutoPairsShortcutBackInsert = '<M-b>'
-  "alternate settings for a terminal vim, relies on terminal forwarding the
-  "option key as +Esc (for iTerm)
-else
-  let g:AutoPairsShortcutJump = '<Esc>n'
-  let g:AutoPairsShortcutFastWrap = '<Esc>e'
-  let g:AutoPairsShortcutBackInsert = '<Esc>b'
-endif
-
-"Session settings
+"-----------------------------------------------------------------------
+" Session
+"-----------------------------------------------------------------------
 let g:session_autosave='no'
 let g:session_autoload='no'
 let g:session_autoload_periodic = 1
 let g:session_command_aliases = 1
+"-----------------------------------------------------------------------
 
-"EasyMotion settings
-hi link EasyMotionTarget ErrorMsg
-hi link EasyMotionShade Comment
-hi link EasyMotionTarget2First Search
-hi link EasyMotionTarget2Second Search
 
-"neocomplete settings
+"-----------------------------------------------------------------------
+" Neocomplete
+"-----------------------------------------------------------------------
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 " Use neocomplete.
@@ -163,8 +207,156 @@ endfunction
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+"-----------------------------------------------------------------------
 
+
+"-----------------------------------------------------------------------
+" Markdown
+"-----------------------------------------------------------------------
+let g:vim_markdown_preview_hotkey='<C-m>'
+let g:vim_markdown_preview_browser='Safari'
+let g:vim_markdown_preview_toggle=2
+" NOTE: you'll have to disable this if you don't have internet
+let g:vim_markdown_preview_github=1
+"-----------------------------------------------------------------------
+
+
+"-----------------------------------------------------------------------
+" NERDTree
+"-----------------------------------------------------------------------
+nnoremap <F8> :NERDTreeToggle /<CR>
+let g:NERDTreeShowHidden=1
+"-----------------------------------------------------------------------
+
+
+"-----------------------------------------------------------------------
+" NERDCommenter
+"-----------------------------------------------------------------------
+nmap <leader>ch <plug>NERDCommenterInsert
+"-----------------------------------------------------------------------
+
+
+"-----------------------------------------------------------------------
+" Tagbar
+"-----------------------------------------------------------------------
+nmap <F9> :TagbarToggle<CR>
+"-----------------------------------------------------------------------
+
+
+"-----------------------------------------------------------------------
+" Gundo
+"-----------------------------------------------------------------------
+nnoremap <F6> :GundoToggle<CR>
+let g:gundo_width = 80
+let g:gundo_preview_height = 60
+let g:gundo_right = 1
+"-----------------------------------------------------------------------
+
+
+"-----------------------------------------------------------------------
+" Airline
+"-----------------------------------------------------------------------
+"let g:airline_powerline_fonts = 1
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }
+set laststatus=2
+"-----------------------------------------------------------------------
+
+
+"-----------------------------------------------------------------------
+" Length Matters
+"-----------------------------------------------------------------------
+let g:lengthmatters_on_by_default=0
+let g:lengthmatters_start_at_column=121
+"-----------------------------------------------------------------------
+
+
+"-----------------------------------------------------------------------
+" Clang-format
+"-----------------------------------------------------------------------
+function! FormatFile()
+  let l:lines="all"
+  pyf ~/.dotfiles/clang-format.py
+endfunction
+
+map <C-K> :call FormatFile()<cr>
+imap <C-K> <c-o>:call FormatFile()<cr>
+"-----------------------------------------------------------------------
+
+
+"-----------------------------------------------------------------------
+" Indent guides
+"-----------------------------------------------------------------------
+let g:indent_guides_guide_size = 1
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_exclude_filetypes = ['help']
+let g:indent_guides_color_change_percent = 15
+"-----------------------------------------------------------------------
+
+
+"-----------------------------------------------------------------------
+" Syntastic
+"-----------------------------------------------------------------------
+"c settings
+let g:syntastic_c_compiler = 'clang'
+let g:syntastic_c_compiler_options = '-std=c99'
+
+"c++ settings
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = '-std=c++14'
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+"-----------------------------------------------------------------------
+
+
+"-----------------------------------------------------------------------
+" Colorscheme
+"-----------------------------------------------------------------------
+" IMPORTANT: Uncomment one of the following lines to force
+" using 256 colors (or 88 colors) if your terminal supports it,
+" but does not automatically use 256 colors by default.
+set t_Co=256
+"set t_Co=88
+if (&t_Co == 256 || &t_Co == 88) && !has('gui_running') &&
+      \ filereadable(expand("$HOME/.vim/plugin/guicolorscheme.vim"))
+  " Use the guicolorscheme plugin to makes 256-color or 88-color
+  " terminal use GUI colors rather than cterm colors.
+  runtime! plugin/guicolorscheme.vim
+  GuiColorScheme base16-ocean
+else
+  " For 8-color 16-color terminals or for gvim, just use the
+  " regular :colorscheme command.
+  colorscheme base16-ocean
+endif
+
+set background=dark
+"-----------------------------------------------------------------------
+
+
+"-----------------------------------------------------------------------
+" File type autocommands
+"-----------------------------------------------------------------------
+autocmd FileType make set noexpandtab
+autocmd BufNewFile,BufRead *.cu set ft=cuda
+autocmd BufNewFile,BufRead *.cuh set ft=cuda
+autocmd BufNewFile,BufRead *.ypp set ft=yacc
+autocmd BufNewFile,BufRead *.launch set ft=xml
+autocmd FileType tex :NoMatchParen
+"-----------------------------------------------------------------------
+
+
+"========================================================================
+" DEPRECIATED/UNUSED SETTINGS (but might be worht somethign later)
+"========================================================================
+
+
+"-----------------------------------------------------------------------
 "YCM settings
+"-----------------------------------------------------------------------
 "let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 "let g:ycm_complete_in_comments = 1
 "let g:ycm_complete_in_strings = 1
@@ -185,8 +377,12 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 "      \ 'infolog' : 1,
 "      \ 'mail' : 1
 "      \}
+"-----------------------------------------------------------------------
 
+
+"-----------------------------------------------------------------------
 "SuperTab settings
+"-----------------------------------------------------------------------
 "tell subertab to use eclim autocomplete if possible
 "let g:SuperTabDefaultCompletionType = 'context'
 "DO NOT REMOVE ^ OR \s
@@ -194,139 +390,56 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 "let g:SuperTabClosePreviewOnPopupClose = 1
 "ignore includes in autocomplete
 "set complete-=i
+"-----------------------------------------------------------------------
 
-"Markdown
-let g:vim_markdown_preview_hotkey='<C-m>'
-let g:vim_markdown_preview_browser='Safari'
-let g:vim_markdown_preview_toggle=2
+"
+"-----------------------------------------------------------------------
+"set shell for neovim/YCM support
+"-----------------------------------------------------------------------
+"let g:python_host_prog = '/usr/local/bin/python2.7'
+"set shell=/bin/bash\
+"-----------------------------------------------------------------------
 
-"NERDTree
-nnoremap <F8> :NERDTreeToggle /<CR>
-let g:NERDTreeShowHidden=1
 
-"NERDCommenter
-"nmap <leader>ch <plug>NERDCommenterInsert
+"-----------------------------------------------------------------------
+"This allows vim clipboard to play nicely with tmux's clipboard
+"set clipboard=unnamed
+"-----------------------------------------------------------------------
 
-"Tagbar
-nmap <F9> :TagbarToggle<CR>
 
-"Disable help menu (hits on insert key - super annoying when you miss
-"backspace)
-nmap <Help> <nop>
+"-----------------------------------------------------------------------
+"NOTE - obselete with LengthMatters plugin 
+"-----------------------------------------------------------------------
+"column at 81 charatcers
+"set colorcolumn=81
+"set colorcolumn=+1  " highlight one column after 'textwidth'
+"highlight ColorColumn ctermfg=darkgray
+"-----------------------------------------------------------------------
 
-"delete whitespace at the end of lines on <F5>
-noremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
-"auto fix indentation in entire file
-nmap <F7> mzgg=G`z<CR>
-
-"Gundo
-nnoremap <F6> :GundoToggle<CR>
-let g:gundo_width = 80
-let g:gundo_preview_height = 60
-let g:gundo_right = 1
-
-"Airline options
-"let g:airline_powerline_fonts = 1
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ }
-set laststatus=2
-
-"Length Matters Settings
-let g:lengthmatters_on_by_default=0
-let g:lengthmatters_start_at_column=121
-
-"Custom Snippet dir so pathogen can update it without losing them
-"let g:snippets_dir = "~/.vim/snippets"
-
-"Clang-format setting
-function! FormatFile()
-  let l:lines="all"
-  pyf ~/.dotfiles/clang-format.py
-endfunction
-
-map <C-K> :call FormatFile()<cr>
-imap <C-K> <c-o>:call FormatFile()<cr>
-
-"cursorline settings
-set cursorline
-"hi CursorLine term=none cterm=none ctermbg=3
-
-"Tab Settings
-set expandtab
-set softtabstop=2
-set shiftwidth=2
-"auto return after 80 characters
-"set textwidth=79
-"set formatoptions+=t
-set ruler
-set number
-set autoindent
-set cindent
-
-" setup colorscheme
-" IMPORTANT: Uncomment one of the following lines to force
-" using 256 colors (or 88 colors) if your terminal supports it,
-" but does not automatically use 256 colors by default.
-set t_Co=256
-"set t_Co=88
-if (&t_Co == 256 || &t_Co == 88) && !has('gui_running') &&
-      \ filereadable(expand("$HOME/.vim/plugin/guicolorscheme.vim"))
-  " Use the guicolorscheme plugin to makes 256-color or 88-color
-  " terminal use GUI colors rather than cterm colors.
-  runtime! plugin/guicolorscheme.vim
-  GuiColorScheme base16-ocean
-else
-  " For 8-color 16-color terminals or for gvim, just use the
-  " regular :colorscheme command.
-  colorscheme base16-ocean
-endif
-
-set background=dark
-
-"enable different cursors based on the mode
-"Versions including tmux; are for tmux configurations
-"let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-"let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\""
-let &t_SI = "\<Esc>P\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-let &t_EI = "\<Esc>P\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\""
-
-"indent guides settings
-let g:indent_guides_guide_size = 1
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_exclude_filetypes = ['help']
-let g:indent_guides_color_change_percent = 15
-
-"-------------------------------------
-"syntastic settings
-"-------------------------------------
-"c settings
-let g:syntastic_c_compiler = 'clang'
-let g:syntastic_c_compiler_options = '-std=c99'
-
-"c++ settings
-let g:syntastic_cpp_compiler = 'clang++'
-let g:syntastic_cpp_compiler_options = '-std=c++14'
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-"-------------------------------------
-
+"-----------------------------------------------------------------------
+"Eclim
+"-----------------------------------------------------------------------
 "Wrapper for changing current directory for Eclim
 "if !exists('g:vimplugin_running')
 "   cd /
 "endif
+"-----------------------------------------------------------------------
 
-"specific file type settings
-autocmd FileType make set noexpandtab
-autocmd BufNewFile,BufRead *.cu set ft=cuda
-autocmd BufNewFile,BufRead *.cuh set ft=cuda
-autocmd BufNewFile,BufRead *.ypp set ft=yacc
-autocmd BufNewFile,BufRead *.launch set ft=xml
-autocmd FileType tex :NoMatchParen
-au FileType tex setlocal nocursorline
-"autocmd BufEnter * if &filetype == "" | setlocal ft=txt | endif
 
+"-----------------------------------------------------------------------
+"Custom Snippet dir so pathogen can update it without losing them
+"-----------------------------------------------------------------------
+"let g:snippets_dir = "~/.vim/snippets"
+"-----------------------------------------------------------------------
+
+
+
+"-----------------------------------------------------------------------
+"EasyMotion
+"-----------------------------------------------------------------------
+"hi link EasyMotionTarget ErrorMsg
+"hi link EasyMotionShade Comment
+"hi link EasyMotionTarget2First Search
+"hi link EasyMotionTarget2Second Search
+"-----------------------------------------------------------------------

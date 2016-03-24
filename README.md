@@ -82,7 +82,7 @@ rm -rf ~/dotfiles/.git/modules/path/to/module_name
 
 The script ```easy-install.sh``` will automatically install this dotfile configuration. The script relies on ```git``` (duh), ```stow```, and a development version of ```ruby```. It will link the entire configuration. If you are trying to set up a dotfiles repo for yourself or would like to use parts of your existing configuration, do not use this script. 
 
-This script is intended for my personal use to make new machines exceptionally easy to get up and running. 
+This script is intended for my personal use to make new machines exceptionally easy to get up and running (so it may break in between my personal uses, feel free to open an issue if something is broken).  
 
 To use the easy install, clone the repo and simply execute the script:
 

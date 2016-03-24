@@ -7,7 +7,7 @@ export ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="robbyrussell"
 #ZSH_THEME="avit"
-ZSH_THEME="../../../zsh-extra/minimal/minimal-path-git-host"
+ZSH_THEME="../../../zsh-extra/minimal/minimal"
 #ZSH_THEME="kardan"
 
 # Uncomment the following line to use case-sensitive completion.
