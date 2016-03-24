@@ -16,6 +16,7 @@
 [submodule "vim/.vim/bundle/lightline.vim"]
 	path = vim/.vim/bundle/lightline.vim
 	url = https://github.com/itchyny/lightline.vim
+	ignore = dirty
 [submodule "vim/.vim/bundle/molokai"]
 	path = vim/.vim/bundle/molokai
 	url = https://github.com/tomasr/molokai
