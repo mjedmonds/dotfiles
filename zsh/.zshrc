@@ -65,8 +65,8 @@ setopt inc_append_history
 setopt share_history
 
 # bind the up/down arrows to complete the previous command matching up tot eh cursor
-bindkey '\e[A' history-beginning-search-backward
-bindkey '\e[B' history-beginning-search-forward
+bindkey '\e[A' history-search-backward
+bindkey '\e[B' history-search-forward
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -133,9 +133,6 @@ if [[ "$OSTYPE" = "linux"* ]]; then
   fi
   if [[ -e ~/catkin_ws/devel/setup.zsh ]]; then
     source ~/catkin_ws/devel/setup.zsh
-  fi
-  if [[ -e ~/rosbuild_ws/setup.zsh ]]; then
-    source ~/rosbuild_ws/setup.zsh
   fi
 fi
 
