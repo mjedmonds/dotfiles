@@ -102,8 +102,29 @@ let &t_EI = "\<Esc>P\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\""
 "-----------------------------------------------------------------------
 let g:tex_flavor='latex'
 let g:tex_conceal=""
-let g:vimtex_view_general_viewer = '/Applications/Skim.app/Contents/SharedSupport/displayline'
-let g:vimtex_view_general_options = '-r @line @pdf @tex'
+if has('mac')
+  let g:vimtex_view_general_viewer = '/Applications/Skim.app/Contents/SharedSupport/displayline'
+  let g:vimtex_view_general_options = '-r @line @pdf @tex'
+  let g:vimtex_latexmk_callback_hooks = ['UpdateSkim']
+  function! UpdateSkim(status)
+    if !a:status | return | endif
+
+    let l:out = b:vimtex.out()
+    let l:cmd = [g:vimtex_view_general_viewer, '-r']
+    if !empty(system('pgrep Skim'))
+      call extend(l:cmd, ['-g'])
+    endif
+    if has('nvim')
+      call jobstart(l:cmd + [line('.'), l:out])
+    elseif has('job')
+      call job_start(l:cmd + [line('.'), l:out])
+    else
+      call system(join(l:cmd + [line('.'), shellescape(l:out)], ' '))
+    endif
+  endfunction
+elseif has('unix')
+  let g:vimtex_view_general_viewer = 'xdg-open'
+endif
 let g:vimtex_view_general_options_latexmk = '-r 1'
 "let g:LatexBox_latexmk_options="-pdflatex=lualatex"
 "-----------------------------------------------------------------------
@@ -115,25 +136,25 @@ let g:vimtex_view_general_options_latexmk = '-r 1'
 let g:AutoPairsUseInsertedCount = 1
 let g:AutoPairsFlyMode = 0
 let g:AutoPairsShortcutToggle = '' 
-"-----------------------------------------------------------------------
-
-"-----------------------------------------------------------------------
-" OS/GUI-specific settings
-"-----------------------------------------------------------------------
 "Enable meta key as alt for autopairs for OS X
 if has ("gui_macvim")
   set macmeta
+  "alternate settings for a terminal vim, relies on terminal forwarding the
+  "option key as +Esc (for iTerm)
   let g:AutoPairsShortcutJump = '<M-n>'
   let g:AutoPairsShortcutFastWrap = '<M-e>'
   let g:AutoPairsShortcutBackInsert = '<M-b>'
-  "alternate settings for a terminal vim, relies on terminal forwarding the
-  "option key as +Esc (for iTerm)
 else
-  let g:AutoPairsShortcutJump = '<Esc>n'
-  let g:AutoPairsShortcutFastWrap = '<Esc>e'
-  let g:AutoPairsShortcutBackInsert = '<Esc>b'
+  let g:AutoPairsShortcutJump = '<A-n>'
+  let g:AutoPairsShortcutFastWrap = '<A-e>'
+  let g:AutoPairsShortcutBackInsert = '<A-b>'
 endif
+"-----------------------------------------------------------------------
 
+
+"-----------------------------------------------------------------------
+" GUI settings
+"-----------------------------------------------------------------------
 " Diable annoying beep and enable transparency on gui
 if has("gui_running")
   " OS X specific 
@@ -207,6 +228,15 @@ endfunction
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+let g:neocomplete#sources#omni#input_patterns.tex =
+        \ '\v\\%('
+        \ . '\a*cite\a*%(\s*\[[^]]*\]){0,2}\s*\{[^}]*'
+        \ . '|\a*ref%(\s*\{[^}]*|range\s*\{[^,}]*%(}\{)?)'
+        \ . '|hyperref\s*\[[^]]*'
+        \ . '|includegraphics\*?%(\s*\[[^]]*\]){0,2}\s*\{[^}]*'
+        \ . '|%(include%(only)?|input)\s*\{[^}]*'
+        \ . ')'
 "-----------------------------------------------------------------------
 
 
@@ -214,7 +244,9 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 " Markdown
 "-----------------------------------------------------------------------
 let g:vim_markdown_preview_hotkey='<C-m>'
-let g:vim_markdown_preview_browser='Safari'
+if has('mac')
+  let g:vim_markdown_preview_browser='Safari'
+endif
 let g:vim_markdown_preview_toggle=2
 " NOTE: you'll have to disable this if you don't have internet
 let g:vim_markdown_preview_github=1
@@ -226,9 +258,9 @@ let g:vim_markdown_preview_github=1
 "-----------------------------------------------------------------------
 let g:UltiSnipsSnippetsDir="~/.vim/snippets"
 " Set ultisnips triggers
-let g:UltiSnipsExpandTrigger="<tab>"                                            
-let g:UltiSnipsJumpForwardTrigger="<tab>"                                       
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"  
+let g:UltiSnipsExpandTrigger="<tab>" 
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>" 
 "-----------------------------------------------------------------------
 
 
