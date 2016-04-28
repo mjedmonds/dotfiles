@@ -286,8 +286,13 @@ let g:lengthmatters_start_at_column=121
 "-----------------------------------------------------------------------
 " Clang-format
 "-----------------------------------------------------------------------
-map <C-K> :pyf ~/.dotfiles/clang-format.py<cr>
-imap <C-K> <c-o>:pyf ~/.dotfiles/clang-format.py<cr>
+function! FormatFile()
+  let l:lines="all"
+  pyf ~/.dotfiles/clang-format.py
+endfunction
+
+map <C-K> :call FormatFile()<cr>
+imap <C-K> <c-o>:call FormatFile()<cr>
 "-----------------------------------------------------------------------
 
 

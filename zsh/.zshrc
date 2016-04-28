@@ -106,7 +106,10 @@ if [[ "$OSTYPE" = "darwin"* ]]; then
   #alias python="python3.5"
   #alias pip="pip3.5"
   alias matlab="/Applications/MATLAB_R2015b.app/bin/matlab -nodesktop"
-  alias spideroak="/Applications/SpiderOakONE.app/Contents/MacOS/SpiderOakONE"
+
+  export EDITOR="mvim"
+  export VISUAL="mvim"
+  alias edit="mvim"
 
   export VIMRUNTIME='/Applications/MacVim.app/Contents/Resources/vim/runtime'
 
