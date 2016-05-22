@@ -110,7 +110,8 @@ if [[ "$OSTYPE" = "darwin"* ]]; then
   export EDITOR="mvim"
   export VISUAL="mvim"
   alias edit="mvim"
-  # prevent use of rm, use trash instead
+  # prevent use of rm, use trash instead 
+  # (you can explicitly run rm with \rm)
   alias rm='echo "This is not the command you are looking for."; false'
   alias trash="trash"
 
@@ -141,8 +142,9 @@ if [[ "$OSTYPE" = "linux"* ]]; then
     source ~/catkin_ws/devel/setup.zsh
   fi
   # prevent use of rm directly
+  # (you can explicitly run rm with \rm)
   alias rm='echo "This is not the command you are looking for."; false'
-  alias trash="gvfs-trash"
+  alias trash="trash-put"
 fi
 
 source ~/.dotfiles/zsh-extra/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
