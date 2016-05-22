@@ -289,7 +289,6 @@ nmap <F9> :TagbarToggle<CR>
 "-----------------------------------------------------------------------
 " Gundo
 "-----------------------------------------------------------------------
-nnoremap <F6> :GundoToggle<CR>
 let g:gundo_width = 80
 let g:gundo_preview_height = 60
 let g:gundo_right = 1
@@ -348,6 +347,9 @@ let g:syntastic_c_compiler_options = '-std=c99'
 "c++ settings
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = '-std=c++14'
+
+"python settings
+let g:syntastic_python_python_exec = '/path/to/python3'
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
