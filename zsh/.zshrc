@@ -111,7 +111,8 @@ if [[ "$OSTYPE" = "darwin"* ]]; then
   export VISUAL="mvim"
   alias edit="mvim"
   # prevent use of rm, use trash instead
-  alias rm="trash"
+  alias rm='echo "This is not the command you are looking for."; false'
+  alias trash="trash"
 
   export VIMRUNTIME='/Applications/MacVim.app/Contents/Resources/vim/runtime'
 
@@ -140,7 +141,8 @@ if [[ "$OSTYPE" = "linux"* ]]; then
     source ~/catkin_ws/devel/setup.zsh
   fi
   # prevent use of rm directly
-  alias rm="gvfs-trash"
+  alias rm='echo "This is not the command you are looking for."; false'
+  alias trash="gvfs-trash"
 fi
 
 source ~/.dotfiles/zsh-extra/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
