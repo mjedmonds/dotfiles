@@ -127,13 +127,20 @@ fi
 
 #linux specific settings 
 if [[ "$OSTYPE" = "linux"* ]]; then
-  LD_LIBRARY_PATH=LD_LIBRARY_PATH:/usr/local/cuda-7.5/lib64 
+  LD_LIBRARY_PATH=/usr/local/lib:LD_LIBRARY_PATH:/usr/local/cuda-7.5/lib64 
+  # pkg-config path (for OMPL)
+  export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
+
   if [[ -e /opt/ros/indigo/setup.zsh ]]; then 
     source /opt/ros/indigo/setup.zsh
   fi
   if [[ -e ~/catkin_ws/devel/setup.zsh ]]; then
     source ~/catkin_ws/devel/setup.zsh
   fi
+  if [[ -e ~/rosbuild_ws/setup.zsh ]]; then
+    source ~/rosbuild_ws/setup.zsh
+  fi
+  alias rm='mv --target-directory ~/.local/share/Trash/files'
 fi
 
 source ~/.dotfiles/zsh-extra/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
