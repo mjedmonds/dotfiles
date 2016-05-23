@@ -95,3 +95,6 @@
 [submodule "vim/.vim/bundle/ultisnips"]
 	path = vim/.vim/bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips
+[submodule "vim/.vim/bundle/vim-autoformat"]
+	path = vim/.vim/bundle/vim-autoformat
+	url = https://github.com/Chiel92/vim-autoformat

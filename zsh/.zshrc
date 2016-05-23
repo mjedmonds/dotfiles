@@ -106,7 +106,14 @@ if [[ "$OSTYPE" = "darwin"* ]]; then
   #alias python="python3.5"
   #alias pip="pip3.5"
   alias matlab="/Applications/MATLAB_R2015b.app/bin/matlab -nodesktop"
-  alias spideroak="/Applications/SpiderOakONE.app/Contents/MacOS/SpiderOakONE"
+
+  export EDITOR="mvim"
+  export VISUAL="mvim"
+  alias edit="mvim"
+  # prevent use of rm, use trash instead 
+  # (you can explicitly run rm with \rm)
+  alias rm='echo "This is not the command you are looking for."; false'
+  alias trash="trash"
 
   export VIMRUNTIME='/Applications/MacVim.app/Contents/Resources/vim/runtime'
 
@@ -137,10 +144,10 @@ if [[ "$OSTYPE" = "linux"* ]]; then
   if [[ -e ~/catkin_ws/devel/setup.zsh ]]; then
     source ~/catkin_ws/devel/setup.zsh
   fi
-  if [[ -e ~/rosbuild_ws/setup.zsh ]]; then
-    source ~/rosbuild_ws/setup.zsh
-  fi
-  alias rm='mv --target-directory ~/.local/share/Trash/files'
+  # prevent use of rm directly
+  # (you can explicitly run rm with \rm)
+  alias rm='echo "This is not the command you are looking for."; false'
+  alias trash="trash-put"
 fi
 
 source ~/.dotfiles/zsh-extra/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
