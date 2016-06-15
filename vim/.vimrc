@@ -17,16 +17,16 @@ set mouse=a
 set nohls
 
 "relative line numbers
-"set relativenumber
+set relativenumber
 
 "Make backspace key delete current line
 set backspace=indent,eol,start
 
 "disable arrow keys
-"noremap <Up> <NOP>
-"noremap <Down> <NOP>
-"noremap <Left> <NOP>
-"noremap <Right> <NOP>
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
 
 "setup backup and cleanup dirs
 set undofile
@@ -65,17 +65,18 @@ let g:mapleader=","
 set cursorline
 "hi CursorLine term=none cterm=none ctermbg=3
 
-"Tab Settings
-set expandtab
-set softtabstop=2
-set shiftwidth=2
+set number
+set smartindent
+set cindent
 "auto return after 80 characters
 "set textwidth=79
 "set formatoptions+=t
 set ruler
-set number
-set autoindent
-set cindent
+
+"Tab Settings
+set softtabstop=2
+set shiftwidth=2
+set expandtab
 
 
 "Disable help menu (hits on insert key - super annoying when you miss
@@ -243,13 +244,15 @@ let g:neocomplete#sources#omni#input_patterns.tex =
 "-----------------------------------------------------------------------
 " Markdown
 "-----------------------------------------------------------------------
-let g:vim_markdown_preview_hotkey='<C-m>'
+let g:vim_markdown_preview_hotkey='<leader>-m'
 if has('mac')
   let g:vim_markdown_preview_browser='Safari'
 endif
 let g:vim_markdown_preview_toggle=2
 " NOTE: you'll have to disable this if you don't have internet
 let g:vim_markdown_preview_github=1
+let g:vim_markdown_preview_temp_file=0
+let g:vim_markdown_math = 1
 "-----------------------------------------------------------------------
 
 "
