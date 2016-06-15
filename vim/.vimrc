@@ -230,14 +230,29 @@ endfunction
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-let g:neocomplete#sources#omni#input_patterns.tex =
-        \ '\v\\%('
-        \ . '\a*cite\a*%(\s*\[[^]]*\]){0,2}\s*\{[^}]*'
-        \ . '|\a*ref%(\s*\{[^}]*|range\s*\{[^,}]*%(}\{)?)'
-        \ . '|hyperref\s*\[[^]]*'
-        \ . '|includegraphics\*?%(\s*\[[^]]*\]){0,2}\s*\{[^}]*'
-        \ . '|%(include%(only)?|input)\s*\{[^}]*'
-        \ . ')'
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" Enable heavy omni completion.
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
+endif
+let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+let g:neocomplete#sources#omni#input_patterns.tex = '\v\\\a*(ref|cite)\a*([^]]*\])?\{([^}]*,)*[^}]*'
+"let g:neocomplete#sources#omni#input_patterns.tex =
+        "\ '\v\\%('
+        "\ . '\a*cite\a*%(\s*\[[^]]*\]){0,2}\s*\{[^}]*'
+        "\ . '|\a*ref%(\s*\{[^}]*|range\s*\{[^,}]*%(}\{)?)'
+        "\ . '|hyperref\s*\[[^]]*'
+        "\ . '|includegraphics\*?%(\s*\[[^]]*\]){0,2}\s*\{[^}]*'
+        "\ . '|%(include%(only)?|input)\s*\{[^}]*'
+        "\ . ')'
 "-----------------------------------------------------------------------
 
 
@@ -248,8 +263,8 @@ let g:vim_markdown_preview_hotkey='<leader>-m'
 if has('mac')
   let g:vim_markdown_preview_browser='Safari'
 endif
-let g:vim_markdown_preview_toggle=2
-" NOTE: you'll have to disable this if you don't have internet
+let g:vim_markdown_preview_toggle=1
+" NOTE: you'll have to disable github preview if you don't have internet
 let g:vim_markdown_preview_github=1
 let g:vim_markdown_preview_temp_file=0
 let g:vim_markdown_math = 1

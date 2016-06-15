@@ -90,14 +90,6 @@ fi
 # colored completion - use my LS_COLORS
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ll="ls -al"
 
 # OS X sepcific settings
@@ -112,7 +104,7 @@ if [[ "$OSTYPE" = "darwin"* ]]; then
   alias edit="mvim"
   # prevent use of rm, use trash instead 
   # (you can explicitly run rm with \rm)
-  alias rm='echo "This is not the command you are looking for."; false'
+  alias rm='echo "This is not the command you are looking for. Use trash"; false'
   alias trash="trash"
 
   export VIMRUNTIME='/Applications/MacVim.app/Contents/Resources/vim/runtime'
@@ -149,6 +141,7 @@ if [[ "$OSTYPE" = "linux"* ]]; then
   alias rm='echo "This is not the command you are looking for."; false'
   alias trash="trash-put"
 fi
+
 
 source ~/.dotfiles/zsh-extra/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
