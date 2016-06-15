@@ -138,7 +138,7 @@ if [[ "$OSTYPE" = "linux"* ]]; then
   fi
   # prevent use of rm directly
   # (you can explicitly run rm with \rm)
-  alias rm='echo "This is not the command you are looking for."; false'
+  alias rm='safe-rm'
   alias trash="trash-put"
 fi
 
