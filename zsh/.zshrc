@@ -90,7 +90,7 @@ fi
 # colored completion - use my LS_COLORS
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
-alias ll="ls -al"
+alias ll="ls -alh"
 
 # OS X sepcific settings
 if [[ "$OSTYPE" = "darwin"* ]]; then
