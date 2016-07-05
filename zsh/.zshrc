@@ -104,7 +104,7 @@ if [[ "$OSTYPE" = "darwin"* ]]; then
   alias edit="mvim"
   # prevent use of rm, use trash instead 
   # (you can explicitly run rm with \rm)
-  alias rm='echo "This is not the command you are looking for. Use trash"; false'
+  alias rm='safe-rm'
   alias trash="trash"
 
   export VIMRUNTIME='/Applications/MacVim.app/Contents/Resources/vim/runtime'
