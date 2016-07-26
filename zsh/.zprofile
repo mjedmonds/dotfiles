@@ -9,11 +9,11 @@ if [[ "$OSTYPE" = "darwin"* ]]; then
   # clean up duplcates in path
   PATH="$(echo $PATH | perl -e 'print join(":", grep { not $seen{$_}++ } split(/:/, scalar <>))')"
 
-  export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
+  #export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
 
-  export EDITOR="mvim"
-  export VISUAL="mvim"
-  export VIMRUNTIME='/Applications/MacVim.app/Contents/Resources/vim/runtime'
+  export EDITOR="nvim"
+  export VISUAL="nvim"
+  #export VIMRUNTIME='/Applications/MacVim.app/Contents/Resources/vim/runtime'
 
   if [[ :$DYLD_FALLBACK_LIBRARY_PATH: != *:"/Developer/NVIDIA/CDUA-7.0/lib":* ]] ; then
     export DYLD_FALLBACK_LIBRARY_PATH=/Developer/NVIDIA/CDUA-7.0/lib:$DYLD_FALLBACK_LIBRARY_PATH 

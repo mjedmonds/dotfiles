@@ -73,9 +73,9 @@ bindkey '\e[B' history-search-forward
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-   export EDITOR='vim'
+  export EDITOR='vim'
 else
-   export EDITOR='vim'
+  export EDITOR='vim'
 fi
 
 #source tmuxinator settin
@@ -94,12 +94,15 @@ alias ll="ls -alh"
 
 # OS X sepcific settings
 if [[ "$OSTYPE" = "darwin"* ]]; then
+  #Set colors to match iTerm2 Terminal Colors
+  export TERM=xterm-256color
+
   #alias python="python3.5"
   #alias pip="pip3.5"
   alias matlab="/Applications/MATLAB_R2015b.app/bin/matlab -nodesktop"
 
   alias edit="mvim"
-  # prevent use of rm, use trash instead 
+  # prevent use of rm, use trash instead
   # (you can explicitly run rm with \rm)
   alias rm='safe-rm'
   alias trash="trash"
@@ -110,13 +113,13 @@ if [[ "$OSTYPE" = "darwin"* ]]; then
 
 fi
 
-#linux specific settings 
+#linux specific settings
 if [[ "$OSTYPE" = "linux"* ]]; then
-  LD_LIBRARY_PATH=/usr/local/lib:LD_LIBRARY_PATH:/usr/local/cuda-7.5/lib64 
+  LD_LIBRARY_PATH=/usr/local/lib:LD_LIBRARY_PATH:/usr/local/cuda-7.5/lib64
   # pkg-config path (for OMPL)
   export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
 
-  if [[ -e /opt/ros/indigo/setup.zsh ]]; then 
+  if [[ -e /opt/ros/indigo/setup.zsh ]]; then
     source /opt/ros/indigo/setup.zsh
   fi
   if [[ -e ~/catkin_ws/devel/setup.zsh ]]; then

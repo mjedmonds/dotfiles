@@ -1,9 +1,37 @@
 "-----------------------------------------------------------------------
-" Pathogen
+" Plug
 "-----------------------------------------------------------------------
-execute pathogen#infect()
-execute pathogen#helptags()
-"-----------------------------------------------------------------------
+call plug#begin('~/.vim/plugged')
+
+Plug 'jiangmiao/auto-pairs'
+Plug 'chriskempson/base16-vim'
+Plug 'Konfekt/FastFold'
+Plug 'vim-scripts/guicolorscheme.vim'
+Plug 'sjl/gundo.vim'
+Plug 'Yggdroot/indentLine'
+Plug 'itchyny/lightline.vim'
+Plug 'tomasr/molokai'
+Plug 'Shougo/neocomplete.vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'gorkunov/smartpairs.vim'
+Plug 'kkga/spacegray'
+Plug 'scrooloose/syntastic'
+Plug 'majutsushi/tagbar'
+Plug 'wellle/targets.vim'
+Plug 'SirVer/ultisnips'
+Plug 'tpope/vim-abolish'
+Plug 'Chiel92/vim-autoformat'
+Plug 'altercation/vim-colors-solarized'
+"Plug 'easymotion/vim-easymotion'
+"Plug 'whatyouhide/vim-lengthmatters'
+Plug 'plasticboy/vim-markdown'
+Plug 'JamshedVesuna/vim-markdown-preview'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-session'
+Plug 'lervag/vimtex'
+
+call plug#end()
+
 
 "-----------------------------------------------------------------------
 " General 
@@ -97,6 +125,11 @@ let &t_SI = "\<Esc>P\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
 let &t_EI = "\<Esc>P\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\""
 "-----------------------------------------------------------------------
 
+"-----------------------------------------------------------------------
+" neovim
+"-----------------------------------------------------------------------
+let g:python_host_prog = '/usr/local/bin/python'
+let g:python3_host_prog = '/usr/local/bin/python3'
 
 "-----------------------------------------------------------------------
 " Latex
@@ -172,8 +205,8 @@ if has("gui_running")
   " Set undercurl as error indicator in gui
   autocmd colorscheme * hi SpellBad gui=undercurl guisp=red
   " Terminal specific settings
-else
-  autocmd colorscheme * hi SpellBad cterm=undercurl
+"else
+  "autocmd colorscheme * hi SpellBad cterm=undercurl
 endif
 "-----------------------------------------------------------------------
 
@@ -396,7 +429,10 @@ else
   colorscheme base16-ocean
 endif
 
+
+
 set background=dark
+
 "-----------------------------------------------------------------------
 
 
@@ -415,6 +451,13 @@ autocmd FileType tex :NoMatchParen
 " DEPRECIATED/UNUSED SETTINGS (but might be worht somethign later)
 "========================================================================
 
+
+"-----------------------------------------------------------------------
+" Pathogen
+"-----------------------------------------------------------------------
+"execute pathogen#infect()
+"execute pathogen#helptags()
+"-----------------------------------------------------------------------
 
 "-----------------------------------------------------------------------
 "YCM settings
