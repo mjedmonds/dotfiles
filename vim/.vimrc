@@ -23,10 +23,10 @@ set relativenumber
 set backspace=indent,eol,start
 
 "disable arrow keys
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
+"noremap <Up> <NOP>
+"noremap <Down> <NOP>
+"noremap <Left> <NOP>
+"noremap <Right> <NOP>
 
 "setup backup and cleanup dirs
 set undofile
@@ -367,7 +367,7 @@ let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = '-std=c++14'
 
 "python settings
-let g:syntastic_python_python_exec = '/path/to/python3'
+let g:syntastic_python_python_exec = '/usr/local/bin/python'
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
