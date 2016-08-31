@@ -29,6 +29,7 @@ Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
 Plug 'lervag/vimtex'
+Plug 'justmao945/vim-clang'
 
 call plug#end()
 
@@ -126,12 +127,6 @@ nmap <F7> mzgg=G`z<CR>
 let &t_SI = "\<Esc>P\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
 let &t_EI = "\<Esc>P\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\""
 "-----------------------------------------------------------------------
-
-"-----------------------------------------------------------------------
-" neovim
-"-----------------------------------------------------------------------
-let g:python_host_prog = '/usr/local/bin/python'
-let g:python3_host_prog = '/usr/local/bin/python3'
 
 "-----------------------------------------------------------------------
 " Latex
@@ -237,21 +232,21 @@ let g:neocomplete#sources#syntax#min_keyword_length = 3
 "let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
 " Define dictionary.
-let g:neocomplete#sources#dictionary#dictionaries = {
-      \ 'default' : '',
-      \ 'vimshell' : $HOME.'/.vimshell_hist',
-      \ 'scheme' : $HOME.'/.gosh_completions'
-      \ }
+"let g:neocomplete#sources#dictionary#dictionaries = {
+      "\ 'default' : '',
+      "\ 'vimshell' : $HOME.'/.vimshell_hist',
+      "\ 'scheme' : $HOME.'/.gosh_completions'
+      "\ }
 
 " Define keyword.
-if !exists('g:neocomplete#keyword_patterns')
-  let g:neocomplete#keyword_patterns = {}
-endif
-let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+"if !exists('g:neocomplete#keyword_patterns')
+  "let g:neocomplete#keyword_patterns = {}
+"endif
+"let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
 " Plugin key-mappings.
-inoremap <expr><C-g>     neocomplete#undo_completion()
-inoremap <expr><C-l>     neocomplete#complete_common_string()
+"inoremap <expr><C-g>     neocomplete#undo_completion()
+"inoremap <expr><C-l>     neocomplete#complete_common_string()
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
@@ -460,6 +455,14 @@ autocmd FileType tex :NoMatchParen
 "========================================================================
 " DEPRECIATED/UNUSED SETTINGS (but might be worht somethign later)
 "========================================================================
+
+
+"-----------------------------------------------------------------------
+" neovim
+"-----------------------------------------------------------------------
+"let g:python_host_prog = '/usr/local/bin/python'
+"let g:python3_host_prog = '/usr/local/bin/python3'
+"-----------------------------------------------------------------------
 
 
 "-----------------------------------------------------------------------
