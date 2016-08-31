@@ -6,4 +6,5 @@ setlocal shiftwidth=2
 setlocal colorcolumn=
 let maplocalleader=","
 setlocal nocursorline
+let b:AutoPairs = {'(':')', '[':']', '{':'}','"':'"'}
 "setlocal background=light

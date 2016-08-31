@@ -18,7 +18,7 @@ Plug 'kkga/spacegray'
 Plug 'scrooloose/syntastic'
 Plug 'majutsushi/tagbar'
 Plug 'wellle/targets.vim'
-Plug 'SirVer/ultisnips'
+"Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-abolish'
 Plug 'Chiel92/vim-autoformat'
 Plug 'altercation/vim-colors-solarized'
@@ -106,6 +106,8 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 
+"allow saving with :W
+command! -bang -nargs=? -complete=file W w<bang> <args>
 
 "Disable help menu (hits on insert key - super annoying when you miss
 "backspace)
@@ -228,11 +230,11 @@ let g:session_command_aliases = 1
 let g:acp_enableAtStartup = 0
 " Use neocomplete.
 let g:neocomplete#enable_at_startup = 1
-" Use smartcase.
-let g:neocomplete#enable_smart_case = 1
+" Auto close the preview window
+let g:neocomplete#enable_auto_close_preview = 1
 " Set minimum syntax keyword length.
 let g:neocomplete#sources#syntax#min_keyword_length = 3
-let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+"let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
 " Define dictionary.
 let g:neocomplete#sources#dictionary#dictionaries = {
@@ -277,15 +279,18 @@ endif
 let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
 let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-let g:neocomplete#sources#omni#input_patterns.tex = '\v\\\a*(ref|cite)\a*([^]]*\])?\{([^}]*,)*[^}]*'
-"let g:neocomplete#sources#omni#input_patterns.tex =
-        "\ '\v\\%('
-        "\ . '\a*cite\a*%(\s*\[[^]]*\]){0,2}\s*\{[^}]*'
-        "\ . '|\a*ref%(\s*\{[^}]*|range\s*\{[^,}]*%(}\{)?)'
-        "\ . '|hyperref\s*\[[^]]*'
-        "\ . '|includegraphics\*?%(\s*\[[^]]*\]){0,2}\s*\{[^}]*'
-        "\ . '|%(include%(only)?|input)\s*\{[^}]*'
-        "\ . ')'
+let g:neocomplete#sources#omni#input_patterns.tex =
+        \ '\v\\%('
+        \ . '\a*cite\a*%(\s*\[[^]]*\]){0,2}\s*\{[^}]*'
+        \ . '|\a*ref%(\s*\{[^}]*|range\s*\{[^,}]*%(}\{)?)'
+        \ . '|hyperref\s*\[[^]]*'
+        \ . '|includegraphics\*?%(\s*\[[^]]*\]){0,2}\s*\{[^}]*'
+        \ . '|%(include%(only)?|input)\s*\{[^}]*'
+        \ . '|\a*(gls|Gls|GLS)(pl)?\a*%(\s*\[[^]]*\]){0,2}\s*\{[^}]*'
+        \ . '|includepdf%(\s*\[[^]]*\])?\s*\{[^}]*'
+        \ . '|includestandalone%(\s*\[[^]]*\])?\s*\{[^}]*'
+        \ . ')'
+
 "-----------------------------------------------------------------------
 
 
