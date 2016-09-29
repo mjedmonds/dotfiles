@@ -30,6 +30,10 @@ if [[ "$OSTYPE" = "darwin"* ]]; then
   source /usr/local/bin/virtualenvwrapper.sh
 fi
 
+if [[ "$OSTYPE" = "linux"* ]]; then
+  export IBUS_ENABLE_SYNC_MODE=1
+fi
+
 if [[ -e ~/.zshrc ]] ; then
   source ~/.zshrc
 fi
