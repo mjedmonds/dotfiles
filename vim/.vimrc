@@ -448,6 +448,7 @@ autocmd BufNewFile,BufRead *.cu set ft=cuda
 autocmd BufNewFile,BufRead *.cuh set ft=cuda
 autocmd BufNewFile,BufRead *.ypp set ft=yacc
 autocmd BufNewFile,BufRead *.launch set ft=xml
+autocmd BufNewFile,BufRead *.urdf set ft=xml
 autocmd FileType tex :NoMatchParen
 "-----------------------------------------------------------------------
 

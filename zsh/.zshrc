@@ -121,6 +121,8 @@ if [[ "$OSTYPE" = "linux"* ]]; then
   # pkg-config path (for OMPL)
   export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
 
+  export PATH=$PATH:~/Developer/clion-2016.2.2/bin/
+
   if [[ -e /opt/ros/indigo/setup.zsh ]]; then
     source /opt/ros/indigo/setup.zsh
   fi
