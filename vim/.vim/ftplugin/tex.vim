@@ -7,4 +7,5 @@ setlocal colorcolumn=
 let maplocalleader=","
 setlocal nocursorline
 let b:AutoPairs = {'(':')', '[':']', '{':'}','"':'"'}
+"colorscheme solarized
 "setlocal background=light

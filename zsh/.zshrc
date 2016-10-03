@@ -92,6 +92,8 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 alias ll="ls -alh"
 
+alias ytrip="youtube-dl -f 'bestaudio' --extract-audio --audio-format mp3 --audio-quality 0 --output \"%(title)s.%(ext)s\""
+
 # OS X sepcific settings
 if [[ "$OSTYPE" = "darwin"* ]]; then
   #Set colors to match iTerm2 Terminal Colors

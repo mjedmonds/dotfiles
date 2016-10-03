@@ -18,7 +18,7 @@ Plug 'kkga/spacegray'
 Plug 'scrooloose/syntastic'
 Plug 'majutsushi/tagbar'
 Plug 'wellle/targets.vim'
-"Plug 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-abolish'
 Plug 'Chiel92/vim-autoformat'
 Plug 'altercation/vim-colors-solarized'
@@ -35,7 +35,7 @@ call plug#end()
 
 
 "-----------------------------------------------------------------------
-" General 
+" General
 "-----------------------------------------------------------------------
 filetype on
 filetype plugin indent on
@@ -157,6 +157,7 @@ elseif has('unix')
   let g:vimtex_view_general_viewer = 'xdg-open'
 endif
 let g:vimtex_view_general_options_latexmk = '-r 1'
+let g:vimtex_complete_enabled = 1
 "let g:LatexBox_latexmk_options="-pdflatex=lualatex"
 "-----------------------------------------------------------------------
 
@@ -166,7 +167,7 @@ let g:vimtex_view_general_options_latexmk = '-r 1'
 "-----------------------------------------------------------------------
 let g:AutoPairsUseInsertedCount = 1
 let g:AutoPairsFlyMode = 0
-let g:AutoPairsShortcutToggle = '' 
+let g:AutoPairsShortcutToggle = ''
 "Enable meta key as alt for autopairs for OS X
 if has ("gui_macvim")
   set macmeta
@@ -188,21 +189,21 @@ endif
 "-----------------------------------------------------------------------
 " Diable annoying beep and enable transparency on gui
 if has("gui_running")
-  " OS X specific 
+  " OS X specific
   if has("gui_MacVim")
     set transparency=2
-    "Font selection for OS X
+    " Font selection for OS X
     set guifont=Inconsolata:h14
-  else 
+  else
     "Font selection for gvim
     set guifont=Monospace\ 11
   endif
-    
+
   autocmd GUIEnter * set vb t_vb=
   " Set undercurl as error indicator in gui
   autocmd colorscheme * hi SpellBad gui=undercurl guisp=red
   " Terminal specific settings
-"else
+  "else
   "autocmd colorscheme * hi SpellBad cterm=undercurl
 endif
 "-----------------------------------------------------------------------
@@ -222,43 +223,34 @@ let g:session_command_aliases = 1
 " Neocomplete
 "-----------------------------------------------------------------------
 " Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
+let g:acp_enableAtStartup = 1
 " Use neocomplete.
 let g:neocomplete#enable_at_startup = 1
 " Auto close the preview window
 let g:neocomplete#enable_auto_close_preview = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
 " Set minimum syntax keyword length.
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 "let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
-" Define dictionary.
-"let g:neocomplete#sources#dictionary#dictionaries = {
-      "\ 'default' : '',
-      "\ 'vimshell' : $HOME.'/.vimshell_hist',
-      "\ 'scheme' : $HOME.'/.gosh_completions'
-      "\ }
-
-" Define keyword.
-"if !exists('g:neocomplete#keyword_patterns')
-  "let g:neocomplete#keyword_patterns = {}
-"endif
-"let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-
 " Plugin key-mappings.
-"inoremap <expr><C-g>     neocomplete#undo_completion()
-"inoremap <expr><C-l>     neocomplete#complete_common_string()
+inoremap <expr><C-g>     neocomplete#undo_completion()
+inoremap <expr><C-l>     neocomplete#complete_common_string()
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
-  ""return neocomplete#close_popup() . "\<CR>"
+  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
   " For no inserting <CR> key.
-  return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+  "return pumvisible() ? "\<C-y>" : "\<CR>"
 endfunction
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 " Close popup by <Space>.
 inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
 
@@ -277,8 +269,8 @@ if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
 endif
 let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)\w*'
+let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::\w*'
 let g:neocomplete#sources#omni#input_patterns.tex =
         \ '\v\\%('
         \ . '\a*cite\a*%(\s*\[[^]]*\]){0,2}\s*\{[^}]*'
@@ -314,9 +306,9 @@ let g:vim_markdown_math = 1
 "-----------------------------------------------------------------------
 let g:UltiSnipsSnippetsDir="~/.vim/snippets"
 " Set ultisnips triggers
-let g:UltiSnipsExpandTrigger="<c-s>"
+let g:UltiSnipsExpandTrigger="<c-u>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"  
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 "-----------------------------------------------------------------------
 
 
@@ -382,6 +374,11 @@ map <C-K> :call FormatFile()<cr>
 imap <C-K> <c-o>:call FormatFile()<cr>
 "-----------------------------------------------------------------------
 
+"-----------------------------------------------------------------------
+" vim-clang
+"-----------------------------------------------------------------------
+let g:clang_auto = 1
+let g:clang_cpp_options = '-std=c++ -stdlib=libc++'
 
 "-----------------------------------------------------------------------
 " Indent guides
@@ -406,6 +403,9 @@ let g:syntastic_cpp_compiler_options = '-std=c++14'
 
 "python settings
 let g:syntastic_python_python_exec = '/usr/local/bin/python'
+
+" HTML5
+let g:syntastic_html_tidy_exec = 'tidy5'
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
@@ -480,7 +480,7 @@ autocmd FileType tex :NoMatchParen
 "let g:ycm_complete_in_strings = 1
 "let g:ycm_autoclose_preview_window_after_completion = 1
 "let g:ycm_autoclose_preview_window_after_insertion = 1
-"let g:ycm_confirm_extra_conf = 0 
+"let g:ycm_confirm_extra_conf = 0
 ""jump to definition/declaration
 "nnoremap <leader>jd :YcmCompleter GoTo<CR>
 "let g:ycm_filetype_blacklist = {
@@ -526,7 +526,7 @@ autocmd FileType tex :NoMatchParen
 
 
 "-----------------------------------------------------------------------
-"NOTE - obselete with LengthMatters plugin 
+"NOTE - obselete with LengthMatters plugin
 "-----------------------------------------------------------------------
 "column at 81 charatcers
 "set colorcolumn=81

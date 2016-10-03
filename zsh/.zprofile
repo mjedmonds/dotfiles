@@ -6,13 +6,15 @@ if [[ "$OSTYPE" = "darwin"* ]]; then
   export PATH=$PATH:/Library/TeX/texbin
   export PATH=$PATH:/Users/mark/bin
   export PATH=$PATH:/Developer/NVIDIA/CUDA-7.0/bin
+  export PATH=$PATH:/Users/mark/.local/bin
+
   # clean up duplcates in path
   PATH="$(echo $PATH | perl -e 'print join(":", grep { not $seen{$_}++ } split(/:/, scalar <>))')"
 
   #export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
 
-  export EDITOR="nvim"
-  export VISUAL="nvim"
+  export EDITOR="mvim"
+  export VISUAL="mvim"
   #export VIMRUNTIME='/Applications/MacVim.app/Contents/Resources/vim/runtime'
 
   if [[ :$DYLD_FALLBACK_LIBRARY_PATH: != *:"/Developer/NVIDIA/CDUA-7.0/lib":* ]] ; then
