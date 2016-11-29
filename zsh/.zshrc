@@ -94,6 +94,9 @@ alias ll="ls -alh"
 
 alias ytrip="youtube-dl -f 'bestaudio' --extract-audio --audio-format mp3 --audio-quality 0 --output \"%(title)s.%(ext)s\""
 
+BASE16_SHELL=$HOME/.config/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+
 # OS X sepcific settings
 if [[ "$OSTYPE" = "darwin"* ]]; then
   #Set colors to match iTerm2 Terminal Colors
@@ -104,8 +107,7 @@ if [[ "$OSTYPE" = "darwin"* ]]; then
   alias matlab="/Applications/MATLAB_R2015b.app/bin/matlab -nodesktop"
 
   alias edit="mvim"
-  # prevent use of rm, use trash instead
-  # (you can explicitly run rm with \rm)
+
   alias rm='safe-rm'
   alias trash="trash"
 

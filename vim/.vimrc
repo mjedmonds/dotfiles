@@ -46,7 +46,7 @@ set mouse=a
 set nohls
 
 "relative line numbers
-set relativenumber
+"set relativenumber
 
 "Make backspace key delete current line
 set backspace=indent,eol,start
@@ -91,7 +91,7 @@ autocmd colorscheme * hi clear SpellBad
 let g:mapleader=","
 
 "cursorline settings
-set cursorline
+"set cursorline
 "hi CursorLine term=none cterm=none ctermbg=3
 
 set number
@@ -106,6 +106,10 @@ set ruler
 set softtabstop=2
 set shiftwidth=2
 set expandtab
+
+" set faster scrolling 
+set ttyfast
+set lazyredraw
 
 "allow saving with :W
 command! -bang -nargs=? -complete=file W w<bang> <args>
@@ -235,8 +239,8 @@ let g:neocomplete#sources#syntax#min_keyword_length = 3
 "let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
 " Plugin key-mappings.
-inoremap <expr><C-g>     neocomplete#undo_completion()
-inoremap <expr><C-l>     neocomplete#complete_common_string()
+"inoremap <expr><C-g>     neocomplete#undo_completion()
+"inoremap <expr><C-l>     neocomplete#complete_common_string()
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
@@ -248,11 +252,15 @@ function! s:my_cr_function()
 endfunction
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 " Close popup by <Space>.
 inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
+
+" cap max suggestion list
+let g:neocomplete#max_list = 15
 
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -268,6 +276,7 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
 endif
+
 let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)\w*'
 let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::\w*'
@@ -291,7 +300,7 @@ let g:neocomplete#sources#omni#input_patterns.tex =
 "-----------------------------------------------------------------------
 let g:vim_markdown_preview_hotkey='<leader>-m'
 if has('mac')
-  let g:vim_markdown_preview_browser='Safari'
+  let g:vim_markdown_preview_browser='Google Chrome'
 endif
 let g:vim_markdown_preview_toggle=1
 " NOTE: you'll have to disable github preview if you don't have internet
@@ -420,23 +429,26 @@ let g:syntastic_check_on_wq = 0
 " IMPORTANT: Uncomment one of the following lines to force
 " using 256 colors (or 88 colors) if your terminal supports it,
 " but does not automatically use 256 colors by default.
-set t_Co=256
-"set t_Co=88
-if (&t_Co == 256 || &t_Co == 88) && !has('gui_running') &&
-      \ filereadable(expand("$HOME/.vim/plugin/guicolorscheme.vim"))
-  " Use the guicolorscheme plugin to makes 256-color or 88-color
-  " terminal use GUI colors rather than cterm colors.
-  runtime! plugin/guicolorscheme.vim
-  GuiColorScheme base16-ocean
-else
-  " For 8-color 16-color terminals or for gvim, just use the
-  " regular :colorscheme command.
-  colorscheme base16-ocean
-endif
-
-
-
+"set t_Co=256
+""set t_Co=88
+"if (&t_Co == 256 || &t_Co == 88) && !has('gui_running') &&
+      "\ filereadable(expand("$HOME/.vim/plugin/guicolorscheme.vim"))
+  "" Use the guicolorscheme plugin to makes 256-color or 88-color
+  "" terminal use GUI colors rather than cterm colors.
+  "runtime! plugin/guicolorscheme.vim
+  "GuiColorScheme base16-ocean
+"else
+  "" For 8-color 16-color terminals or for gvim, just use the
+  "" regular :colorscheme command.
+  "colorscheme base16-ocean
+"endif
+colorscheme base16-ocean
 set background=dark
+
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
 
 "-----------------------------------------------------------------------
 
