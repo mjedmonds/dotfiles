@@ -466,10 +466,10 @@ let g:syntastic_check_on_wq = 0
   "" regular :colorscheme command.
   "colorscheme base16-ocean
 "endif
+let base16colorspace=256
 colorscheme base16-ocean
 set background=dark
 
-let base16colorspace=256
   
 " load colorscheme from base16-shell (loads base16-ocean)
 if filereadable(expand("~/.vimrc_background"))
@@ -477,9 +477,9 @@ if filereadable(expand("~/.vimrc_background"))
 endif
 
 " enable 256 colors for gnome-terminal
-"if $COLORTERM == 'gnome-terminal'
-  "set t_Co=256
-"endif
+if $COLORTERM == 'gnome-terminal'
+  set t_Co=256
+endif
 
 "-----------------------------------------------------------------------
 
