@@ -129,10 +129,29 @@ nmap <F7> mzgg=G`z<CR>
 
 "enable different cursors based on the mode
 "Versions including tmux; are for tmux configurations
+if has("unix")
+  let s:uname = system("uname -s")
+  if s:uname == "Darwin"
+    " iterm2/mac cursors
+    let &t_SI = "\<Esc>P\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+    let &t_EI = "\<Esc>P\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\""
+  else
+    " gnome-terminal cursors
+    if has("autocmd")
+      au VimEnter,InsertLeave * silent execute '!echo -ne "\e[2 q"' | redraw!
+      au InsertEnter,InsertChange *
+        \ if v:insertmode == 'i' | 
+        \   silent execute '!echo -ne "\e[6 q"' | redraw! |
+        \ elseif v:insertmode == 'r' |
+        \   silent execute '!echo -ne "\e[4 q"' | redraw! |
+        \ endif
+      au VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
+    endif
+  endif
+endif
+
 "let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
 "let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\""
-let &t_SI = "\<Esc>P\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-let &t_EI = "\<Esc>P\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\""
 "-----------------------------------------------------------------------
 
 "-----------------------------------------------------------------------
