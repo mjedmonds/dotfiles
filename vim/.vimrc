@@ -14,7 +14,6 @@ Plug 'tomasr/molokai'
 Plug 'Shougo/neocomplete.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'gorkunov/smartpairs.vim'
-Plug 'kkga/spacegray'
 Plug 'scrooloose/syntastic'
 Plug 'majutsushi/tagbar'
 Plug 'wellle/targets.vim'
@@ -29,7 +28,8 @@ Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
 Plug 'lervag/vimtex'
-Plug 'justmao945/vim-clang'
+Plug 'chriskempson/base16-vim'
+"Plug 'justmao945/vim-clang'
 
 call plug#end()
 
@@ -80,15 +80,18 @@ set wildmenu
 set wildmode=full
 "set wildmode=longest:full,full
 
-" Disable annoying beeping
-set noerrorbells
-set vb t_vb=
+" Disable annoying beeping (causes strange 001B character in terminal)
+set noerrorbells visualbell t_vb=
+autocmd GUIEnter * set visualbell t_vb=
 
 "spelling colors/options
 autocmd colorscheme * hi clear SpellBad
 
 "leader key
 let g:mapleader=","
+
+"unicode
+set encoding=utf-8
 
 "cursorline settings
 "set cursorline
@@ -126,13 +129,30 @@ nmap <F7> mzgg=G`z<CR>
 
 "enable different cursors based on the mode
 "Versions including tmux; are for tmux configurations
-if exists('$TMUX')
-  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-else
-  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
+if has("unix")
+  let s:uname = system("uname -s")
+  if s:uname == "Darwin"
+    " iterm2/mac cursors
+    let &t_SI = "\<Esc>P\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+    let &t_EI = "\<Esc>P\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\""
+  else
+    " gnome-terminal cursors
+    if has("autocmd")
+      au VimEnter,InsertLeave * silent execute '!echo -ne "\e[2 q"' | redraw!
+      au InsertEnter,InsertChange *
+        \ if v:insertmode == 'i' | 
+        \   silent execute '!echo -ne "\e[6 q"' | redraw! |
+        \ elseif v:insertmode == 'r' |
+        \   silent execute '!echo -ne "\e[4 q"' | redraw! |
+        \ endif
+      au VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
+    endif
+  endif
+endif
+
+"let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+"let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\""
 "-----------------------------------------------------------------------
 
 "-----------------------------------------------------------------------
@@ -206,9 +226,8 @@ if has("gui_running")
     set guifont=Monospace\ 11
   endif
 
-  autocmd GUIEnter * set vb t_vb=
   " Set undercurl as error indicator in gui
-  autocmd colorscheme * hi SpellBad gui=undercurl guisp=red
+  "autocmd colorscheme * hi SpellBad gui=undercurl guisp=red
   " Terminal specific settings
   "else
   "autocmd colorscheme * hi SpellBad cterm=undercurl
@@ -386,11 +405,14 @@ map <C-K> :call FormatFile()<cr>
 imap <C-K> <c-o>:call FormatFile()<cr>
 "-----------------------------------------------------------------------
 
+
 "-----------------------------------------------------------------------
 " vim-clang
 "-----------------------------------------------------------------------
 let g:clang_auto = 1
 let g:clang_cpp_options = '-std=c++ -stdlib=libc++'
+"-----------------------------------------------------------------------
+
 
 "-----------------------------------------------------------------------
 " Indent guides
@@ -445,12 +467,19 @@ let g:syntastic_check_on_wq = 0
   "" regular :colorscheme command.
   "colorscheme base16-ocean
 "endif
+let base16colorspace=256
 colorscheme base16-ocean
 set background=dark
 
+  
+" load colorscheme from base16-shell (loads base16-ocean)
 if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
   source ~/.vimrc_background
+endif
+
+" enable 256 colors for gnome-terminal
+if $COLORTERM == 'gnome-terminal'
+  set t_Co=256
 endif
 
 "-----------------------------------------------------------------------

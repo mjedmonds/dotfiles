@@ -56,7 +56,7 @@ plugins=(git brew)
 #
 
 source $ZSH/oh-my-zsh.sh
-export CFLAGS=-I/usr/lib/python2.7/site-packages/numpy/core/include/
+#export CFLAGS=-I/usr/lib/python2.7/site-packages/numpy/core/include/
 
 # Share history aross zsh sessions
 # Appends every command to the history file once it is executed
@@ -94,14 +94,14 @@ alias ll="ls -alh"
 
 alias ytrip="youtube-dl -f 'bestaudio' --extract-audio --audio-format mp3 --audio-quality 0 --output \"%(title)s.%(ext)s\""
 
-BASE16_SHELL=$HOME/.config/base16-shell/
+BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+
+# enable 256 colors
+export TERM=xterm-256color
 
 # OS X sepcific settings
 if [[ "$OSTYPE" = "darwin"* ]]; then
-  #Set colors to match iTerm2 Terminal Colors
-  export TERM=xterm-256color
-
   #alias python="python3.5"
   #alias pip="pip3.5"
   alias matlab="/Applications/MATLAB_R2015b.app/bin/matlab -nodesktop"
@@ -119,7 +119,7 @@ fi
 
 #linux specific settings
 if [[ "$OSTYPE" = "linux"* ]]; then
-  LD_LIBRARY_PATH=/usr/local/lib:LD_LIBRARY_PATH:/usr/local/cuda-7.5/lib64
+  LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH:/usr/local/cuda/lib64
   # pkg-config path (for OMPL)
   export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
 
@@ -135,6 +135,7 @@ if [[ "$OSTYPE" = "linux"* ]]; then
   # (you can explicitly run rm with \rm)
   alias rm='safe-rm'
   alias trash="trash-put"
+  alias gvir="gvim --remote-tab"
 fi
 
 
