@@ -1,6 +1,0 @@
-pane	ADM	0	:vim	1	:*	0	:/Users/mark	0	vim	:vim
-pane	ADM	0	:vim	1	:*	1	:/Users/mark	1	vim	:vim
-pane	_default	0	:zsh	1	:*	0	:/Users/mark	1	zsh	:
-window	ADM	0	1	:*	7797,272x63,0,0{136x63,0,0,1,135x63,137,0,2}
-window	_default	0	1	:*	bd5d,272x63,0,0,0
-state	ADM	

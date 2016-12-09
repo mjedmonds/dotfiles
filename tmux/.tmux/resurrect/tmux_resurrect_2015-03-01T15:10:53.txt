@@ -1,8 +1,0 @@
-pane	1	0	:vim	1	:*	0	:/Users/mark	1	vim	:vim /Users/mark/Google Drive/Documents/_ECE 431L/ECE432L Vision Lab Group/Meeting notes/Meeting Notes With Asari 2_27_15.txt
-pane	ADM	0	:vim	1	:*	0	:/Users/mark	0	vim	:vim
-pane	ADM	0	:vim	1	:*	1	:/Users/mark	1	vim	:vim
-pane	_default	0	:zsh	1	:*	0	:/Users/mark	1	zsh	:
-window	1	0	1	:*	b35e,272x70,0,0,1
-window	ADM	0	1	:*	1308,272x70,0,0{133x70,0,0,2,138x70,134,0,4}
-window	_default	0	1	:*	b35d,272x70,0,0,0
-state	ADM	

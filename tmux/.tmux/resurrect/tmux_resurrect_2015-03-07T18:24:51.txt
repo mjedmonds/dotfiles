@@ -1,6 +1,0 @@
-pane	0	0	:zsh	1	:*	0	:/Users/mark	1	zsh	:
-pane	adm	0	:editor	1	:*	0	:/Users/mark/SpiderOak Hive/Honors Thesis/ADM/CplusplusDM/src	1	zsh	:vim
-pane	adm	0	:editor	1	:*	1	:/Users/mark	0	vim	:vim
-window	0	0	1	:*	bffd,149x63,0,0,0
-window	adm	0	1	:*	1c57,270x63,0,0{119x63,0,0,1,150x63,120,0,2}
-state	adm	0
