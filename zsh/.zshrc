@@ -100,13 +100,18 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 # enable 256 colors
 export TERM=xterm-256color
 
+# emacs aliases
+alias emax="emacsclient -t"              # used to be "emacs -nw"
+alias semac="sudo emacsclient -t"        # used to be "sudo emacs -nw"
+alias emacsc="emacsclient -c -a emacs"   # new - opens the GUI with alternate non-daemon
+
+alias edit="emacsc"  # set to edit as a daemon
+
 # OS X sepcific settings
 if [[ "$OSTYPE" = "darwin"* ]]; then
   #alias python="python3.5"
   #alias pip="pip3.5"
   alias matlab="/Applications/MATLAB_R2015b.app/bin/matlab -nodesktop"
-
-  alias edit="mvim"
 
   alias rm='safe-rm'
   alias trash="trash"
@@ -140,4 +145,3 @@ fi
 
 
 source ~/.dotfiles/zsh-extra/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-

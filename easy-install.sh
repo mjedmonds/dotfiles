@@ -10,7 +10,9 @@ stow --ignore ".DS_Store" tmuxinator
 stow --ignore ".DS_Store" git
 stow --ignore ".DS_Store" slate
 #ln -s ./.clang_format ~/.clang_format
-ln -s ./.jsbeautifyrc ~/.jsbeautifyrc
+ln -s ${PWD}/.jsbeautifyrc ~/.jsbeautifyrc
+ln -s ${PWD}/emacs/spacemacs ~/.emacs.d
+ln -s ${PWD}/emacs/.spacemacs ~/.spacemacs
 
 #Plugin installations
 

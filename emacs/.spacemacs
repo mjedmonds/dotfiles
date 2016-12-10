@@ -319,6 +319,9 @@ you should place your code here."
   ;; transparency options
   (set-frame-parameter (selected-frame) 'alpha '(98 . 95))
   (add-to-list 'default-frame-alist '(alpha . (98  . 95)))
+
+  ;; delete extra whitespace on save
+  (add-hook 'before-save-hook 'delete-trailing-whitespace)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
