@@ -32,7 +32,7 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-
+     yaml
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -41,8 +41,7 @@ values."
      ivy
      auto-completion
      ;; better-defaults
-     ;; vimscript
-     emacs-lisp
+     ;; vimscript     emacs-lisp
      git
      markdown
      latex
@@ -52,7 +51,7 @@ values."
      ;; spell-checking
      syntax-checking
      html
-     c-c++
+     (c-c++ :variables c-c++-enable-clang-support t)
      markdown
      javascript
      ;; org
@@ -307,6 +306,11 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+
+  ;; change default brace style
+  (setq-default
+   c-default-style "bsd"
+   c-basic-offset 2)
   )
 
 (defun dotspacemacs/user-config ()
@@ -331,6 +335,17 @@ you should place your code here."
 
   ;; disable new frames
   (setq-default ns-pop-up-frames nil)
+
+  (load "~/.dotfiles/emacs/clang-format.el")
+  (global-set-key [C-tab] 'clang-format-buffer)
+
+  ;; add file associations
+  (add-to-list 'auto-mode-alist '("\\.launch\\'" . xml-mode))
+
+  ;; default tabs are spaces with width 2
+  (setq-default indent-tabs-mode nil)
+  (setq-default tab-width 2)
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

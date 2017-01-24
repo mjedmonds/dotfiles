@@ -18,7 +18,7 @@ if [[ "$OSTYPE" = "darwin"* ]]; then
   #export VIMRUNTIME='/Applications/MacVim.app/Contents/Resources/vim/runtime'
 
   if [[ :$DYLD_FALLBACK_LIBRARY_PATH: != *:"/Developer/NVIDIA/CDUA-7.0/lib":* ]] ; then
-    export DYLD_FALLBACK_LIBRARY_PATH=/Developer/NVIDIA/CDUA-7.0/lib:$DYLD_FALLBACK_LIBRARY_PATH 
+    export DYLD_FALLBACK_LIBRARY_PATH=/Developer/NVIDIA/CDUA-7.0/lib:$DYLD_FALLBACK_LIBRARY_PATH
     launchctl setenv DYLD_FALLBACK_LIBRARY_PATH $DYLD_FALLBACK_LIBRARY_PATH
   fi
 
@@ -34,6 +34,8 @@ fi
 
 if [[ "$OSTYPE" = "linux"* ]]; then
   export IBUS_ENABLE_SYNC_MODE=1
+  export PATH=$PATH:~/Developer/clion-2016.2.2/bin/
+  export PATH=$PATH:/usr/local/cuda/bin/
 fi
 
 if [[ -e ~/.zshrc ]] ; then

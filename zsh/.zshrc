@@ -105,7 +105,7 @@ alias emax="emacsclient -t"              # used to be "emacs -nw"
 alias semac="sudo emacsclient -t"        # used to be "sudo emacs -nw"
 alias emacsc="emacsclient -c -a emacs"   # new - opens the GUI with alternate non-daemon
 
-alias edit="emacsc"  # set to edit as a daemon
+alias edit="~/Dropbox/Developer/emacsclient.sh"  # set to edit as a daemon
 
 # OS X sepcific settings
 if [[ "$OSTYPE" = "darwin"* ]]; then
@@ -128,10 +128,10 @@ if [[ "$OSTYPE" = "linux"* ]]; then
   # pkg-config path (for OMPL)
   export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
 
-  export PATH=$PATH:~/Developer/clion-2016.2.2/bin/
+  export CMAKE_PREFIX_PATH="/home/mark/Development/libfreenect2/build:$CMAKE_PREFIX_PATH"
 
-  if [[ -e /opt/ros/indigo/setup.zsh ]]; then
-    source /opt/ros/indigo/setup.zsh
+  if [[ -e /opt/ros/kinetic/setup.zsh ]]; then
+    source /opt/ros/kinetic/setup.zsh
   fi
   if [[ -e ~/catkin_ws/devel/setup.zsh ]]; then
     source ~/catkin_ws/devel/setup.zsh
