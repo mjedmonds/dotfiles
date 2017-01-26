@@ -67,6 +67,8 @@ values."
    dotspacemacs-additional-packages '(
      ;; base-16 color schemes
      base16-theme
+     ;; c++ intelligent completion
+     company-irony
    )
 
    ;; A list of packages that cannot be updated.
@@ -336,8 +338,18 @@ you should place your code here."
   ;; disable new frames
   (setq-default ns-pop-up-frames nil)
 
+  ;; clang format
   (load "~/.dotfiles/emacs/clang-format.el")
   (global-set-key [C-tab] 'clang-format-buffer)
+
+  ;; c++ hook
+  (add-hook 'c++-mode-hook
+            (lambda ()
+              (setq company-clang-arguments '("-std=c++11"))
+              (setq flycheck-gcc-language-standard "c++11")
+              (setq flycheck-cppcheck-language-standard "c++11")
+              (setq flycheck-clang-language-standard "c++11")
+              ))
 
   ;; add file associations
   (add-to-list 'auto-mode-alist '("\\.launch\\'" . xml-mode))
@@ -358,7 +370,7 @@ you should place your code here."
  '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
    (quote
-    (wolfram-mode thrift stan-mode scad-mode qml-mode matlab-mode julia-mode arduino-mode yaml-mode disaster company-c-headers cmake-mode clang-format git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter diff-hl vimrc-mode dactyl-mode yapfify web-mode web-beautify tagedit slim-mode scss-mode sass-mode pyvenv pytest pyenv-mode py-isort pug-mode pip-requirements livid-mode skewer-mode simple-httpd live-py-mode less-css-mode json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc hy-mode haml-mode flyspell-correct-ivy flyspell-correct flycheck-pos-tip pos-tip flycheck emmet-mode cython-mode company-web web-completion-data company-tern dash-functional tern company-anaconda coffee-mode auto-dictionary anaconda-mode pythonic company-auctex auctex-latexmk auctex smeargle orgit org mmm-mode markdown-toc markdown-mode magit-gitflow gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md evil-magit magit magit-popup git-commit with-editor company-statistics company base16-theme auto-yasnippet yasnippet ac-ispell auto-complete helm-themes helm-swoop helm-projectile helm-mode-manager helm-flx helm-descbinds helm-ag ace-jump-helm-line ws-butler window-numbering which-key wgrep volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline smex restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint ivy-hydra info+ indent-guide ido-vertical-mode hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-make helm helm-core google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump popup f s diminish define-word counsel-projectile projectile pkg-info epl counsel swiper ivy column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed dash async aggressive-indent adaptive-wrap ace-window ace-link avy quelpa package-build spacemacs-theme))))
+    (company-irony wolfram-mode thrift stan-mode scad-mode qml-mode matlab-mode julia-mode arduino-mode yaml-mode disaster company-c-headers cmake-mode clang-format git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter diff-hl vimrc-mode dactyl-mode yapfify web-mode web-beautify tagedit slim-mode scss-mode sass-mode pyvenv pytest pyenv-mode py-isort pug-mode pip-requirements livid-mode skewer-mode simple-httpd live-py-mode less-css-mode json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc hy-mode haml-mode flyspell-correct-ivy flyspell-correct flycheck-pos-tip pos-tip flycheck emmet-mode cython-mode company-web web-completion-data company-tern dash-functional tern company-anaconda coffee-mode auto-dictionary anaconda-mode pythonic company-auctex auctex-latexmk auctex smeargle orgit org mmm-mode markdown-toc markdown-mode magit-gitflow gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md evil-magit magit magit-popup git-commit with-editor company-statistics company base16-theme auto-yasnippet yasnippet ac-ispell auto-complete helm-themes helm-swoop helm-projectile helm-mode-manager helm-flx helm-descbinds helm-ag ace-jump-helm-line ws-butler window-numbering which-key wgrep volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline smex restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint ivy-hydra info+ indent-guide ido-vertical-mode hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-make helm helm-core google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump popup f s diminish define-word counsel-projectile projectile pkg-info epl counsel swiper ivy column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed dash async aggressive-indent adaptive-wrap ace-window ace-link avy quelpa package-build spacemacs-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
