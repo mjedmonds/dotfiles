@@ -1,0 +1,25 @@
+{
+
+  // There are 2 possible top level settings keys, "user" and "default". If you
+  // use "default" in your user settings file, the default settings will be
+  // overwritten, but if you use "user" your settings will be merged into the
+  // default settings.
+  "user": {
+    // transformations
+    "transformations": {
+      "PDF": {
+        "pandoc-arguments": [
+          "-t", "pdf",
+          "--number-sections",
+          "--filter pandoc-eqnos"
+          // use --latex-engine=engine where engine is
+          // pdflatex|lualatex|xelatex. This may need to be specified with a
+          // full path, e.g. on a mac with BasicTeX
+          // "--latex-engine=/usr/texbin/pdflatex"
+          // if -o or --output missing, will write to a temporary file
+          // "--output=~/Downloads/output.pdf"
+        ]
+      }
+    }
+  }
+}

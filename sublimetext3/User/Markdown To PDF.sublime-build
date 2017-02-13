@@ -1,0 +1,6 @@
+{
+  //"shell_cmd": "pandoc --filter pandoc-eqnos --number-sections --template=\"/Users/mark/.pandoc/default.latex\" -o \"$file.pdf\" \"$file\" && open -g -a Skim \"$file.pdf\"",  
+  "shell_cmd": "pandoc --filter pandoc-eqnos --template=\"/Users/mark/.pandoc/default.latex\" -o \"$file.pdf\" \"$file\" && open -g -a Skim \"$file.pdf\"",  
+  "selector": "text.html.markdown",
+  "path": "/Library/TeX/texbin:$PATH"
+}

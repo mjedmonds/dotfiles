@@ -1,0 +1,28 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"1337 Color Scheme",
+		"Base16 Color Schemes",
+		"Clang Format",
+		"LaTeX Snippets",
+		"LaTeXTools",
+		"Markdown Extended",
+		"Material Theme",
+		"Monokai Extended",
+		"Package Control",
+		"Pandoc",
+		"SublimeLinter",
+		"SublimeLinter-cppcheck",
+		"Theme - Piatto",
+		"Theme - Spacegray",
+		"Tomorrow Color Schemes"
+	],
+	"repositories":
+	[
+		"https://github.com/guillermooo/Vintageous"
+	]
+}
