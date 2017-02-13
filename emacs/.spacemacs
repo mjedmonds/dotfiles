@@ -32,6 +32,7 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     octave
      yaml
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
@@ -337,6 +338,9 @@ you should place your code here."
 
   ;; disable new frames
   (setq-default ns-pop-up-frames nil)
+
+  ;; prevent new windows on ubuntu
+  (custom-set-variables '(pop-up-frames nil))
 
   ;; clang format
   (load "~/.dotfiles/emacs/clang-format.el")

@@ -124,11 +124,11 @@ fi
 
 #linux specific settings
 if [[ "$OSTYPE" = "linux"* ]]; then
-  LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH:/usr/local/cuda/lib64
+  LD_LIBRARY_PATH=/usr/lib:/usr/local/lib:$LD_LIBRARY_PATH:/usr/local/cuda/lib64
   # pkg-config path (for OMPL)
   export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
 
-  export CMAKE_PREFIX_PATH="/home/mark/Development/libfreenect2/build:$CMAKE_PREFIX_PATH"
+  export CMAKE_PREFIX_PATH=/home/mark/Developer/opencv-2.4.13/build:/home/mark/Developer/libfreenect2/build:$CMAKE_PREFIX_PATH
 
   if [[ -e /opt/ros/kinetic/setup.zsh ]]; then
     source /opt/ros/kinetic/setup.zsh
@@ -141,6 +141,7 @@ if [[ "$OSTYPE" = "linux"* ]]; then
   alias rm='safe-rm'
   alias trash="trash-put"
   alias gvir="gvim --remote-tab"
+  alias pycharm="~/Developer/pycharm-2016.3.2/bin/pycharm.sh"
 fi
 
 
