@@ -1,6 +1,5 @@
 {
 	"always_show_minimap_viewport": true,
-	"open_files_in_new_window": false,
 	"bold_folder_labels": true,
 	"color_scheme": "Packages/User/SublimeLinter/base16-ocean.dark (SL).tmTheme",
 	"font_face": "Inconsolata",
@@ -15,6 +14,7 @@
 	],
 	"line_padding_bottom": 0,
 	"line_padding_top": 0,
+	"open_files_in_new_window": false,
 	"overlay_scroll_bars": "enabled",
 	"tab_size": 2,
 	"theme": "Spacegray.sublime-theme",

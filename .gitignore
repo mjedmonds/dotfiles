@@ -8,4 +8,6 @@ vim/.vim/sessions
 vim/.vim/.netrwhist
 vim/.vim/.ycm_extra_conf.pyc
 vim/vim-markdown-preview.html
-vim/.vim/plugged/**
+vim/.vim/plugged/*
+
+sublimetext3/User/Package Control.cache/*

@@ -5,7 +5,7 @@ if [[ "$OSTYPE" = "darwin"* ]]; then
   export PATH=$PATH:/usr/local/sbin
   export PATH=$PATH:/Library/TeX/texbin
   export PATH=$PATH:/Users/mark/bin
-  export PATH=$PATH:/Developer/NVIDIA/CUDA-7.0/bin
+  export PATH=$PATH:/Developer/NVIDIA/CUDA-8.0/bin
   export PATH=$PATH:/Users/mark/.local/bin
 
   # clean up duplcates in path

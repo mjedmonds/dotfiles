@@ -111,7 +111,6 @@ alias edit="~/Dropbox/Developer/emacsclient.sh"  # set to edit as a daemon
 if [[ "$OSTYPE" = "darwin"* ]]; then
   #alias python="python3.5"
   #alias pip="pip3.5"
-  alias matlab="/Applications/MATLAB_R2015b.app/bin/matlab -nodesktop"
 
   alias rm='safe-rm'
   alias trash="trash"
