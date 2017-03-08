@@ -34,7 +34,7 @@ fi
 
 if [[ "$OSTYPE" = "linux"* ]]; then
   export IBUS_ENABLE_SYNC_MODE=1
-  export PATH=$PATH:~/Developer/clion-2016.2.2/bin/
+  export PATH=$PATH:~/Developer/clion-2016.3.3/bin/
   export PATH=$PATH:/usr/local/cuda/bin/
 fi
 

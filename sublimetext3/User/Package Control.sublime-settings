@@ -8,10 +8,13 @@
 		"1337 Color Scheme",
 		"Base16 Color Schemes",
 		"Clang Format",
+		"CMake",
+		"EasyClangComplete",
 		"LaTeX Snippets",
 		"LaTeXTools",
 		"Markdown Extended",
 		"Material Theme",
+		"Matlab Completions",
 		"Monokai Extended",
 		"Package Control",
 		"Pandoc",
@@ -19,7 +22,8 @@
 		"SublimeLinter-cppcheck",
 		"Theme - Piatto",
 		"Theme - Spacegray",
-		"Tomorrow Color Schemes"
+		"Tomorrow Color Schemes",
+		"Vintageous"
 	],
 	"repositories":
 	[

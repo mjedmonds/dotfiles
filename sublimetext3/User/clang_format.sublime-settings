@@ -1,3 +1,4 @@
 {
-	"binary": "/usr/local/Cellar/clang-format/2015-07-31/bin/clang-format"
+	"binary": "clang-format",
+  "format_on_save": true
 }
