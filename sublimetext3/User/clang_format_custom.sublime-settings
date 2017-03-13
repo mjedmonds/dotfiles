@@ -1,6 +1,6 @@
 {
   "BasedOnStyle": "Chromium",
   "TabWidth": 2,
-  "ColumnLimit": 120,
+  // "ColumnLimit": 120,
   "BreakBeforeBraces": "Allman"
 }
