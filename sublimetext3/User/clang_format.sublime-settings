@@ -1,4 +1,4 @@
 {
-	"binary": "clang-format",
-  "format_on_save": true
+	"binary": "/usr/local/bin/clang-format",
+	"format_on_save": true
 }

@@ -100,12 +100,15 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 # enable 256 colors
 export TERM=xterm-256color
 
-# emacs aliases
-alias emax="emacsclient -t"              # used to be "emacs -nw"
-alias semac="sudo emacsclient -t"        # used to be "sudo emacs -nw"
-alias emacsc="emacsclient -c -a emacs"   # new - opens the GUI with alternate non-daemon
+# bash-like globbing
+unsetopt nomatch
 
-alias edit="~/Dropbox/Developer/emacsclient.sh"  # set to edit as a daemon
+# emacs aliases
+#alias emax="emacsclient -t"              # used to be "emacs -nw"
+#alias semac="sudo emacsclient -t"        # used to be "sudo emacs -nw"
+#alias emacsc="emacsclient -c -a emacs"   # new - opens the GUI with alternate non-daemon
+
+#alias edit="~/Dropbox/Developer/emacsclient.sh"  # set to edit as a daemon
 
 # OS X sepcific settings
 if [[ "$OSTYPE" = "darwin"* ]]; then
@@ -115,9 +118,11 @@ if [[ "$OSTYPE" = "darwin"* ]]; then
   alias rm='safe-rm'
   alias trash="trash"
 
-  if [[ -e ~/catkin_ws/install_isolated/setup.zsh ]] ; then
-    source ~/catkin_ws/install_isolated/setup.zsh
+  if [[ -e ~/.zshrc-hidden ]]; then
+    source ~/.zshrc-hidden
   fi
+
+  alias pycharm='/Applications/PyCharm.app/Contents/MacOS/pycharm'
 
 fi
 

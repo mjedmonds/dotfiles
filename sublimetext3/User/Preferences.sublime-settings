@@ -1,11 +1,21 @@
 {
+	"added_words":
+	[
+		"minima"
+	],
 	"always_show_minimap_viewport": true,
 	"bold_folder_labels": true,
 	"color_scheme": "Packages/User/SublimeLinter/base16-ocean.dark (SL).tmTheme",
 	"font_face": "Inconsolata",
-	"font_size": 12,
+	"font_size": 14,
 	"ignored_packages":
 	[
+		"Vintage",
+		"Vintageous"
+	],
+	"ignored_words":
+	[
+		"Velostat"
 	],
 	"indent_guide_options":
 	[
@@ -18,8 +28,9 @@
 	"overlay_scroll_bars": "enabled",
 	"tab_size": 2,
 	"theme": "Spacegray.sublime-theme",
-	"word_wrap": true,
 	"translate_tabs_to_spaces": true,
+	"vintageous_hlsearch": true,
 	"vintageous_use_ctrl_keys": true,
-	"vintageous_use_sys_clipboard": true
+	"vintageous_use_sys_clipboard": true,
+	"word_wrap": true
 }

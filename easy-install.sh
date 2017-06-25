@@ -14,6 +14,4 @@ ln -s ${PWD}/.jsbeautifyrc ~/.jsbeautifyrc
 ln -s ${PWD}/emacs/spacemacs ~/.emacs.d
 ln -s ${PWD}/emacs/.spacemacs ~/.spacemacs
 
-#Plugin installations
-
 

@@ -6,13 +6,16 @@
 	"installed_packages":
 	[
 		"1337 Color Scheme",
+		"ActualVim",
 		"Base16 Color Schemes",
 		"Clang Format",
 		"CMake",
 		"EasyClangComplete",
+		"HTML-CSS-JS Prettify",
 		"LaTeX Snippets",
 		"LaTeXTools",
 		"Markdown Extended",
+		"Markdown Preview",
 		"Material Theme",
 		"Matlab Completions",
 		"Monokai Extended",
