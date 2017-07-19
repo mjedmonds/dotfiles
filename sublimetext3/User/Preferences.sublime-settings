@@ -5,7 +5,7 @@
 	],
 	"always_show_minimap_viewport": true,
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/User/SublimeLinter/base16-ocean.dark (SL).tmTheme",
+	"color_scheme": "Packages/User/SublimeLinter/base16-ocean (SL).tmTheme",
 	"font_face": "Inconsolata",
 	"font_size": 14,
 	"ignored_packages":
@@ -27,7 +27,7 @@
 	"open_files_in_new_window": false,
 	"overlay_scroll_bars": "enabled",
 	"tab_size": 2,
-	"theme": "Spacegray.sublime-theme",
+	"theme": "Default.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"vintageous_hlsearch": true,
 	"vintageous_use_ctrl_keys": true,
