@@ -150,6 +150,7 @@ if [[ "$OSTYPE" = "linux"* ]]; then
   alias trash="trash-put"
   alias gvir="gvim --remote-tab"
   alias pycharm="~/Developer/pycharm-2017.1.4/bin/pycharm.sh"
+  alias clion="~/Developer/clion-2017.2/bin/clion.sh"
 fi
 
 

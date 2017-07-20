@@ -1,5 +1,5 @@
 {
-	"binary": "clang-format",
-	"format_on_save": true,
-	"style": "File"
+  "binary": "clang-format",
+  "format_on_save": true,
+  "style": "File"  //search for .clang-format file,  not sublime-settings
 }
