@@ -1,6 +1,19 @@
 {
   "BasedOnStyle": "Chromium",
   "TabWidth": 2,
-  // "ColumnLimit": 120,
-  "BreakBeforeBraces": "Allman"
+  "ColumnLimit": 0,
+  "BraceWrapping": {
+    "AfterClass":      "true",
+    "AfterControlStatement": "true",
+    "AfterEnum":       "true",
+    "AfterFunction":   "true",
+    "AfterNamespace":  "true",
+    "AfterObjCDeclaration": "true",
+    "AfterStruct":     "true",
+    "AfterUnion":      "true",
+    "BeforeCatch":     "true",
+    "BeforeElse":      "true",
+    "IndentBraces":    "false"
+  },
+  "BreakBeforeBraces": "Custom"
 }
