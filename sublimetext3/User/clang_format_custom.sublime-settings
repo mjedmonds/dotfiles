@@ -15,5 +15,7 @@
     "BeforeElse":      "true",
     "IndentBraces":    "false"
   },
-  "BreakBeforeBraces": "Custom"
+  "BreakBeforeBraces": "Custom",
+  "BreakStringLiterals": "false",
+  "FixNamespaceComments": "true"
 }
