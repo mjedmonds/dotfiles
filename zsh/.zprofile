@@ -29,7 +29,7 @@ if [[ "$OSTYPE" = "darwin"* ]]; then
   export ANDROID_HOME=/usr/local/opt/android-sdk
 
   # Virtualenv/VirtualenvWrapper
-  source /usr/local/bin/virtualenvwrapper.sh
+  # source /usr/local/bin/virtualenvwrapper.sh
 fi
 
 if [[ "$OSTYPE" = "linux"* ]]; then
@@ -41,3 +41,8 @@ fi
 if [[ -e ~/.zshrc ]] ; then
   source ~/.zshrc
 fi
+
+# Setting PATH for Python 2.7
+# The original version is saved in .zprofile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+export PATH
