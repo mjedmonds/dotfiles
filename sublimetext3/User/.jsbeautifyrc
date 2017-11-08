@@ -1,0 +1,28 @@
+{
+  "all":
+  {
+    // These rules apply to all HTML, CSS, JS and JSON files to be prettified
+    // and have the lowest level of precedence (meaning any of the settings in
+    // the 'html', 'css', 'js', 'json' and 'custom' categories override these).
+
+    // You can add other .jsbeautifyrc rules in this section too.
+
+    // End output with newline
+    "end_with_newline": false,
+
+    // Character(s) to use as line terminators.
+    "eol": "\n",
+
+    // Initial indentation level
+    "indent_level": 0,
+
+    // Indentation character
+    "indent_char": " ",
+
+    // Indentation size
+    "indent_size": 2,
+
+    // Indent with tabs, overrides `indent_size` and `indent_char`
+    "indent_with_tabs": false
+  }
+}

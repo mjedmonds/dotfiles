@@ -3,7 +3,7 @@
 	{
 		"completefunc": "ActualVimComplete"
 	},
-	"enabled": true,
+	"enabled": false,
 	"indent_priority": "sublime",
 	"large_file_disable":
 	{
@@ -15,7 +15,7 @@
 		"--cmd",
 		"let g:actualvim = 1"
 	],
-	"neovim_path": "/usr/bin/nvim",
+	"neovim_path": "/usr/local/bin/nvim",
 	"settings":
 	{
 		"sublime":

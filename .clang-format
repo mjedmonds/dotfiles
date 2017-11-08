@@ -17,4 +17,23 @@ BraceWrapping:
  IndentBraces:    false
 BreakBeforeBraces: Custom
 UseTab:          Never
+---
+Language: JavaScript
+BasedOnStyle: Chromium
+TabWidth: 2
+ColumnLimit: 0
+BraceWrapping: 
+ AfterClass:      true
+ AfterControlStatement: true
+ AfterEnum:       true
+ AfterFunction:   true
+ AfterNamespace:  true
+ AfterObjCDeclaration: true
+ AfterStruct:     true
+ AfterUnion:      true
+ BeforeCatch:     true
+ BeforeElse:      true
+ IndentBraces:    false
+BreakBeforeBraces: Custom
+UseTab:          Never
 ...

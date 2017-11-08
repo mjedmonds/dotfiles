@@ -4,10 +4,12 @@
 		"minima"
 	],
 	"always_show_minimap_viewport": true,
+	"auto_complete": true,
+	"auto_complete_commit_on_tab": true,
 	"bold_folder_labels": true,
 	"color_scheme": "Packages/User/SublimeLinter/base16-ocean (SL).tmTheme",
 	"font_face": "Inconsolata",
-	"font_size": 12,
+	"font_size": 14,
 	"ignored_packages":
 	[
 		"Vintage",

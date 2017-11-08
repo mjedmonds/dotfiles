@@ -1,0 +1,7 @@
+{
+    "editor.tabSize": 2,
+    "vim.disableAnnoyingNeovimMessage": true,
+    "workbench.colorTheme": "Base16 Dark Ocean",
+    //"workbench.colorTheme": "Solarized Light",
+    "editor.lineHeight": 17
+}

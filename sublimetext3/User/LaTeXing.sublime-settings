@@ -1,0 +1,12 @@
+{
+  "forward_sync": true,
+  "reverse_sync": true,
+  "pdf_viewer_osx": {
+    "skim": [
+        "/Applications/Skim.app"
+    ],
+    "preview": [
+        "/Applications/Preview.app"
+    ]
+  }
+}
