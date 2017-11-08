@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #add symlinks through stow
-cd ~/.dotfiles
+cd ~/dotfiles
 stow --ignore ".DS_Store" vim
 stow --ignore ".DS_Store" zsh
 stow --ignore ".DS_Store" bash
