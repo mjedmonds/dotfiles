@@ -56,7 +56,7 @@ if [ "$(uname)" == "Darwin" ]; then
   e_success "configured sublime text (macOS)"
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     # Linux
-  SUBLIME_TEXT_USER_PATH="$HOME/.config/sublime-text-3/Packages/User"
+  SUBLIME_TEXT_USER_PATH="$HOME/.config/sublime-text-3/Packages"
   symlink "$SUBLIME_TEXT_DOTFILES_PATH/User" "$SUBLIME_TEXT_USER_PATH/User" 
   e_success "configured sublime text (Linux)"
 fi
