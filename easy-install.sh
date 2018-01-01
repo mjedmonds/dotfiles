@@ -51,22 +51,14 @@ SUBLIME_TEXT_USER_PATH=""
 SUBLIME_TEXT_DOTFILES_PATH="$HOME/.dotfiles/sublimetext3"
 if [ "$(uname)" == "Darwin" ]; then
   # OS X
-  SUBLIME_TEXT_USER_PATH="$HOME/Library/Application Support/Sublime Text 3/Packages/User"
-  symlink "$SUBLIME_TEXT_DOTFILES_PATH/Default_(OSX).sublime-keymap" "$SUBLIME_TEXT_USER_PATH/Default (OSX).sublime-keymap"
-  symlink "$SUBLIME_TEXT_DOTFILES_PATH/Default_(OSX).sublime-mousemap" "$SUBLIME_TEXT_USER_PATH/Default (OSX).sublime-mousemap"
+  SUBLIME_TEXT_USER_PATH="$HOME/Library/Application Support/Sublime Text 3/Packages"
+  symlink "$SUBLIME_TEXT_DOTFILES_PATH/User" "$SUBLIME_TEXT_USER_PATH/User" 
   e_success "configured sublime text (macOS)"
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     # Linux
   SUBLIME_TEXT_USER_PATH="$HOME/.config/sublime-text-3/Packages/User"
-  symlink "$SUBLIME_TEXT_DOTFILES_PATH/Default_(Linux).sublime-keymap" "$SUBLIME_TEXT_USER_PATH/Default (Linux).sublime-keymap"
-  symlink "$SUBLIME_TEXT_DOTFILES_PATH/Default_(Linux).sublime-mousemap" "$SUBLIME_TEXT_USER_PATH/Default (Linux).sublime-mousemap"
+  symlink "$SUBLIME_TEXT_DOTFILES_PATH/User" "$SUBLIME_TEXT_USER_PATH/User" 
   e_success "configured sublime text (Linux)"
 fi
 
-if [ ! "$SUBLIME_TEXT_USER_PATH" == "" ]; then
-    symlink "$SUBLIME_TEXT_DOTFILES_PATH/Preferences.sublime-settings" "$SUBLIME_TEXT_USER_PATH/Preferences.sublime-settings"
-    symlink "$SUBLIME_TEXT_DOTFILES_PATH/phpcs.sublime-settings" "$SUBLIME_TEXT_USER_PATH/phpcs.sublime-settings"
-    symlink "$SUBLIME_TEXT_DOTFILES_PATH/Snippets" "$SUBLIME_TEXT_USER_PATH/Snippets"
-    symlink "$SUBLIME_TEXT_DOTFILES_PATH/Package_Control.sublime-settings" "$SUBLIME_TEXT_USER_PATH/Package Control.sublime-settings"
-fi
 
