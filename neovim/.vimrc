@@ -11,8 +11,7 @@ Plug 'sjl/gundo.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'itchyny/lightline.vim'
 Plug 'tomasr/molokai'
-Plug 'Shougo/deoplete.nvim'
-"Plug 'Shougo/neocomplete.vim'
+Plug 'Shougo/neocomplete.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'gorkunov/smartpairs.vim'
 Plug 'scrooloose/syntastic'
@@ -220,7 +219,7 @@ if has("gui_running")
   if has("gui_MacVim")
     set transparency=2
     " Font selection for OS X
-    set guifont=Inconsolata:h15
+    set guifont=Inconsolata:h14
   else
     "Font selection for gvim
     set guifont=Monospace\ 11
@@ -496,8 +495,6 @@ autocmd BufNewFile,BufRead *.ypp set ft=yacc
 autocmd BufNewFile,BufRead *.launch set ft=xml
 autocmd BufNewFile,BufRead *.urdf set ft=xml
 autocmd FileType tex :NoMatchParen
-"folding based on indent for python
-"autocmd FileType py :setlocal foldmethod=indent 
 "-----------------------------------------------------------------------
 
 
