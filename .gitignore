@@ -9,6 +9,7 @@ vim/.vim/.netrwhist
 vim/.vim/.ycm_extra_conf.pyc
 vim/vim-markdown-preview.html
 vim/.vim/plugged/*
+neovim/nvim/plugged/*
 
 sublimetext3/User/Package\ Control.cache/*
 sublimetext3/User/Package\ Control.last-run

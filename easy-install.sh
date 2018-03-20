@@ -40,7 +40,7 @@ if [ "$(uname)" == "Darwin" ]; then
   e_success "configured slate (macOS)"
 fi
 
-symlink "${PWD}/neovim/nvim" "${HOME}/.config/nvim"
+symlink "${PWD}/vim/.vim" "${HOME}/.config/nvim"
 e_success "configured neovim"
 
 #symlink "{PWD}/.clang_format" "${HOME}/.clang_format"
