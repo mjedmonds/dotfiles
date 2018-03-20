@@ -3,33 +3,39 @@
 "-----------------------------------------------------------------------
 call plug#begin('~/.vim/plugged')
 
-Plug 'jiangmiao/auto-pairs'
+" colorschemes
 Plug 'chriskempson/base16-vim'
-Plug 'Konfekt/FastFold'
 Plug 'vim-scripts/guicolorscheme.vim'
-Plug 'sjl/gundo.vim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'tomasr/molokai'
 Plug 'Yggdroot/indentLine'
 Plug 'itchyny/lightline.vim'
-Plug 'tomasr/molokai'
-Plug 'Shougo/deoplete.nvim'
+" completion
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+Plug 'zchee/deoplete-jedi' 
+Plug 'Shougo/neco-syntax'
 "Plug 'Shougo/neocomplete.vim'
-Plug 'scrooloose/nerdcommenter'
+
+Plug 'sjl/gundo.vim'
+Plug 'jiangmiao/auto-pairs'
 Plug 'gorkunov/smartpairs.vim'
+Plug 'Konfekt/FastFold'
+Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/syntastic'
-Plug 'majutsushi/tagbar'
 Plug 'wellle/targets.vim'
 Plug 'SirVer/ultisnips'
-Plug 'tpope/vim-abolish'
 Plug 'Chiel92/vim-autoformat'
-Plug 'altercation/vim-colors-solarized'
 "Plug 'easymotion/vim-easymotion'
 "Plug 'whatyouhide/vim-lengthmatters'
-Plug 'plasticboy/vim-markdown'
-Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
 Plug 'lervag/vimtex'
-Plug 'chriskempson/base16-vim'
 "Plug 'justmao945/vim-clang'
 
 call plug#end()
@@ -156,6 +162,22 @@ endif
 "-----------------------------------------------------------------------
 
 "-----------------------------------------------------------------------
+" neovim
+"-----------------------------------------------------------------------
+if has('nvim')
+  let g:python_host_prog = '/usr/local/bin/python'
+  let g:python3_host_prog = '/usr/local/bin/python3'
+endif
+"-----------------------------------------------------------------------
+
+
+"-----------------------------------------------------------------------
+" deoplete
+"-----------------------------------------------------------------------
+let g:deoplete#enable_at_startup = 1
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+"-----------------------------------------------------------------------
 " Latex
 "-----------------------------------------------------------------------
 let g:tex_flavor='latex'
@@ -242,78 +264,6 @@ let g:session_autosave='no'
 let g:session_autoload='no'
 let g:session_autoload_periodic = 1
 let g:session_command_aliases = 1
-"-----------------------------------------------------------------------
-
-
-"-----------------------------------------------------------------------
-" Neocomplete
-"-----------------------------------------------------------------------
-" Disable AutoComplPop.
-let g:acp_enableAtStartup = 1
-" Use neocomplete.
-let g:neocomplete#enable_at_startup = 1
-" Auto close the preview window
-let g:neocomplete#enable_auto_close_preview = 1
-" Use smartcase.
-let g:neocomplete#enable_smart_case = 1
-" Set minimum syntax keyword length.
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-"let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-
-" Plugin key-mappings.
-"inoremap <expr><C-g>     neocomplete#undo_completion()
-"inoremap <expr><C-l>     neocomplete#complete_common_string()
-
-" Recommended key-mappings.
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
-  " For no inserting <CR> key.
-  "return pumvisible() ? "\<C-y>" : "\<CR>"
-endfunction
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
-" <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-" Close popup by <Space>.
-inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
-
-" cap max suggestion list
-let g:neocomplete#max_list = 15
-
-" Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
-" disable buffer completion
-"call neocomplete#custom#source('buffer', 'disabled', 1)
-
-" Enable heavy omni completion.
-if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
-endif
-
-let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)\w*'
-let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::\w*'
-let g:neocomplete#sources#omni#input_patterns.tex =
-        \ '\v\\%('
-        \ . '\a*cite\a*%(\s*\[[^]]*\]){0,2}\s*\{[^}]*'
-        \ . '|\a*ref%(\s*\{[^}]*|range\s*\{[^,}]*%(}\{)?)'
-        \ . '|hyperref\s*\[[^]]*'
-        \ . '|includegraphics\*?%(\s*\[[^]]*\]){0,2}\s*\{[^}]*'
-        \ . '|%(include%(only)?|input)\s*\{[^}]*'
-        \ . '|\a*(gls|Gls|GLS)(pl)?\a*%(\s*\[[^]]*\]){0,2}\s*\{[^}]*'
-        \ . '|includepdf%(\s*\[[^]]*\])?\s*\{[^}]*'
-        \ . '|includestandalone%(\s*\[[^]]*\])?\s*\{[^}]*'
-        \ . ')'
-
 "-----------------------------------------------------------------------
 
 
@@ -472,7 +422,6 @@ colorscheme base16-ocean
 "colorscheme solarized 
 set background=dark
 "set background=light
-
   
 " load colorscheme from base16-shell (loads base16-ocean)
 "if filereadable(expand("~/.vimrc_background"))
@@ -483,6 +432,10 @@ set background=dark
 "if $COLORTERM == 'gnome-terminal'
   "set t_Co=256
 "endif
+
+" easy way to switch between light and dark themes
+command! CoLight colorscheme base16-tomorrow
+command! CoDark colorscheme base16-ocean
 
 "-----------------------------------------------------------------------
 
@@ -502,16 +455,11 @@ autocmd FileType tex :NoMatchParen
 
 
 "========================================================================
-" DEPRECIATED/UNUSED SETTINGS (but might be worht somethign later)
+" DEPRECIATED/UNUSED SETTINGS (but might be worht something later)
 "========================================================================
 
 
-"-----------------------------------------------------------------------
-" neovim
-"-----------------------------------------------------------------------
-"let g:python_host_prog = '/usr/local/bin/python'
-"let g:python3_host_prog = '/usr/local/bin/python3'
-"-----------------------------------------------------------------------
+
 
 
 "-----------------------------------------------------------------------

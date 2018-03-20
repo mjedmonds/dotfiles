@@ -126,7 +126,7 @@ if [[ "$OSTYPE" = "darwin"* ]]; then
 
   alias pycharm='/Applications/PyCharm.app/Contents/MacOS/pycharm'
 
-  export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
+  #export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 
 fi
 

@@ -7,9 +7,9 @@
 	"auto_complete": true,
 	"auto_complete_commit_on_tab": true,
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/User/SublimeLinter/base16-ocean (SL).tmTheme",
+	"color_scheme": "Packages/Monokai Extended/Monokai Extended Light.tmTheme",
 	"font_face": "Inconsolata",
-	"font_size": 16,
+	"font_size": 18,
 	"ignored_packages":
 	[
 		"Vintage",

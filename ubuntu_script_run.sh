@@ -99,21 +99,17 @@ sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -
 # setup vlc: $(HOME)/.config/vlc/vlcrc
 # setup unity-tweak-tool
 
-# chinese input
-# sudo apt-get install ibus-sunpinyin
-# reboot to enable
-
 # audio
 # sudo apt-get install pavucontrol
 
 # dropbox downloaded from official website, remove previous link in dropbox security
 
 # setup git
-# ssh-keygen -t rsa -b 4096 -C "yixinzhu.xjtu@gmail.com"
+# ssh-keygen -t rsa -b 4096 -C "mark@mjedmonds.com"
 # eval "$(ssh-agent -s)"
 # ssh-add ~/.ssh/id_rsa
-# git config --global user.email "yixinzhu.xjtu@gmail.com"
-# git config --global user.name "Yixin Zhu"
+# git config --global user.email "mark@mjedmonds.com"
+# git config --global user.name "Mark Edmonds"
 # git config --global push.default simple
 
 # setup bashrc
@@ -123,7 +119,13 @@ sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -
 
 # setup slack as startup, add all accounts
 
-# pycharm, clion
+# pycharm, clion, idea
+sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make
+sudo apt-get update
+sudo apt-get install ubuntu-make
+umake ide pycharm-professional
+umake ide clion
+umake ide idea-ultimate
 
 # sublime
 # clang-format:

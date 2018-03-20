@@ -49,6 +49,9 @@ e_success "configured jsbeautifyrc"
 #symlink "${PWD}/emacs/spacemacs" "${HOME}/.emacs.d"
 #symlink "${PWD}/emacs/.spacemacs" "${HOME}/.spacemacs""
 
+# symlink oni
+symlink "${PWD}/.oni" "${HOME}/.oni"
+
 # sublime-text
 SUBLIME_TEXT_USER_PATH=""
 SUBLIME_TEXT_DOTFILES_PATH="$HOME/.dotfiles/sublimetext3"
