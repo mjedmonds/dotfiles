@@ -21,12 +21,13 @@ const deactivate = () => {
   console.log('config deactivated')
 }
 
+
 module.exports = {
   activate,
   deactivate,
   //add custom config here, such as
 
-  'ui.colorscheme': 'onedark',
+  'ui.colorscheme': 'nord',
 
   // general settings
   'oni.useDefaultConfig': false,
@@ -35,9 +36,10 @@ module.exports = {
   'autoUpdate.enabled': true,
 
   // editor settings
-  'editor.completions.mode': true,
+  'editor.completions.mode': 'oni',
   'editor.fontSize': '14px',
   'editor.fontFamily': 'Inconsolata',
+  'editor.quickInfo.enabled': true,
   'editor.quickInfo.delay': 300,
   'editor.cursorLine': true,
 
@@ -46,6 +48,17 @@ module.exports = {
   'ui.fontSmoothing': 'auto',
   'tabs.height': '1.8em',
   'tabs.showIndex': true,
+
+  // language servers
+  // pythong
+  'language.python.languageServer.command':'pyls',
+  // C++
+  'language.cpp.languageServer.command':'clangd',
+  'language.cpp.languageServer.arguments': ['-std=c++11'],
+  // C
+  'language.c.languageServer.command':'clangd',
+  'language.c.languageServer.arguments': ['-std=c99'],
+
 
   // custom grammar files
   'editor.textMateHighlighting.enabled': true,
@@ -59,8 +72,7 @@ module.exports = {
   'language.make.textMateGrammar' : { 'Makefile' : '~/.dotfiles/textmate-grammars/make.tmLanguage.json'},
   'language.python.textMateGrammar' : { '.py' : '~/.dotfiles/textmate-grammars/python.tmLanguage.json'},
   'language.php.textMateGrammar' : { '.php' : '~/.dotfiles/textmate-grammars/php.tmLanguage.json'},
-  'language.php.textMateGrammar' : { '.php' : '~/.dotfiles/textmate-grammars/php.tmLanguage.json'},
   'language.sql.textMateGrammar' : { '.sql' : '~/.dotfiles/textmate-grammars/sql.tmLanguage.json'},
   'language.xml.textMateGrammar' : { '.xml' : '~/.dotfiles/textmate-grammars/xml.tmLanguage.json'},
   'language.yaml.textMateGrammar' : { '.yaml' : '~/.dotfiles/textmate-grammars/yaml.tmLanguage.json'},
-}
+};

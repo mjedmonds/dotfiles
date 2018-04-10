@@ -50,7 +50,7 @@ e_success "configured jsbeautifyrc"
 #symlink "${PWD}/emacs/.spacemacs" "${HOME}/.spacemacs""
 
 # symlink oni
-symlink "${PWD}/.oni" "${HOME}/.oni"
+symlink "${PWD}/oni" "${HOME}/.config/oni"
 
 # sublime-text
 SUBLIME_TEXT_USER_PATH=""

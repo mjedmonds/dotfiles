@@ -3,21 +3,24 @@
 "-----------------------------------------------------------------------
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'jiangmiao/auto-pairs'
+"Plug 'jiangmiao/auto-pairs'
 Plug 'chriskempson/base16-vim'
 "Plug 'Konfekt/FastFold'
 "Plug 'vim-scripts/guicolorscheme.vim'
-Plug 'sjl/gundo.vim'
+"Plug 'sjl/gundo.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'itchyny/lightline.vim'
 Plug 'tomasr/molokai'
 "Plug 'Shougo/neocomplete.vim'
 Plug 'scrooloose/nerdcommenter'
-Plug 'gorkunov/smartpairs.vim'
-Plug 'scrooloose/syntastic'
+"Plug 'gorkunov/smartpairs.vim'
+"Plug 'scrooloose/syntastic'
 "Plug 'majutsushi/tagbar'
-Plug 'wellle/targets.vim'
-Plug 'SirVer/ultisnips'
+" oni comes with targets
+if !exists("g:gui_oni")
+  Plug 'wellle/targets.vim'
+endif
+"Plug 'SirVer/ultisnips'
 "Plug 'tpope/vim-abolish'
 Plug 'Chiel92/vim-autoformat'
 Plug 'altercation/vim-colors-solarized'
@@ -69,6 +72,8 @@ set confirm
 
 "set the folding option to syntax
 set foldmethod=syntax
+" set fold start to unfold by default
+set foldlevelstart=20
 "only fold the top level by default
 set foldnestmax=1
 
@@ -108,8 +113,8 @@ set shiftwidth=2
 set expandtab
 
 " set faster scrolling 
-set ttyfast
-set lazyredraw
+"set ttyfast
+"set lazyredraw
 
 "allow saving with :W
 command! -bang -nargs=? -complete=file W w<bang> <args>
@@ -188,22 +193,22 @@ let g:vimtex_complete_enabled = 1
 "-----------------------------------------------------------------------
 " Auto pairs
 "-----------------------------------------------------------------------
-let g:AutoPairsUseInsertedCount = 1
-let g:AutoPairsFlyMode = 0
-let g:AutoPairsShortcutToggle = ''
-"Enable meta key as alt for autopairs for OS X
-if has ("gui_macvim")
-  set macmeta
-  "alternate settings for a terminal vim, relies on terminal forwarding the
-  "option key as +Esc (for iTerm)
-  let g:AutoPairsShortcutJump = '<M-n>'
-  let g:AutoPairsShortcutFastWrap = '<M-e>'
-  let g:AutoPairsShortcutBackInsert = '<M-b>'
-else
-  let g:AutoPairsShortcutJump = '<A-n>'
-  let g:AutoPairsShortcutFastWrap = '<A-e>'
-  let g:AutoPairsShortcutBackInsert = '<A-b>'
-endif
+"let g:AutoPairsUseInsertedCount = 1
+"let g:AutoPairsFlyMode = 0
+"let g:AutoPairsShortcutToggle = ''
+""Enable meta key as alt for autopairs for OS X
+"if has ("gui_macvim")
+  "set macmeta
+  ""alternate settings for a terminal vim, relies on terminal forwarding the
+  ""option key as +Esc (for iTerm)
+  "let g:AutoPairsShortcutJump = '<M-n>'
+  "let g:AutoPairsShortcutFastWrap = '<M-e>'
+  "let g:AutoPairsShortcutBackInsert = '<M-b>'
+"else
+  "let g:AutoPairsShortcutJump = '<A-n>'
+  "let g:AutoPairsShortcutFastWrap = '<A-e>'
+  "let g:AutoPairsShortcutBackInsert = '<A-b>'
+"endif
 "-----------------------------------------------------------------------
 
 
@@ -240,79 +245,6 @@ let g:session_autoload_periodic = 1
 let g:session_command_aliases = 1
 "-----------------------------------------------------------------------
 
-
-"-----------------------------------------------------------------------
-" Neocomplete
-"-----------------------------------------------------------------------
-" Disable AutoComplPop.
-let g:acp_enableAtStartup = 1
-" Use neocomplete.
-let g:neocomplete#enable_at_startup = 1
-" Auto close the preview window
-let g:neocomplete#enable_auto_close_preview = 1
-" Use smartcase.
-let g:neocomplete#enable_smart_case = 1
-" Set minimum syntax keyword length.
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-"let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-
-" Plugin key-mappings.
-"inoremap <expr><C-g>     neocomplete#undo_completion()
-"inoremap <expr><C-l>     neocomplete#complete_common_string()
-
-" Recommended key-mappings.
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
-  " For no inserting <CR> key.
-  "return pumvisible() ? "\<C-y>" : "\<CR>"
-endfunction
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
-" <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-" Close popup by <Space>.
-inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
-
-" cap max suggestion list
-let g:neocomplete#max_list = 15
-
-" Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
-" disable buffer completion
-"call neocomplete#custom#source('buffer', 'disabled', 1)
-
-" Enable heavy omni completion.
-if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
-endif
-
-let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)\w*'
-let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::\w*'
-let g:neocomplete#sources#omni#input_patterns.tex =
-        \ '\v\\%('
-        \ . '\a*cite\a*%(\s*\[[^]]*\]){0,2}\s*\{[^}]*'
-        \ . '|\a*ref%(\s*\{[^}]*|range\s*\{[^,}]*%(}\{)?)'
-        \ . '|hyperref\s*\[[^]]*'
-        \ . '|includegraphics\*?%(\s*\[[^]]*\]){0,2}\s*\{[^}]*'
-        \ . '|%(include%(only)?|input)\s*\{[^}]*'
-        \ . '|\a*(gls|Gls|GLS)(pl)?\a*%(\s*\[[^]]*\]){0,2}\s*\{[^}]*'
-        \ . '|includepdf%(\s*\[[^]]*\])?\s*\{[^}]*'
-        \ . '|includestandalone%(\s*\[[^]]*\])?\s*\{[^}]*'
-        \ . ')'
-
-"-----------------------------------------------------------------------
-
-
 "-----------------------------------------------------------------------
 " Markdown
 "-----------------------------------------------------------------------
@@ -331,42 +263,42 @@ let g:vim_markdown_math = 1
 "-----------------------------------------------------------------------
 " Utilsnips
 "-----------------------------------------------------------------------
-let g:UltiSnipsSnippetsDir="~/.vim/snippets"
+"let g:UltiSnipsSnippetsDir="~/.vim/snippets"
 " Set ultisnips triggers
-let g:UltiSnipsExpandTrigger="<c-u>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+"let g:UltiSnipsExpandTrigger="<c-u>"
+"let g:UltiSnipsJumpForwardTrigger="<c-b>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 "-----------------------------------------------------------------------
 
 
 "-----------------------------------------------------------------------
 " NERDTree
 "-----------------------------------------------------------------------
-nnoremap <F8> :NERDTreeToggle /<CR>
-let g:NERDTreeShowHidden=1
+"nnoremap <F8> :NERDTreeToggle /<CR>
+"let g:NERDTreeShowHidden=1
 "-----------------------------------------------------------------------
 
 
 "-----------------------------------------------------------------------
 " NERDCommenter
 "-----------------------------------------------------------------------
-nmap <leader>ch <plug>NERDCommenterInsert
+"nmap <leader>ch <plug>NERDCommenterInsert
 "-----------------------------------------------------------------------
 
 
 "-----------------------------------------------------------------------
 " Tagbar
 "-----------------------------------------------------------------------
-nmap <F9> :TagbarToggle<CR>
+"nmap <F9> :TagbarToggle<CR>
 "-----------------------------------------------------------------------
 
 
 "-----------------------------------------------------------------------
 " Gundo
 "-----------------------------------------------------------------------
-let g:gundo_width = 80
-let g:gundo_preview_height = 60
-let g:gundo_right = 1
+"let g:gundo_width = 80
+"let g:gundo_preview_height = 60
+"let g:gundo_right = 1
 "-----------------------------------------------------------------------
 
 
@@ -424,24 +356,24 @@ let g:indent_guides_color_change_percent = 15
 " Syntastic
 "-----------------------------------------------------------------------
 "c settings
-let g:syntastic_c_compiler = 'clang'
-let g:syntastic_c_compiler_options = '-std=c99'
+"let g:syntastic_c_compiler = 'clang'
+"let g:syntastic_c_compiler_options = '-std=c99'
 
-"c++ settings
-let g:syntastic_cpp_compiler = 'clang++'
-let g:syntastic_cpp_compiler_options = '-std=c++14'
+""c++ settings
+"let g:syntastic_cpp_compiler = 'clang++'
+"let g:syntastic_cpp_compiler_options = '-std=c++14'
 
-"python settings
-let g:syntastic_python_python_exec = '/usr/local/bin/python'
+""python settings
+"let g:syntastic_python_python_exec = '/usr/local/bin/python'
 
-" HTML5
-let g:syntastic_html_tidy_exec = 'tidy5'
+"" HTML5
+"let g:syntastic_html_tidy_exec = 'tidy5'
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-"-----------------------------------------------------------------------
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 0
+"let g:syntastic_check_on_open = 0
+"let g:syntastic_check_on_wq = 0
+""-----------------------------------------------------------------------
 
 
 "-----------------------------------------------------------------------
@@ -464,9 +396,9 @@ let g:syntastic_check_on_wq = 0
   "colorscheme base16-ocean
 "endif
 "let base16colorspace=256
-colorscheme base16-ocean
+"colorscheme base16-ocean
 "colorscheme solarized 
-set background=dark
+"set background=dark
 "set background=light
 
   
@@ -479,6 +411,10 @@ set background=dark
 "if $COLORTERM == 'gnome-terminal'
   "set t_Co=256
 "endif
+
+" easy way to switch between light and dark themes
+command! CoLight colorscheme base16-tomorrow
+command! CoDark colorscheme onedark
 
 "-----------------------------------------------------------------------
 
@@ -585,13 +521,6 @@ autocmd FileType tex :NoMatchParen
 "if !exists('g:vimplugin_running')
 "   cd /
 "endif
-"-----------------------------------------------------------------------
-
-
-"-----------------------------------------------------------------------
-"Custom Snippet dir so pathogen can update it without losing them
-"-----------------------------------------------------------------------
-"let g:snippets_dir = "~/.vim/snippets"
 "-----------------------------------------------------------------------
 
 
