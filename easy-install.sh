@@ -51,6 +51,7 @@ e_success "configured jsbeautifyrc"
 
 # symlink oni
 symlink "${PWD}/oni" "${HOME}/.config/oni"
+e_success "configured oni"
 
 # sublime-text
 SUBLIME_TEXT_USER_PATH=""
