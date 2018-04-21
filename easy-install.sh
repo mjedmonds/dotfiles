@@ -38,6 +38,9 @@ e_success "configured git"
 if [ "$(uname)" == "Darwin" ]; then
   stow --ignore ".DS_Store" slate
   e_success "configured slate (macOS)"
+  # symlink pheonix
+  symlink "${PWD}/phoenix/phoenix.js" "${HOME}/.phoenix.js"
+  e_success "configured phoenix"
 fi
 
 symlink "${PWD}/vim/.vim" "${HOME}/.config/nvim"
@@ -52,6 +55,7 @@ e_success "configured jsbeautifyrc"
 # symlink oni
 symlink "${PWD}/oni" "${HOME}/.config/oni"
 e_success "configured oni"
+
 
 # sublime-text
 SUBLIME_TEXT_USER_PATH=""

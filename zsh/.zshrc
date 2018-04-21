@@ -7,8 +7,11 @@ export ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="robbyrussell"
 #ZSH_THEME="avit"
-ZSH_THEME="../../../zsh-extra/minimal/minimal"
+#ZSH_THEME="../../../zsh-extra/minimal/minimal"
 #ZSH_THEME="kardan"
+
+# Set to blank for PURE theme
+ZSH_THEME=""
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -57,6 +60,10 @@ plugins=(git brew)
 
 source $ZSH/oh-my-zsh.sh
 #export CFLAGS=-I/usr/lib/python2.7/site-packages/numpy/core/include/
+
+# PURE ZSH Theme
+autoload -U promptinit; promptinit
+prompt pure
 
 # Share history aross zsh sessions
 # Appends every command to the history file once it is executed

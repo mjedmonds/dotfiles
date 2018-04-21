@@ -11,9 +11,11 @@ vim/vim-markdown-preview.html
 vim/.vim/plugged/*
 neovim/nvim/plugged/*
 
-sublimetext3/User/Package\ Control.cache/*
-sublimetext3/User/Package\ Control.last-run
-sublimetext3/User/Package\ Control.merged-ca-bundle
+sublimetext3/User/Package Control.cache/*
+sublimetext3/User/Package Control.last-run
+sublimetext3/User/Package Control.merged-ca-bundle
+sublimetext3/User/Package Control.user-ca-bundle
+sublimetext3/User/oscrypto-ca-bundle.crt
 Package Control.last-run
 Package Control.cache
 Package Control.system-ca-bundle
