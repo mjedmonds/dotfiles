@@ -10,14 +10,14 @@ To clone the entire repo, including submodules, run:
 
 ```
 cd ~/
-git clone --recursive git://github.com/medmonds34/.dotfiles.git
+git clone --recursive git://github.com/mjedmonds/.dotfiles.git
 ```
 
 Or:
 
 ```
 cd ~/
-git clone git://github.com/medmonds34/.dotfiles.git
+git clone git://github.com/mjedmonds/.dotfiles.git
 cd dotfiles
 git submodule update --init --recursive
 ```
