@@ -62,6 +62,9 @@ source $ZSH/oh-my-zsh.sh
 #export CFLAGS=-I/usr/lib/python2.7/site-packages/numpy/core/include/
 
 # PURE ZSH Theme
+if [[ "$OSTYPE" = "linux"* ]]; then
+  fpath+=('/usr/local/lib/node_modules/pure-prompt/functions')
+fi
 autoload -U promptinit; promptinit
 prompt pure
 
