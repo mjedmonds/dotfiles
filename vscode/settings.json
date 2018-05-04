@@ -1,7 +1,9 @@
 {
     "editor.tabSize": 2,
     "vim.disableAnnoyingNeovimMessage": true,
+    "vim.useSystemClipboard": true,
     //"workbench.colorTheme": "Solarized Light",
     "editor.lineHeight": 17,
-    "workbench.colorTheme": "Ocean Dark Extended"
+    "workbench.colorTheme": "Ocean Dark Extended",
+    "keyboard.dispatch": "keyCode"
 }
