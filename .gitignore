@@ -19,3 +19,6 @@ sublimetext3/User/oscrypto-ca-bundle.crt
 Package Control.last-run
 Package Control.cache
 Package Control.system-ca-bundle
+
+oni/Cache
+oni/GPUCache
