@@ -9,7 +9,7 @@
 	"bold_folder_labels": true,
 	"color_scheme": "Packages/Monokai Extended/Monokai Extended Light.tmTheme",
 	"font_face": "Inconsolata",
-	"font_size": 23,
+	"font_size": 32,
 	"ignored_packages":
 	[
 		"Vintage",

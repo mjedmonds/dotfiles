@@ -56,6 +56,18 @@ e_success "configured jsbeautifyrc"
 symlink "${PWD}/oni" "${HOME}/.config/oni"
 e_success "configured oni"
 
+# vscode
+if [ "$(uname)" == "Darwin" ]; then
+    symlink ${PWD}/vscode/settings.json ${HOME}/Application\ Support/Code/User/settings.json
+    symlink ${PWD}/vscode/keybindings.json ${HOME}/Application\ Support/Code/User/keybindings.json
+    symlink ${PWD}/vscode/snippets ${HOME}/Application\ Support/Code/User/snippets
+    e_success "configured vscode"
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+    symlink ${PWD}/vscode/settings.json ${HOME}/.config/Code/User/settings.json
+    symlink ${PWD}/vscode/keybindings.json ${HOME}/.config/Code/User/keybindings.json
+    symlink ${PWD}/vscode/snippets ${HOME}/.config/Code/User/snippets
+    e_success "configured vscode"
+fi
 
 # sublime-text
 SUBLIME_TEXT_USER_PATH=""
