@@ -2,13 +2,13 @@
 sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -y && sudo apt-get autoclean -y
 
 # multi user access
-sudo chmod 0750 /home/*
+# sudo chmod 0750 /home/*
 
 # chrome
-cd ~/Downloads
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo dpkg -i google-chrome-stable_current_amd64.deb
-sudo apt-get install -f -y
+# cd ~/Downloads
+# wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+# sudo dpkg -i google-chrome-stable_current_amd64.deb
+# sudo apt-get install -f -y
 
 # ros
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
@@ -17,33 +17,39 @@ sudo apt-get update
 sudo apt-get install ros-kinetic-desktop-full -y
 sudo rosdep init
 rosdep update
-echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
-source ~/.bashrc
+# echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
+# source ~/.bashrc
+source ~/.zshrc
 sudo apt-get install python-rosinstall ros-kinetic-robot-localization ros-kinetic-moveit ros-kinetic-moveit-ros ros-kinetic-object-recognition-ros ros-kinetic-tf2-sensor-msgs ros-kinetic-move-base -y
 
 # libraries
-sudo apt-get install mesa-utils synaptic timelimit scons petsc-dev freeglut3-dev openssh-server vim emacs cmake-qt-gui libmetis-dev cmake-curses-gui libopenvdb-dev libgtest-dev libzmqpp-dev liblua5.2-dev libzmqpp-dev libilmbase-dev libopenexr-dev indicator-multiload vlc compizconfig-settings-manager unity-tweak-tool avahi-daemon avahi-discover avahi-utils libnss-mdns mdns-scan linux-image-extra-virtual git p7zip-full unrar-free htop imagemagick openscad blender kolourpaint4 libspatialindex-dev libgeos-dev python3-pip liblapack-dev libatlas-base-dev libatlas-dev libprotobuf-dev libleveldb-dev libsnappy-dev libhdf5-serial-dev libgflags-dev libgoogle-glog-dev liblmdb-dev protobuf-compiler shutter texlive-full clang-format redshift redshift-gtk ffmpeg gitk libglew-dev libglfw3-dev python-scipy alien inkscape libcgal-dev libcgal-qt5-dev gstreamer1.0-libav libturbojpeg libjpeg-turbo8-dev meld p7zip-rar python-virtualenv python-dev swig python-pygame python-qt4 npm clang libmagick++-dev python-tk python-imaging-tk python-pip libcsfml-dev gtk-recordmydesktop python3 python3-pyqt5 python3-requests python3-xlib python3-pillow tesseract-ocr-eng tesseract-ocr-chi-tra tesseract-ocr-chi-sim lm-sensors ntpdate graphviz-dev samba-common-bin texmaker tree -y
+sudo apt-get install build-essential mesa-utils synaptic timelimit scons petsc-dev freeglut3-dev openssh-server vim emacs cmake-qt-gui libmetis-dev cmake-curses-gui libopenvdb-dev libgtest-dev libzmqpp-dev liblua5.2-dev libzmqpp-dev libilmbase-dev libopenexr-dev indicator-multiload vlc compizconfig-settings-manager unity-tweak-tool avahi-daemon avahi-discover avahi-utils libnss-mdns mdns-scan linux-image-extra-virtual git p7zip-full unrar-free htop imagemagick openscad blender kolourpaint4 libspatialindex-dev libgeos-dev python3-pip liblapack-dev libatlas-base-dev libatlas-dev libprotobuf-dev libleveldb-dev libsnappy-dev libhdf5-serial-dev libgflags-dev libgoogle-glog-dev liblmdb-dev protobuf-compiler shutter texlive-full clang-format redshift redshift-gtk ffmpeg gitk libglew-dev libglfw3-dev python-scipy alien inkscape libcgal-dev libcgal-qt5-dev gstreamer1.0-libav libturbojpeg libjpeg-turbo8-dev meld p7zip-rar python-virtualenv python-dev swig python-pygame python-qt4 npm clang libmagick++-dev python-tk python-imaging-tk python-pip libcsfml-dev gtk-recordmydesktop python3 python3-pyqt5 python3-requests python3-xlib python3-pillow tesseract-ocr-eng tesseract-ocr-chi-tra tesseract-ocr-chi-sim lm-sensors ntpdate graphviz-dev samba-common-bin texmaker tree -y
 sudo add-apt-repository ppa:noobslab/themes -y # theme
-sudo apt-add-repository ppa:numix/ppa -y # icon
-sudo add-apt-repository ppa:otto-kesselgulasch/gimp -y # gimp
-sudo apt-add-repository ppa:octave/stable -y # octave
+# sudo apt-add-repository ppa:numix/ppa -y # icon
+# sudo add-apt-repository ppa:otto-kesselgulasch/gimp -y # gimp
+# sudo apt-add-repository ppa:octave/stable -y # octave
 sudo add-apt-repository ppa:zarquon42/meshlab -y # meshlab
+sudo add-apt-repository ppa:snwh/pulp # paper theme
 sudo apt-get update
-sudo apt-get install flatabulous-theme numix-icon-theme numix-icon-theme-circle gimp octave meshlab -y
+sudo apt-get update
+# sudo apt-get install flatabulous-theme numix-icon-theme numix-icon-theme-circle gimp octave meshlab -y
+sudo apt-get install paper-gtk-theme paper-icon-theme
+sudo apt-get install arc-theme
+sudo apt-get install meshlab -y
 
-sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
-sudo apt-get update
-sudo apt-get install gcc-4.7 gcc-4.8 gcc-4.9 gcc-6 g++-4.7 g++-4.8 g++-4.9 g++-6 -y
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.7 10
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 20
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 30
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 40
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 35
-sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.7 10
-sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 20
-sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 30
-sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 40
-sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 35
+# sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
+# sudo apt-get update
+# sudo apt-get install gcc-4.7 gcc-4.8 gcc-4.9 gcc-6 g++-4.7 g++-4.8 g++-4.9 g++-6 -y
+# sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.7 10
+# sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 20
+# sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 30
+# sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 40
+# sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 35
+# sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.7 10
+# sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 20
+# sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 30
+# sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 40
+# sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 35
 # sudo update-alternatives --config gcc
 # sudo update-alternatives --config g++
 
@@ -119,13 +125,24 @@ sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -
 
 # setup slack as startup, add all accounts
 
-# pycharm, clion, idea
-sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make
+# wine
+wget https://dl.winehq.org/wine-builds/Release.key
+sudo apt-key add Release.key
+sudo apt-add-repository 'https://dl.winehq.org/wine-builds/ubuntu/'
 sudo apt-get update
-sudo apt-get install ubuntu-make
-umake ide pycharm-professional
-umake ide clion
-umake ide idea-ultimate
+sudo apt-get install wine -y
+
+# pycharm, clion, idea
+sudo apt-get install snapd
+sudo snap install pycharm-professional --classic
+sudo snap install clion --classic
+sudo snap install intellij-idea-ultimate --classic
+# sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make
+# sudo apt-get update
+# sudo apt-get install ubuntu-make
+# umake ide pycharm-professional
+# umake ide clion
+# umake ide idea-ultimate
 
 # sublime
 # clang-format:
