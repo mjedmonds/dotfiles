@@ -1,10 +1,10 @@
 <scheme name="Base16-Ocean-mjedmonds" version="142" parent_scheme="Darcula">
   <option name="FONT_SCALE" value="1.0" />
   <metaInfo>
-    <property name="created">2018-05-07T10:26:48</property>
+    <property name="created">2018-05-07T15:48:05</property>
     <property name="ide">Python</property>
     <property name="ideVersion">2018.1.2.0.0</property>
-    <property name="modified">2018-05-07T10:26:57</property>
+    <property name="modified">2018-05-07T15:48:14</property>
     <property name="originalScheme">Base16-Ocean-mjedmonds</property>
   </metaInfo>
   <option name="LINE_SPACING" value="1.1" />
@@ -18,13 +18,13 @@
   </font>
   <option name="CONSOLE_FONT_NAME" value="DejaVu Sans Mono" />
   <colors>
-    <option name="ADDED_LINES_COLOR" value="a3be8c" />
+    <option name="ADDED_LINES_COLOR" value="667958" />
     <option name="ANNOTATIONS_COLOR" value="c0c5ce" />
     <option name="BORDER_LINES_COLOR" value="" />
     <option name="CARET_COLOR" value="c0c5ce" />
     <option name="CARET_ROW_COLOR" value="324049" />
     <option name="CONSOLE_BACKGROUND_KEY" value="2b303b" />
-    <option name="DELETED_LINES_COLOR" value="bf616a" />
+    <option name="DELETED_LINES_COLOR" value="804040" />
     <option name="DIFF_SEPARATORS_BACKGROUND" value="1e2a30" />
     <option name="DIFF_SEPARATORS_TOP_BORDER" value="1b262b" />
     <option name="DOCUMENTATION_COLOR" value="2b303b" />
@@ -53,7 +53,7 @@
     <option name="INFORMATION_HINT" value="2b303b" />
     <option name="LINE_NUMBERS_COLOR" value="475f63" />
     <option name="METHOD_SEPARATORS_COLOR" value="65737e" />
-    <option name="MODIFIED_LINES_COLOR" value="ebcb8b" />
+    <option name="MODIFIED_LINES_COLOR" value="83704c" />
     <option name="NOTIFICATION_BACKGROUND" value="3d1f2a" />
     <option name="QUESTION_HINT" value="2b303b" />
     <option name="RIGHT_MARGIN_COLOR" value="65737e" />
@@ -1208,6 +1208,7 @@
       <value>
         <option name="EFFECT_COLOR" value="c0c5ce" />
         <option name="ERROR_STRIPE_COLOR" value="4d6168" />
+        <option name="EFFECT_TYPE" value="5" />
       </value>
     </option>
     <option name="IMPLICIT_ANONYMOUS_CLASS_PARAMETER_ATTRIBUTES">
@@ -3109,6 +3110,7 @@
       <value>
         <option name="EFFECT_COLOR" value="c0c5ce" />
         <option name="ERROR_STRIPE_COLOR" value="4d6168" />
+        <option name="EFFECT_TYPE" value="5" />
       </value>
     </option>
     <option name="WRITE_SEARCH_RESULT_ATTRIBUTES">
