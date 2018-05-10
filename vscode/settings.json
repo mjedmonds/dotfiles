@@ -4,13 +4,13 @@
     //"workbench.colorTheme": "Solarized Light",
     "editor.lineHeight": 17,
     "editor.wordWrap": "on",
-    "workbench.colorTheme": "Ocean Dark Extended",
+    "workbench.colorTheme": "Default Light+",
     "keyboard.dispatch": "keyCode",
-    "gitlens.advanced.messages": {
-        "suppressShowKeyBindingsNotice": true
-    },
     // configure python env
     "python.venvPath": "~/Developer/virtualenv/",
     "editor.fontFamily": "'DejaVu Sans Mono', 'Menlo', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-    "editor.fontSize": 14
+    "editor.fontSize": 14,
+    "nightswitch.dayTheme": "Default Light+",
+    "nightswitch.nightTheme": "Ocean Dark Extended",
+    "window.zoomLevel": 1
 }
