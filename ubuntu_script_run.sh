@@ -29,13 +29,17 @@ sudo add-apt-repository ppa:noobslab/themes -y # theme
 # sudo add-apt-repository ppa:otto-kesselgulasch/gimp -y # gimp
 # sudo apt-add-repository ppa:octave/stable -y # octave
 sudo add-apt-repository ppa:zarquon42/meshlab -y # meshlab
-sudo add-apt-repository ppa:snwh/pulp # paper theme
 sudo apt-get update
-sudo apt-get update
-# sudo apt-get install flatabulous-theme numix-icon-theme numix-icon-theme-circle gimp octave meshlab -y
-sudo apt-get install paper-gtk-theme paper-icon-theme
-sudo apt-get install arc-theme
 sudo apt-get install meshlab -y
+
+# Ubuntu 18.04 Themes
+
+# Ubuntu 16.04 themes
+# sudo add-apt-repository ppa:snwh/pulp # paper theme
+# sudo apt-get update
+# sudo apt-get install flatabulous-theme numix-icon-theme numix-icon-theme-circle gimp octave meshlab -y
+# sudo apt-get install paper-gtk-theme paper-icon-theme
+# sudo apt-get install arc-theme
 
 # sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
 # sudo apt-get update
@@ -123,17 +127,26 @@ sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -
 
 # compile libraries
 
+# install snap
+sudo apt-get install snapd
+
 # setup slack as startup, add all accounts
+sudo snap install slack --classic
+
+# spotify 
+sudo snap install spotify
+
+# gitkraken
+sudo snap install gitkraken
 
 # wine
-wget https://dl.winehq.org/wine-builds/Release.key
-sudo apt-key add Release.key
-sudo apt-add-repository 'https://dl.winehq.org/wine-builds/ubuntu/'
-sudo apt-get update
-sudo apt-get install wine -y
+# wget https://dl.winehq.org/wine-builds/Release.key
+# sudo apt-key add Release.key
+# sudo apt-add-repository 'https://dl.winehq.org/wine-builds/ubuntu/'
+# sudo apt-get update
+# sudo apt-get install wine -y
 
 # pycharm, clion, idea
-sudo apt-get install snapd
 sudo snap install pycharm-professional --classic
 sudo snap install clion --classic
 sudo snap install intellij-idea-ultimate --classic
@@ -143,6 +156,14 @@ sudo snap install intellij-idea-ultimate --classic
 # umake ide pycharm-professional
 # umake ide clion
 # umake ide idea-ultimate
+
+# Clipboard management (copyq)
+sudo add-apt-repository ppa:hluk/copyq
+sudo apt-get update
+sudo apt-get install copyq
+
+# wallpaper changer (Variety)
+sudo apt-get install variety
 
 # sublime
 # clang-format:
