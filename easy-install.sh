@@ -24,50 +24,58 @@ function symlink() {
     ln -s "$1" "$2"
 }
 
+function print_update() {
+    if [ $? -eq 0 ]; then
+        e_success "Configured $1"
+    else
+        e_error "Error configuring $1"
+    fi
+}
 
 #add symlinks through stow
 cd ~/.dotfiles
 stow --ignore ".DS_Store" vim
-e_success "configured vim"
+print_update "vim"
 stow --ignore ".DS_Store" zsh
-e_success "configured zsh"
+print_update "zsh"
 stow --ignore ".DS_Store" bash
-e_success "configured bash"
+print_update "bash"
 stow --ignore ".DS_Store" git
-e_success "configured git"
+print_update "git"
 if [ "$(uname)" == "Darwin" ]; then
   stow --ignore ".DS_Store" slate
-  e_success "configured slate (macOS)"
+  print_update "slate (macOS)"
   # symlink pheonix
   symlink "${PWD}/phoenix/phoenix.js" "${HOME}/.phoenix.js"
-  e_success "configured phoenix"
+  print_update "phoenix"
 fi
 
 symlink "${PWD}/vim/.vim" "${HOME}/.config/nvim"
-e_success "configured neovim"
+print_update "neovim"
 
 #symlink "{PWD}/.clang_format" "${HOME}/.clang_format"
 symlink "${PWD}/.jsbeautifyrc" "${HOME}/.jsbeautifyrc"
-e_success "configured jsbeautifyrc"
+print_update "jsbeautifyrc"
 #symlink "${PWD}/emacs/spacemacs" "${HOME}/.emacs.d"
 #symlink "${PWD}/emacs/.spacemacs" "${HOME}/.spacemacs""
 
 # symlink oni
 symlink "${PWD}/oni" "${HOME}/.config/oni"
-e_success "configured oni"
+print_update "oni"
 
 # vscode
 if [ "$(uname)" == "Darwin" ]; then
-    symlink ${PWD}/vscode/settings.json ${HOME}/Application\ Support/Code/User/settings.json
-    symlink ${PWD}/vscode/keybindings.json ${HOME}/Application\ Support/Code/User/keybindings.json
-    symlink ${PWD}/vscode/snippets ${HOME}/Application\ Support/Code/User/snippets
-    e_success "configured vscode"
-elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-    symlink ${PWD}/vscode/settings.json ${HOME}/.config/Code/User/settings.json
-    symlink ${PWD}/vscode/keybindings.json ${HOME}/.config/Code/User/keybindings.json
-    symlink ${PWD}/vscode/snippets ${HOME}/.config/Code/User/snippets
-    e_success "configured vscode"
+    vscode_base_path=${HOME}/Application\ Support
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then\
+    vscode_base_path=${HOME}/.config
 fi
+mkdir -p ${vscode_base_path}
+symlink ${PWD}/vscode/settings.json ${vscode_base_path}/Code/User/settings.json
+print_update "vscode settings"
+symlink ${PWD}/vscode/keybindings.json ${vscode_base_path}/Code/User/keybindings.json
+print_update "vscode keybindings"
+symlink ${PWD}/vscode/snippets ${vscode_base_path}/Code/User/snippets
+print_update "vscode snippets"
 
 # sublime-text
 SUBLIME_TEXT_USER_PATH=""
@@ -75,13 +83,12 @@ SUBLIME_TEXT_DOTFILES_PATH="$HOME/.dotfiles/sublimetext3"
 if [ "$(uname)" == "Darwin" ]; then
   # OS X
   SUBLIME_TEXT_USER_PATH="$HOME/Library/Application Support/Sublime Text 3/Packages"
-  symlink "$SUBLIME_TEXT_DOTFILES_PATH/User" "$SUBLIME_TEXT_USER_PATH/User" 
-  e_success "configured sublime text (macOS)"
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     # Linux
   SUBLIME_TEXT_USER_PATH="$HOME/.config/sublime-text-3/Packages"
-  symlink "$SUBLIME_TEXT_DOTFILES_PATH/User" "$SUBLIME_TEXT_USER_PATH/User" 
-  e_success "configured sublime text (Linux)"
 fi
+mkdir -p $SUBLIME_TEXT_USER_PATH
+symlink "$SUBLIME_TEXT_DOTFILES_PATH/User" "$SUBLIME_TEXT_USER_PATH/User" 
+print_update "sublime text"
 
 

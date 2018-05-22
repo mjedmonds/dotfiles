@@ -11,35 +11,37 @@ sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -
 # sudo apt-get install -f -y
 
 # ros
-sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
-sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
-sudo apt-get update
-sudo apt-get install ros-kinetic-desktop-full -y
-sudo rosdep init
-rosdep update
+# sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+# sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
+# sudo apt-get update
+# sudo apt-get install ros-kinetic-desktop-full -y
+# sudo rosdep init
+# rosdep update
 # echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
-# source ~/.bashrc
-source ~/.zshrc
-sudo apt-get install python-rosinstall ros-kinetic-robot-localization ros-kinetic-moveit ros-kinetic-moveit-ros ros-kinetic-object-recognition-ros ros-kinetic-tf2-sensor-msgs ros-kinetic-move-base -y
+## source ~/.bashrc
+# source ~/.zshrc
+#sudo apt-get install python-rosinstall ros-kinetic-robot-localization ros-kinetic-moveit ros-kinetic-moveit-ros ros-kinetic-object-recognition-ros ros-kinetic-tf2-sensor-msgs ros-kinetic-move-base -y
 
 # libraries
-sudo apt-get install build-essential mesa-utils synaptic timelimit scons petsc-dev freeglut3-dev openssh-server vim emacs cmake-qt-gui libmetis-dev cmake-curses-gui libopenvdb-dev libgtest-dev libzmqpp-dev liblua5.2-dev libzmqpp-dev libilmbase-dev libopenexr-dev indicator-multiload vlc compizconfig-settings-manager unity-tweak-tool avahi-daemon avahi-discover avahi-utils libnss-mdns mdns-scan linux-image-extra-virtual git p7zip-full unrar-free htop imagemagick openscad blender kolourpaint4 libspatialindex-dev libgeos-dev python3-pip liblapack-dev libatlas-base-dev libatlas-dev libprotobuf-dev libleveldb-dev libsnappy-dev libhdf5-serial-dev libgflags-dev libgoogle-glog-dev liblmdb-dev protobuf-compiler shutter texlive-full clang-format redshift redshift-gtk ffmpeg gitk libglew-dev libglfw3-dev python-scipy alien inkscape libcgal-dev libcgal-qt5-dev gstreamer1.0-libav libturbojpeg libjpeg-turbo8-dev meld p7zip-rar python-virtualenv python-dev swig python-pygame python-qt4 npm clang libmagick++-dev python-tk python-imaging-tk python-pip libcsfml-dev gtk-recordmydesktop python3 python3-pyqt5 python3-requests python3-xlib python3-pillow tesseract-ocr-eng tesseract-ocr-chi-tra tesseract-ocr-chi-sim lm-sensors ntpdate graphviz-dev samba-common-bin texmaker tree -y
-sudo add-apt-repository ppa:noobslab/themes -y # theme
-# sudo apt-add-repository ppa:numix/ppa -y # icon
+sudo apt-get install build-essential curl mesa-utils synaptic freeglut3-dev openssh-server vim cmake-qt-gui cmake-curses-gui libzmqpp-dev liblua5.2-dev  vlc git p7zip-full unrar-free htop python3-pip libhdf5-serial-dev libgflags-dev texlive-full clang-format ffmpeg libglew-dev libglfw3-dev python-scipy libturbojpeg libjpeg-turbo8-dev meld p7zip-rar python-virtualenv python-dev swig python-pygame python-qt4 npm clang python-tk python-pil.imagetk python-pip gtk-recordmydesktop python3 python3-dev python3-pyqt5 python3-requests python3-xlib python3-pil lm-sensors ntpdate libgraphviz-dev texmaker tree meshlab gnome-tweak-tool zsh stow safe-rm gparted -y
 # sudo add-apt-repository ppa:otto-kesselgulasch/gimp -y # gimp
 # sudo apt-add-repository ppa:octave/stable -y # octave
-sudo add-apt-repository ppa:zarquon42/meshlab -y # meshlab
+
+
+# -----------------------------------
+# DOWNLOAD PyPy3 FROM SOURCE!
+# -----------------------------------
+
+sudo chsh -s /bin/zsh mark
+
+# Ubuntu themes 16.04+
+sudo apt-get install arc-theme -y
+# will also need to install gnome-shell theme to theme gnome-panel
+sudo apt-get install chrome-gnome-shell 
+
+sudo add-apt-repository ppa:snwh/pulp # paper theme
 sudo apt-get update
-sudo apt-get install meshlab -y
-
-# Ubuntu 18.04 Themes
-
-# Ubuntu 16.04 themes
-# sudo add-apt-repository ppa:snwh/pulp # paper theme
-# sudo apt-get update
-# sudo apt-get install flatabulous-theme numix-icon-theme numix-icon-theme-circle gimp octave meshlab -y
-# sudo apt-get install paper-gtk-theme paper-icon-theme
-# sudo apt-get install arc-theme
+sudo apt-get install paper-icon-theme
 
 # sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
 # sudo apt-get update
@@ -127,6 +129,13 @@ sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -
 
 # compile libraries
 
+# visual studio code
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
+sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+sudo apt-get update
+sudo apt-get install code -y
+
 # install snap
 sudo apt-get install snapd
 
@@ -160,10 +169,23 @@ sudo snap install intellij-idea-ultimate --classic
 # Clipboard management (copyq)
 sudo add-apt-repository ppa:hluk/copyq
 sudo apt-get update
-sudo apt-get install copyq
+sudo apt-get install copyq -y
 
 # wallpaper changer (Variety)
-sudo apt-get install variety
+sudo apt-get install variety -y
+
+# ---------------------------------------------
+# Ubuntu 18.04 specific tweaks
+# ---------------------------------------------
+# move min, max, close buttons to left
+gsettings set org.gnome.desktop.wm.preferences button-layout 'close,maximize,minimize:'
+
+# must do the following using the gnome extensions website
+# install multi monitors add-on from gnome extension library
+# install gnome-shell extension from gnome extension library
+# install system-monitor extension from gnome extension library
+# install dash to dock extension from gnome extension library
+# ---------------------------------------------
 
 # sublime
 # clang-format:
