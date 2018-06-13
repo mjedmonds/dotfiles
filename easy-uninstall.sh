@@ -62,16 +62,16 @@ print_update "oni"
 
 # vscode
 if [ "$(uname)" == "Darwin" ]; then
-    vscode_base_path=${HOME}/Application\ Support
+    vscode_base_path="${HOME}/Library/Application Support"
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then\
-    vscode_base_path=${HOME}/.config
+    vscode_base_path="${HOME}/.config"
 fi
 mkdir -p ${vscode_base_path}
-rm ${vscode_base_path}/Code/User/settings.json
+rm "${vscode_base_path}/Code/User/settings.json"
 print_update "vscode settings"
-rm ${vscode_base_path}/Code/User/keybindings.json
+rm "${vscode_base_path}/Code/User/keybindings.json"
 print_update "vscode keybindings"
-rm ${vscode_base_path}/Code/User/snippets
+rm "${vscode_base_path}/Code/User/snippets"
 print_update "vscode snippets"
 
 # sublime-text
