@@ -144,7 +144,7 @@ fi
 if [[ "$OSTYPE" = "linux"* ]]; then
   export LD_LIBRARY_PATH=/usr/lib:/usr/local/lib:$LD_LIBRARY_PATH:/usr/local/cuda/lib64
   export CUDA_HOME=/usr/local/cuda
-  export PATH=$PATH:/usr/local/cuda/bin
+  export PATH=$PATH:/home/mark/.local/bin:/usr/local/cuda/bin
   # pkg-config path (for OMPL)
   export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
   export DYLD_FALLBACK_LIBRARY_PATH=/usr/local/lib:/usr/lib:$DYLD_FALLBACK_LIBRARY_PATH

@@ -23,7 +23,7 @@ sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -
 #sudo apt-get install python-rosinstall ros-kinetic-robot-localization ros-kinetic-moveit ros-kinetic-moveit-ros ros-kinetic-object-recognition-ros ros-kinetic-tf2-sensor-msgs ros-kinetic-move-base -y
 
 # libraries
-sudo apt-get install build-essential curl mesa-utils synaptic freeglut3-dev openssh-server vim cmake-qt-gui cmake-curses-gui libzmqpp-dev liblua5.2-dev  vlc git p7zip-full unrar-free htop python3-pip libhdf5-serial-dev libblas-dev liblapack-dev libgflags-dev texlive-full clang-format ffmpeg libglew-dev libglfw3-dev python-scipy libturbojpeg libjpeg-turbo8-dev meld gfortran p7zip-rar python-virtualenv python-dev swig python-pygame python-qt4 npm clang python-tk python-pil.imagetk python-pip gtk-recordmydesktop python3 python3-dev python3-pyqt5 python3-requests python3-xlib python3-pil lm-sensors ntpdate libgraphviz-dev texmaker tree meshlab gnome-tweak-tool zsh stow safe-rm gparted libfreetype6 libfreetype6-dev libpng-dev libpng++-dev libqhull-dev -y
+sudo apt-get install build-essential curl mesa-utils synaptic freeglut3-dev openssh-server vim cmake-qt-gui cmake-curses-gui libzmqpp-dev liblua5.2-dev  vlc git p7zip-full unrar-free htop python3-pip libhdf5-serial-dev libblas-dev liblapack-dev libgflags-dev texlive-full clang-format ffmpeg libglew-dev libglfw3-dev python-scipy libturbojpeg libjpeg-turbo8-dev meld gfortran p7zip-rar python-virtualenv python-dev swig python-pygame python-qt4 npm clang python-tk python-pil.imagetk python-pip gtk-recordmydesktop python3 python3-dev python3-pyqt5 python3-requests python3-xlib python3-pil lm-sensors ntpdate libgraphviz-dev texmaker tree meshlab gnome-tweak-tool zsh stow safe-rm gparted libfreetype6 libfreetype6-dev libpng-dev libpng++-dev libqhull-dev libgeos-dev -y
 # sudo add-apt-repository ppa:otto-kesselgulasch/gimp -y # gimp
 # sudo apt-add-repository ppa:octave/stable -y # octave
 
@@ -128,14 +128,14 @@ sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -
 # setup network
 
 # docker
-sudo apt-get install apt-transport-https ca-certificates curl software-properties-common -y
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository \
-   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-   $(lsb_release -cs) \
-   stable"
-sudo apt-get update
-sudo apt-get install docker-ce  
+# sudo apt-get install apt-transport-https ca-certificates curl software-properties-common -y
+# curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+# sudo add-apt-repository \
+#    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+#    $(lsb_release -cs) \
+#    stable"
+# sudo apt-get update
+# sudo apt-get install docker-ce  
 
 # visual studio code
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
@@ -144,8 +144,11 @@ sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode s
 sudo apt-get update
 sudo apt-get install code -y
 
+# okular (pdf viewer)
+sudo apt-get install okular -y
+
 # install snap
-sudo apt-get install snapd
+sudo apt-get install snapd -y
 
 # setup slack as startup, add all accounts
 sudo snap install slack --classic
