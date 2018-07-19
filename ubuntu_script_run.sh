@@ -23,7 +23,7 @@ sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -
 #sudo apt-get install python-rosinstall ros-kinetic-robot-localization ros-kinetic-moveit ros-kinetic-moveit-ros ros-kinetic-object-recognition-ros ros-kinetic-tf2-sensor-msgs ros-kinetic-move-base -y
 
 # libraries
-sudo apt-get install build-essential curl mesa-utils synaptic freeglut3-dev openssh-server vim cmake-qt-gui cmake-curses-gui libzmqpp-dev liblua5.2-dev  vlc git p7zip-full unrar-free htop python3-pip libhdf5-serial-dev libblas-dev liblapack-dev libgflags-dev texlive-full clang-format ffmpeg libglew-dev libglfw3-dev python-scipy libturbojpeg libjpeg-turbo8-dev meld gfortran p7zip-rar python-virtualenv python-dev swig python-pygame python-qt4 npm clang python-tk python-pil.imagetk python-pip gtk-recordmydesktop python3 python3-dev python3-pyqt5 python3-requests python3-xlib python3-pil lm-sensors ntpdate libgraphviz-dev texmaker tree meshlab gnome-tweak-tool zsh stow safe-rm gparted libfreetype6 libfreetype6-dev libpng-dev libpng++-dev libqhull-dev libgeos-dev -y
+sudo apt-get install build-essential curl mesa-utils synaptic freeglut3-dev openssh-server vim cmake-qt-gui cmake-curses-gui libzmqpp-dev liblua5.2-dev  vlc git p7zip-full unrar-free htop python3-pip libhdf5-serial-dev libblas-dev liblapack-dev libgflags-dev texlive-full clang-format ffmpeg libglew-dev libglfw3-dev python-scipy libturbojpeg libjpeg-turbo8-dev meld gfortran p7zip-rar python-virtualenv python-dev swig python-pygame python-qt4 npm clang python-tk python-pil.imagetk python-pip gtk-recordmydesktop python3 python3-dev python3-pyqt5 python3-requests python3-xlib python3-pil lm-sensors ntpdate libgraphviz-dev texmaker tree meshlab gnome-tweak-tool zsh stow safe-rm gparted libfreetype6 libfreetype6-dev libpng-dev libpng++-dev libqhull-dev libgnome-keyring0 libcurl4-openssl-dev libgeos-dev -y
 # sudo add-apt-repository ppa:otto-kesselgulasch/gimp -y # gimp
 # sudo apt-add-repository ppa:octave/stable -y # octave
 
@@ -178,9 +178,9 @@ sudo snap install intellij-idea-ultimate --classic
 # umake ide idea-ultimate
 
 # Clipboard management (copyq)
-sudo add-apt-repository ppa:hluk/copyq
-sudo apt-get update
-sudo apt-get install copyq -y
+# sudo add-apt-repository ppa:hluk/copyq
+# sudo apt-get update
+# sudo apt-get install copyq -y
 
 # wallpaper changer (Variety)
 sudo apt-get install variety -y
@@ -190,6 +190,11 @@ sudo apt-get install variety -y
 # ---------------------------------------------
 # move min, max, close buttons to left
 gsettings set org.gnome.desktop.wm.preferences button-layout 'close,maximize,minimize:'
+# caps lock as escape
+gsettings set org.gnome.desktop.input-sources xkb-options "['caps:escape']"
+
+# install for system-monitor
+sudo apt-get install gir1.2-gtop-2.0 gir1.2-networkmanager-1.0 gir1.2-clutter-1.0 -y
 
 # must do the following using the gnome extensions website
 # install multi monitors add-on from gnome extension library
