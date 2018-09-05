@@ -23,7 +23,7 @@ sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -
 #sudo apt-get install python-rosinstall ros-kinetic-robot-localization ros-kinetic-moveit ros-kinetic-moveit-ros ros-kinetic-object-recognition-ros ros-kinetic-tf2-sensor-msgs ros-kinetic-move-base -y
 
 # libraries
-sudo apt-get install build-essential curl mesa-utils synaptic freeglut3-dev openssh-server vim cmake-qt-gui cmake-curses-gui libzmqpp-dev liblua5.2-dev  vlc git p7zip-full unrar-free htop python3-pip libhdf5-serial-dev libblas-dev liblapack-dev libgflags-dev texlive-full clang-format ffmpeg libglew-dev libglfw3-dev python-scipy libturbojpeg libjpeg-turbo8-dev meld gfortran p7zip-rar python-virtualenv python-dev swig python-pygame python-qt4 npm clang python-tk python-pil.imagetk python-pip gtk-recordmydesktop python3 python3-dev python3-pyqt5 python3-requests python3-xlib python3-pil lm-sensors ntpdate libgraphviz-dev texmaker tree meshlab gnome-tweak-tool zsh stow safe-rm gparted libfreetype6 libfreetype6-dev libpng-dev libpng++-dev libqhull-dev libgnome-keyring0 libcurl4-openssl-dev libgeos-dev -y
+sudo apt-get install build-essential curl mesa-utils synaptic freeglut3-dev openssh-server vim cmake-qt-gui cmake-curses-gui libzmqpp-dev liblua5.2-dev  vlc git p7zip-full unrar-free htop python3-pip libhdf5-serial-dev libblas-dev liblapack-dev libgflags-dev texlive-full clang-format ffmpeg libglew-dev libglfw3-dev python-scipy libturbojpeg libjpeg-turbo8-dev meld gfortran p7zip-rar python-virtualenv python-dev swig python-pygame python-qt4 npm clang python-tk python-pil.imagetk python-pip gtk-recordmydesktop python3 python3-dev python3-pyqt5 python3-requests python3-xlib python3-pil lm-sensors ntpdate libgraphviz-dev texmaker tree meshlab gnome-tweak-tool zsh stow safe-rm gparted libfreetype6 libfreetype6-dev libpng-dev libpng++-dev libqhull-dev libgnome-keyring0 libcurl4-openssl-dev libgeos-dev zsh curl chromium-browser -y
 # sudo add-apt-repository ppa:otto-kesselgulasch/gimp -y # gimp
 # sudo apt-add-repository ppa:octave/stable -y # octave
 
@@ -37,11 +37,11 @@ sudo chsh -s /bin/zsh mark
 # Ubuntu themes 16.04+
 sudo apt-get install arc-theme -y
 # will also need to install gnome-shell theme to theme gnome-panel
-sudo apt-get install chrome-gnome-shell 
+sudo apt-get install chrome-gnome-shell -y
 
-sudo add-apt-repository ppa:snwh/pulp # paper theme
+sudo add-apt-repository ppa:snwh/ppa # paper theme
 sudo apt-get update
-sudo apt-get install paper-icon-theme
+sudo apt-get install paper-icon-theme -y
 
 # sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
 # sudo apt-get update
