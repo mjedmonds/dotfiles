@@ -205,6 +205,12 @@ sudo apt-get install gir1.2-gtop-2.0 gir1.2-networkmanager-1.0 gir1.2-clutter-1.
 # install impatience extension from gnome extension library
 # ---------------------------------------------
 
+#gitwatch setup for auto committing markdown notes
+git clone https://github.com/gitwatch/gitwatch ~/Downloads
+sudo install -b ~/Downloads/gitwatch/gitwatch.sh /usr/local/bin/gitwatch
+cp ./gitwatch/gitwatch-markdown-notes.desktop ~/.config/autostart/
+cp ./gitwatch/gitwatch-OpenLock-markdown-notes.desktop ~/.config/autostart/
+
 # sublime
 # clang-format:
 # ctrl+alt+P -> install package control;
