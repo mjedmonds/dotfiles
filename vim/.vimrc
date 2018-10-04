@@ -418,7 +418,7 @@ let g:syntastic_check_on_wq = 0
   "colorscheme base16-ocean
 "endif
 "let base16colorspace=256
-colorscheme base16-ocean
+"colorscheme base16-ocean
 "colorscheme solarized 
 set background=dark
 "set background=light

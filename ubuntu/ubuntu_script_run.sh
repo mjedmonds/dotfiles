@@ -156,8 +156,8 @@ sudo snap install slack --classic
 # spotify 
 sudo snap install spotify
 
-# gitkraken
-sudo snap install gitkraken
+# gitkraken dependencies (do not install from snap)
+sudo apt install libcurl3 libgnome-keyring-dev libgnome-keyring-common libcanberra-gtk-module -y
 
 # wine
 # wget https://dl.winehq.org/wine-builds/Release.key
