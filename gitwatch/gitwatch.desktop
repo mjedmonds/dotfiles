@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=bash /home/mark/dotfiles/ubuntu/gitwatch/launch_gitwatches.sh
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=gitwatch.desktop
+Name=gitwatch-markdown-notes
+Comment[en_US]=launch gitwatches for specific repos
+Comment=~/Dropbox/Developer/CARA-repos/markdown-notes
