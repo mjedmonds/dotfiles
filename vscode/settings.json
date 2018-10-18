@@ -6,6 +6,11 @@
     "editor.fontSize": 14,
     "window.zoomLevel": 0,
     
+    // filetype specific settings
+    "[markdown]": {
+        "editor.tabSize": 4
+    },
+
     // colorscheme settings
     "workbench.colorTheme": "Ocean Dark Extended",
     "nightswitch.dayTheme": "Default Light+",
