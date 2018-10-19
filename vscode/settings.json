@@ -8,7 +8,7 @@
     
     // filetype specific settings
     "[markdown]": {
-        "editor.tabSize": 4
+        "editor.tabSize": 2
     },
 
     // colorscheme settings
@@ -23,9 +23,21 @@
     // configure python env
     "python.venvPath": "~/Developer/virtualenv/",
     
+    // extension settings
     "gitlens.advanced.messages": {
         "suppressShowKeyBindingsNotice": true
     },
     "gitlens.historyExplorer.enabled": true,
     "latex-workshop.message.update.show": false,
+    "markdown-preview-enhanced.scrollSync": true,
+    "emeraldwalk.runonsave": {
+        "commands": [
+            {
+                "match": ".*",
+                "isAsync": true,
+                "cmd": "bash ~/dotfiles/vscode/sync_extensions.sh"
+            }
+        ]
+    }
+
 }
