@@ -6,6 +6,11 @@
     "editor.fontSize": 14,
     "window.zoomLevel": 0,
     
+    // filetype specific settings
+    "[markdown]": {
+        "editor.tabSize": 2
+    },
+
     // colorscheme settings
     "workbench.colorTheme": "Ocean Dark Extended",
     "nightswitch.dayTheme": "Default Light+",
@@ -18,9 +23,21 @@
     // configure python env
     "python.venvPath": "~/Developer/virtualenv/",
     
+    // extension settings
     "gitlens.advanced.messages": {
         "suppressShowKeyBindingsNotice": true
     },
     "gitlens.historyExplorer.enabled": true,
     "latex-workshop.message.update.show": false,
+    "markdown-preview-enhanced.scrollSync": true,
+    "emeraldwalk.runonsave": {
+        "commands": [
+            {
+                "match": ".*",
+                "isAsync": true,
+                "cmd": "bash ~/dotfiles/vscode/sync_extensions.sh"
+            }
+        ]
+    }
+
 }

@@ -42,7 +42,7 @@ if vim.eval('exists("g:clang_format_path")') == "1":
 # 'clang-format --help' for a list of supported styles. The default looks for
 # a '.clang-format' or '_clang-format' file to indicate the style that should be
 # used.
-style = '{BasedOnStyle: Chromium, ColumnLimit: 80, BreakBeforeBraces: Allman}'
+style = '{BasedOnStyle: Chromium, ColumnLimit: 120, BreakBeforeBraces: Allman}'
 #fallback_style = 'Chromium'
 fallback_style = None
 if vim.eval('exists("g:clang_format_fallback_style")') == "1":
