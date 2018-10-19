@@ -6,6 +6,7 @@ function e_header()  { echo -e "\n\033[1m$@\033[0m"; }
 function e_success() { echo -e " \033[1;32m✔\033[0m  $@"; }
 function e_error()   { echo -e " \033[1;31m✖\033[0m  $@"; }
 function e_arrow()   { echo -e " \033[1;34m➜\033[0m  $@"; }
+function e_warning() { echo -e " \033[1;31m⚠️\033[0m  $@"; }
 
 
 function symlink() {
@@ -17,9 +18,10 @@ function symlink() {
         fi
     fi
     if [ -f "$2" ]; then
-        e_error "File already exists!"
-        local newname="$2.$(date +%s)"
-        mv "$2" "$newname" && e_success "renamed to $newname"
+        basename=$(basename "$2")
+        local newname="${HOME}/dotfiles/trash/$basename.$(date +%s)"
+        e_warning "File already exists! Moving to $newname"
+        mv "$2" "$newname" && e_success "Renamed to $newname"
     fi
     ln -s "$1" "$2"
 }
@@ -32,26 +34,42 @@ function print_update() {
     fi
 }
 
-#add symlinks through stow
+#add symlinks
 cd ~/.dotfiles
-stow --ignore ".DS_Store" vim
-print_update "vim"
-stow --ignore ".DS_Store" zsh
-print_update "zsh"
-stow --ignore ".DS_Store" bash
-print_update "bash"
-stow --ignore ".DS_Store" git
-print_update "git"
-if [ "$(uname)" == "Darwin" ]; then
-  stow --ignore ".DS_Store" slate
-  print_update "slate (macOS)"
-  # symlink pheonix
-  symlink "${PWD}/phoenix/phoenix.js" "${HOME}/.phoenix.js"
-  print_update "phoenix"
-fi
-
+# vim
+symlink "${PWD}/vim/.vimrc" "${HOME}/.vimrc"
+print_update "vimrc"
+symlink "${PWD}/vim/.vim" "${HOME}/.vim"
+print_update "vim folder"
 symlink "${PWD}/vim/.vim" "${HOME}/.config/nvim"
 print_update "neovim"
+
+#zsh 
+symlink "${PWD}/zsh/.zshrc" "${HOME}/.zshrc"
+print_update "zshrc"
+symlink "${PWD}/zsh/.zprofile" "${HOME}/.zprofile"
+print_update "zprofile"
+
+# bash
+symlink "${PWD}/bash/.bashrc" "${HOME}/.bashrc"
+print_update "bashrc"
+symlink "${PWD}/bash/.bash_profile" "${HOME}/.bash_profile"
+print_update "bash_profile"
+
+# git
+symlink "${PWD}/git/.gitconfig" "${HOME}/.gitconfig"
+print_update "gitconfig"
+symlink "${PWD}/git/.gitignore_global" "${HOME}/.gitignore_global"
+print_update "gitignore_global"
+
+
+# if [ "$(uname)" == "Darwin" ]; then
+#   stow --ignore ".DS_Store" slate
+#   print_update "slate (macOS)"
+  # symlink pheonix
+#   symlink "${PWD}/phoenix/phoenix.js" "${HOME}/.phoenix.js"
+#   print_update "phoenix"
+# fi
 
 #symlink "{PWD}/.clang_format" "${HOME}/.clang_format"
 symlink "${PWD}/.jsbeautifyrc" "${HOME}/.jsbeautifyrc"
@@ -87,7 +105,7 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     # Linux
   SUBLIME_TEXT_USER_PATH="$HOME/.config/sublime-text-3/Packages"
 fi
-mkdir -p $SUBLIME_TEXT_USER_PATH
+mkdir -p "$SUBLIME_TEXT_USER_PATH"
 symlink "$SUBLIME_TEXT_DOTFILES_PATH/User" "$SUBLIME_TEXT_USER_PATH/User" 
 print_update "sublime text"
 

@@ -22,3 +22,5 @@ Package Control.system-ca-bundle
 
 oni/Cache
 oni/GPUCache
+
+trash/*

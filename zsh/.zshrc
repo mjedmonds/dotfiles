@@ -169,4 +169,4 @@ if [[ "$OSTYPE" = "linux"* ]]; then
 fi
 
 
-source ~/dotfiles/zsh-extra/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
