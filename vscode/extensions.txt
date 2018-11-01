@@ -21,3 +21,4 @@ vscodevim.vim
 xaver.clang-format
 yzane.markdown-pdf
 yzhang.markdown-all-in-one
+telesoho.vscode-markdown-paste-image
