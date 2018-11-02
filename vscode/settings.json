@@ -16,8 +16,8 @@
 
   // colorscheme settings
   "workbench.colorTheme": "Ocean Dark Extended",
-  "nightswitch.dayTheme": "Default Light+",
-  "nightswitch.nightTheme": "Ocean Dark Extended",
+  "nightswitch.themeDay": "Default Light+",
+  "nightswitch.themeNight": "Ocean Dark Extended",
 
   // vim settings
   "vim.useSystemClipboard": true,
