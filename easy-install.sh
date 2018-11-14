@@ -44,7 +44,7 @@ print_update "vim folder"
 symlink "${PWD}/vim/.vim" "${HOME}/.config/nvim"
 print_update "neovim"
 
-#zsh 
+#zsh
 symlink "${PWD}/zsh/.zshrc" "${HOME}/.zshrc"
 print_update "zshrc"
 symlink "${PWD}/zsh/.zprofile" "${HOME}/.zprofile"
@@ -94,6 +94,8 @@ symlink "${PWD}/vscode/keybindings.json" "${vscode_base_path}/Code/User/keybindi
 print_update "vscode keybindings"
 symlink "${PWD}/vscode/snippets" "${vscode_base_path}/Code/User/snippets"
 print_update "vscode snippets"
+symlink "${PWD}/vscode/markdown-preview-enhanced-style.less" "${HOME}/.mume/style.less"
+print_update "vscode markdown preview enhanced style"
 
 # sublime-text
 SUBLIME_TEXT_USER_PATH=""
@@ -106,7 +108,7 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
   SUBLIME_TEXT_USER_PATH="$HOME/.config/sublime-text-3/Packages"
 fi
 mkdir -p "$SUBLIME_TEXT_USER_PATH"
-symlink "$SUBLIME_TEXT_DOTFILES_PATH/User" "$SUBLIME_TEXT_USER_PATH/User" 
+symlink "$SUBLIME_TEXT_DOTFILES_PATH/User" "$SUBLIME_TEXT_USER_PATH/User"
 print_update "sublime text"
 
 
