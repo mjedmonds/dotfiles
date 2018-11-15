@@ -43,5 +43,6 @@
       "cmd": "bash ~/dotfiles/vscode/sync_extensions.sh"
     }]
   },
-  "pasteImage.path": "./images"
+  "pasteImage.path": "./images",
+  "nightswitch.autoSwitch": false
 }
