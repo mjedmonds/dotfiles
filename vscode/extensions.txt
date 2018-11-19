@@ -22,3 +22,5 @@ xaver.clang-format
 yzane.markdown-pdf
 yzhang.markdown-all-in-one
 telesoho.vscode-markdown-paste-image
+christian-kohler.path-intellisense
+gharveymn.nightswitch
