@@ -44,5 +44,6 @@
     }]
   },
   "pasteImage.path": "./images",
-  "nightswitch.autoSwitch": false
+  "nightswitch.autoSwitch": false,
+  "python.formatting.provider": "black"
 }
