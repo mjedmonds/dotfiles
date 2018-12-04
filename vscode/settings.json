@@ -2,7 +2,8 @@
   "editor.tabSize": 2,
   "editor.lineHeight": 17,
   "editor.wordWrap": "on",
-  "editor.fontFamily": "'DejaVu Sans Mono', 'Menlo', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  "editor.fontFamily": "'DejaVu Sans Code', 'DejaVu Sans Mono', 'Menlo', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  "editor.fontLigatures": true,
   "editor.fontSize": 14,
   "editor.formatOnSave": true,
   "files.trimTrailingWhitespace": true,
@@ -44,5 +45,7 @@
     }]
   },
   "pasteImage.path": "./images",
-  "nightswitch.autoSwitch": false
+  "nightswitch.autoSwitch": false,
+  "gitlens.views.fileHistory.enabled": true,
+  "gitlens.views.lineHistory.enabled": true
 }
