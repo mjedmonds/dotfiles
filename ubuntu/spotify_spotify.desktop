@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Spotify HiDPI
+GenericName=Music Player
+Icon=/snap/spotify/current/usr/share/spotify/icons/spotify-linux-512.png
+Exec=env BAMF_DESKTOP_FILE_HINT=/var/lib/snapd/desktop/applications/spotify_spotify.desktop /snap/bin/spotify --force-device-scale-factor=1.8 %U
+Terminal=false
+MimeType=x-scheme-handler/spotify;
+Categories=Audio;Music;Player;AudioVideo;
+StartupWMClass=spotify
+
