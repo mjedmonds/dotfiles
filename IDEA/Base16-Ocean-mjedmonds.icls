@@ -1,15 +1,15 @@
 <scheme name="Base16-Ocean-mjedmonds" version="142" parent_scheme="Darcula">
   <option name="FONT_SCALE" value="1.0" />
   <metaInfo>
-    <property name="created">2018-12-04T12:05:33</property>
+    <property name="created">2018-12-05T15:29:45</property>
     <property name="ide">Python</property>
-    <property name="ideVersion">2018.3.0.0</property>
-    <property name="modified">2018-12-04T12:05:47</property>
+    <property name="ideVersion">2018.3.1.0.0</property>
+    <property name="modified">2018-12-05T15:30:07</property>
     <property name="originalScheme">Base16-Ocean-mjedmonds</property>
   </metaInfo>
   <option name="LINE_SPACING" value="1.1" />
   <option name="EDITOR_FONT_SIZE" value="13" />
-  <option name="EDITOR_FONT_NAME" value="DejaVu Sans Code" />
+  <option name="EDITOR_FONT_NAME" value="DejaVu Sans Mono" />
   <option name="EDITOR_LIGATURES" value="true" />
   <option name="CONSOLE_FONT_NAME" value="DejaVu Sans Mono" />
   <colors>
