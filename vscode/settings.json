@@ -45,5 +45,7 @@
   },
   "pasteImage.path": "./images",
   "nightswitch.autoSwitch": false,
-  "python.formatting.provider": "black"
+  "python.formatting.provider": "black",
+  "gitlens.views.fileHistory.enabled": true,
+  "gitlens.views.lineHistory.enabled": true
 }
