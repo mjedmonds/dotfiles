@@ -1,4 +1,3 @@
-AndrsDC.base16-themes
 DavidAnson.vscode-markdownlint
 dbaeumer.vscode-eslint
 eamodio.gitlens
@@ -24,3 +23,8 @@ yzhang.markdown-all-in-one
 telesoho.vscode-markdown-paste-image
 christian-kohler.path-intellisense
 gharveymn.nightswitch
+mushan.vscode-paste-image
+jsaulou.theme-by-language
+thomaspink.theme-github
+akamud.vscode-theme-onelight
+akamud.vscode-theme-onedark
