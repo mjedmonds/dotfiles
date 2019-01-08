@@ -34,6 +34,7 @@
   },
   "latex-workshop.message.update.show": false,
   "markdown-preview-enhanced.scrollSync": true,
+  "markdown-preview-enhanced.previewTheme": "github-light.css",
   "emeraldwalk.runonsave":
   {
     "commands": [
@@ -53,4 +54,5 @@
     "*": "Ocean Dark Extended",
     "markdown": "Atom One Dark"
   },
+  "window.titleBarStyle": "native",
 }
