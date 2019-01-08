@@ -1,0 +1,3 @@
+.tabbrowser-tab>.tab-stack>.tab-content[pinned][titlechanged]:not([visuallyselected="true"]) {
+  background-image: none !important;
+}
