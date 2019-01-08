@@ -16,7 +16,7 @@
   },
 
   // colorscheme settings
-  "workbench.colorTheme": "Ocean Dark Extended",
+  "workbench.colorTheme": "Atom One Dark",
   "nightswitch.themeDay": "Default Light+",
   "nightswitch.themeNight": "Ocean Dark Extended",
 
@@ -32,7 +32,6 @@
   {
     "suppressShowKeyBindingsNotice": true
   },
-  "gitlens.historyExplorer.enabled": true,
   "latex-workshop.message.update.show": false,
   "markdown-preview-enhanced.scrollSync": true,
   "emeraldwalk.runonsave":
@@ -48,5 +47,10 @@
   "nightswitch.autoSwitch": false,
   "python.formatting.provider": "black",
   "gitlens.views.fileHistory.enabled": true,
-  "gitlens.views.lineHistory.enabled": true
+  "gitlens.views.lineHistory.enabled": true,
+  "theme-by-language.themes":
+  {
+    "*": "Ocean Dark Extended",
+    "markdown": "Atom One Dark"
+  },
 }
