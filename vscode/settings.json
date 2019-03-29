@@ -16,7 +16,7 @@
   },
 
   // colorscheme settings
-  "workbench.colorTheme": "Atom One Dark",
+  "workbench.colorTheme": "Ocean Dark Extended",
   "nightswitch.themeDay": "Default Light+",
   "nightswitch.themeNight": "Ocean Dark Extended",
 
