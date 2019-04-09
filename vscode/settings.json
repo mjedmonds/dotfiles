@@ -16,7 +16,7 @@
   },
 
   // colorscheme settings
-  "workbench.colorTheme": "Atom One Dark",
+  "workbench.colorTheme": "Ocean Dark Extended",
   "nightswitch.themeDay": "Default Light+",
   "nightswitch.themeNight": "Ocean Dark Extended",
 
@@ -55,4 +55,9 @@
     "markdown": "Atom One Dark"
   },
   "window.titleBarStyle": "native",
+  "clang-format.language.c.enable": false,
+  "clang-format.language.cpp.enable": false,
+  "clang-format.language.cuda.enable": false,
+  "clang-format.language.glsl.enable": false,
+  "clang-format.language.java.enable": false,
 }
