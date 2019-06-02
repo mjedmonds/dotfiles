@@ -135,6 +135,8 @@ if [[ "$OSTYPE" = "darwin"* ]]; then
   fi
 
   alias pycharm='/Applications/PyCharm.app/Contents/MacOS/pycharm'
+  alias remove_priv_frames="/Users/mark/Dropbox/Developer/mark-rMBP-repos/music/music-management/remove_priv_frames.sh"
+  alias syncify="/Users/mark/Dropbox/Music/Music Temp/Edmonds/Playlist Rips/playlist_sync.sh"
 
   #export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 
