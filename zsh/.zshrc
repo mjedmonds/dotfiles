@@ -158,6 +158,9 @@ if [[ "$OSTYPE" = "linux"* ]]; then
   if [[ -e /opt/ros/kinetic/setup.zsh ]]; then
     source /opt/ros/kinetic/setup.zsh
   fi
+  if [[ -e /opt/ros/melodic/setup.zsh ]]; then
+    source /opt/ros/melodic/setup.zsh
+  fi
   if [[ -e ~/catkin_ws/devel/setup.zsh ]]; then
     source ~/catkin_ws/devel/setup.zsh
   fi

@@ -28,3 +28,5 @@ jsaulou.theme-by-language
 thomaspink.theme-github
 akamud.vscode-theme-onelight
 akamud.vscode-theme-onedark
+twxs.cmake
+austin.code-gnu-global
