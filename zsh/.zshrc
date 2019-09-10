@@ -169,8 +169,6 @@ if [[ "$OSTYPE" = "linux"* ]]; then
   alias rm='safe-rm'
   alias trash="trash-put"
   alias gvir="gvim --remote-tab"
-  alias python="python3"
-  alias pip="pip3"
 
   # >>> conda initialize >>>
   # !! Contents within this block are managed by 'conda init' !!
