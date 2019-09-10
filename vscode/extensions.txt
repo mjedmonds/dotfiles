@@ -32,3 +32,4 @@ twxs.cmake
 austin.code-gnu-global
 EFanZh.graphviz-preview
 Stephanvs.dot
+ajshort.msg
