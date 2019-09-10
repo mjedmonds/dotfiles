@@ -30,3 +30,5 @@ akamud.vscode-theme-onelight
 akamud.vscode-theme-onedark
 twxs.cmake
 austin.code-gnu-global
+EFanZh.graphviz-preview
+Stephanvs.dot

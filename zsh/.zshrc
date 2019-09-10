@@ -135,8 +135,8 @@ if [[ "$OSTYPE" = "darwin"* ]]; then
   fi
 
   alias pycharm='/Applications/PyCharm.app/Contents/MacOS/pycharm'
-  alias remove_priv_frames="/Users/mark/Dropbox/Developer/mark-rMBP-repos/music/music-management/remove_priv_frames.sh"
-  alias syncify="/Users/mark/Dropbox/Music/Music Temp/Edmonds/Playlist Rips/playlist_sync.sh"
+  alias remove_priv_frames="${HOME}/Dropbox/Developer/mark-rMBP-repos/music/music-management/remove_priv_frames.sh"
+  alias playlist_sync="${HOME}/Dropbox/Music/Music\ Temp/Edmonds/Playlist\ Rips/playlist_sync.sh"
 
   #export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 
@@ -146,14 +146,14 @@ fi
 if [[ "$OSTYPE" = "linux"* ]]; then
   export LD_LIBRARY_PATH=/usr/lib:/usr/local/lib:$LD_LIBRARY_PATH:/usr/local/cuda/lib64
   export CUDA_HOME=/usr/local/cuda
-  export PATH=$PATH:/home/mark/.local/bin:/usr/local/cuda/bin
+  export PATH=$PATH:"${HOME}/.local/bin":/usr/local/cuda/bin
   # pkg-config path (for OMPL)
   export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
   export DYLD_FALLBACK_LIBRARY_PATH=/usr/local/lib:/usr/lib:$DYLD_FALLBACK_LIBRARY_PATH
 
   alias matlab="LD_PRELOAD="/usr/lib/x86_64-linux-gnu/libstdc++.so.6" matlab &"
 
-  export CMAKE_PREFIX_PATH=/home/mark/Developer/opencv-2.4.13/build:/home/mark/Developer/libfreenect2/build:$CMAKE_PREFIX_PATH
+  export CMAKE_PREFIX_PATH=${HOME}/Developer/opencv-2.4.13/build:${HOME}/Developer/libfreenect2/build:$CMAKE_PREFIX_PATH
 
   if [[ -e /opt/ros/kinetic/setup.zsh ]]; then
     source /opt/ros/kinetic/setup.zsh
