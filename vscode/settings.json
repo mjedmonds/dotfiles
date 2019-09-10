@@ -52,12 +52,12 @@
   "theme-by-language.themes":
   {
     "*": "Ocean Dark Extended",
-    "markdown": "Atom One Dark"
+    "markdown": "Atom One Dark",
   },
   "window.titleBarStyle": "native",
-  "clang-format.language.c.enable": false,
-  "clang-format.language.cpp.enable": false,
-  "clang-format.language.cuda.enable": false,
-  "clang-format.language.glsl.enable": false,
-  "clang-format.language.java.enable": false,
+  "C_Cpp.clang_format_style": "{BasedOnStyle: Chromium, ColumnLimit: 120, BreakBeforeBraces: Allman}",
+  "C_Cpp.clang_format_fallbackStyle": "Chromium",
+  "C_Cpp.clang_format_sortIncludes": true,
+  "C_Cpp.default.cppStandard": "c++03",
+  "C_Cpp.default.intelliSenseMode": "clang-x64",
 }
