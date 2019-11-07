@@ -124,7 +124,7 @@ unsetopt nomatch
 if [[ "$OSTYPE" = "darwin"* ]]; then
   #alias python="python3.5"
   #alias pip="pip3.5"
-  export LD_LIBRARY_PATH=/usr/lib:/usr/local/lib:$LD_LIBRARY_PATH:/usr/local/cuda/lib64
+  export LD_LIBRARY_PATH=/usr/lib:/usr/local/lib:$LD_LIBRARY_PATH
   export DYLD_FALLBACK_LIBRARY_PATH=/usr/local/lib:/usr/lib:$DYLD_FALLBACK_LIBRARY_PATH
 
   alias rm='safe-rm'

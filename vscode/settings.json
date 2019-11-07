@@ -94,4 +94,7 @@
     "yaml",
     "yml"
   ],
+  "python.pythonPath": "~/miniconda3/bin/python",
+  "terminal.integrated.inheritEnv": false,
+  "python.condaPath": "~/miniconda3/bin/conda",
 }
