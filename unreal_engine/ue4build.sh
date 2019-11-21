@@ -27,5 +27,3 @@ if [ $? -eq 0 ]; then
   echo "Successfully hot reloaded"
 fi
 
-# example of using this in cmake:
-# add_custom_target(QuickStartEditor cd "/home/mark/Developer/UnrealEngine" && bash "/home/mark/dotfiles/unreal_engine/ue4build.sh" "/home/mark/Documents/Unreal Projects/QuickStart/QuickStart.uproject")
