@@ -33,3 +33,4 @@ austin.code-gnu-global
 EFanZh.graphviz-preview
 Stephanvs.dot
 ajshort.msg
+esbenp.prettier-vscode
