@@ -141,6 +141,9 @@ if [[ "$OSTYPE" = "darwin"* ]]; then
 
   #export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 
+  # opam configuration
+  test -r /Users/mark/.opam/opam-init/init.zsh && . /Users/mark/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
 fi
 
 #linux specific settings
