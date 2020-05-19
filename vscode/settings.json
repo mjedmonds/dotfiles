@@ -2,9 +2,9 @@
   "editor.tabSize": 2,
   "editor.lineHeight": 17,
   "editor.wordWrap": "on",
-  "editor.fontFamily": "'DejaVu Sans Mono', 'DejaVu Sans Code', 'Menlo', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  "editor.fontFamily": "'Source Code Pro', 'JetBrains Mono', 'DejaVu Sans Mono', 'DejaVu Sans Code', 'Menlo', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
   "editor.fontLigatures": true,
-  "editor.fontSize": 14,
+  "editor.fontSize": 15,
   "files.trimTrailingWhitespace": true,
   "window.zoomLevel": 0,
 
