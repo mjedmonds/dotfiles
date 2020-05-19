@@ -51,7 +51,7 @@ ZSH_THEME=""
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew)
+plugins=(git brew vi-mode zsh-autosuggestions)
 
 # User configuration
 
@@ -73,6 +73,22 @@ prompt pure
 setopt inc_append_history
 # Reloads the history whenever you use it
 setopt share_history
+
+# bind vim keybindings
+function zle-line-init zle-keymap-select {
+	# Change the cursor style depending on keymap mode.
+	case $KEYMAP {
+		vicmd)
+			printf '\e[0 q' # Box.
+			;;
+
+		viins|main)
+			printf '\e[6 q' # Vertical bar.
+			;;
+	}
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
 
 # bind the up/down arrows to complete the previous command matching up tot eh cursor
 bindkey '\e[A' history-search-backward
