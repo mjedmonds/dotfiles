@@ -63,7 +63,8 @@ source $ZSH/oh-my-zsh.sh
 
 # PURE ZSH Theme
 if [[ "$OSTYPE" = "linux"* ]]; then
-  fpath+=('/usr/local/lib/node_modules/pure-prompt/functions')
+  # global path fpath+=('/usr/local/lib/node_modules/pure-prompt/functions')
+  fpath+=('/home/mark/node_modules/pure-prompt/functions')
 fi
 autoload -U promptinit; promptinit
 prompt pure
@@ -188,6 +189,12 @@ if [[ "$OSTYPE" = "linux"* ]]; then
   alias rm='safe-rm'
   alias trash="trash-put"
   alias gvir="gvim --remote-tab"
+
+  if [[ -d ~/Developer/sketch-1.7.6 ]]; then
+    export SKETCH_DIR="${HOME}/Developer/sketch-1.7.6"
+    export PATH="$PATH:$SKETCH_DIR/sketch-frontend"
+    export SKETCH_HOME="$SKETCH_DIR/sketch-frontend/runtime"
+  fi
 
 fi
 
