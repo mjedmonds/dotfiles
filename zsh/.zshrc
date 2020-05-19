@@ -84,7 +84,7 @@ function zle-line-init zle-keymap-select {
 			;;
 
 		viins|main)
-			printf '\e[6 q' # Vertical bar.
+			printf '\e[5 q' # Vertical bar.
 			;;
 	}
 }
