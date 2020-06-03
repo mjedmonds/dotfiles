@@ -34,8 +34,10 @@ function print_update() {
     fi
 }
 
+DOTFILES="${HOME}/dotfiles"
+
 #add symlinks
-cd ~/.dotfiles
+cd ${DOTFILES}
 # vim
 symlink "${PWD}/vim/.vimrc" "${HOME}/.vimrc"
 print_update "vimrc"
@@ -122,5 +124,7 @@ chsh -s /bin/zsh ${USER}
 print_update "change shell to zsh"
 
 # install pure-prompt
+cd ${HOME}
 npm install pure-prompt
 print_update "pure-prompt"
+cd ${DOTFILES}

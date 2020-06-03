@@ -85,7 +85,18 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
   SUBLIME_TEXT_USER_PATH="$HOME/.config/sublime-text-3/Packages"
 fi
 mkdir -p $SUBLIME_TEXT_USER_PATH
-rm "$SUBLIME_TEXT_USER_PATH/User" 
+rm "$SUBLIME_TEXT_USER_PATH/User"
 print_update "sublime text"
 
+
+
+# install oh-my-zsh and plugins
+uninstall_oh_my_zsh
+print_update "oh-my-zsh"
+chsh -s /bin/bash ${USER}
+print_update "change shell to bash"
+
+# install pure-prompt
+npm uninstall pure-prompt
+print_update "pure-prompt"
 
