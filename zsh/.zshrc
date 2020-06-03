@@ -64,7 +64,7 @@ source $ZSH/oh-my-zsh.sh
 # PURE ZSH Theme
 if [[ "$OSTYPE" = "linux"* ]]; then
   # global path fpath+=('/usr/local/lib/node_modules/pure-prompt/functions')
-  fpath+=('/home/mark/node_modules/pure-prompt/functions')
+  fpath+=("${HOME}/node_modules/pure-prompt/functions")
 fi
 autoload -U promptinit; promptinit
 prompt pure
@@ -198,7 +198,7 @@ if [[ "$OSTYPE" = "linux"* ]]; then
 
 fi
 
-source ~/dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source ~/dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # pyenv
 if command -v pyenv 1>/dev/null 2>&1; then

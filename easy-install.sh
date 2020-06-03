@@ -111,4 +111,16 @@ mkdir -p "$SUBLIME_TEXT_USER_PATH"
 symlink "$SUBLIME_TEXT_DOTFILES_PATH/User" "$SUBLIME_TEXT_USER_PATH/User"
 print_update "sublime text"
 
+# install oh-my-zsh and plugins
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+print_update "oh-my-zsh"
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+print_update "zsh-autosuggestions"
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+print_update "zsh-syntaxt-highlighting"
+chsh -s /bin/zsh ${USER}
+print_update "change shell to zsh"
 
+# install pure-prompt
+npm install pure-prompt
+print_update "pure-prompt"
