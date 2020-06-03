@@ -99,4 +99,6 @@
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "python.linting.pylintEnabled": true,
+  "python.linting.enabled": true,
 }
