@@ -69,6 +69,9 @@ fi
 autoload -U promptinit; promptinit
 prompt pure
 
+# dotfiles directory
+DOTFILES="${HOME}/dotfiles"
+
 # Share history aross zsh sessions
 # Appends every command to the history file once it is executed
 setopt inc_append_history
@@ -117,9 +120,14 @@ fi
 # colored completion - use my LS_COLORS
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
+# alias for better ls
 alias ll="ls -alh"
 
+# youtube downloader alias
 alias ytrip="youtube-dl -f 'bestaudio' --extract-audio --audio-format mp3 --audio-quality 0 --output \"%(title)s.%(ext)s\""
+
+# alias for cleaning draw.io SVGs for powerpoint
+alias draw-io-clean-svg="${DOTFILES}/scripts/draw-io-clean-svg.sh"
 
 BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
