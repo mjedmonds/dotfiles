@@ -7,17 +7,11 @@
   "editor.fontSize": 15,
   "files.trimTrailingWhitespace": true,
   "window.zoomLevel": 0,
-
   // filetype specific settings
   "[markdown]":
   {
     "editor.tabSize": 2
   },
-
-  // colorscheme settings
-  "workbench.colorTheme": "Ocean Dark Extended",
-  "nightswitch.themeDay": "Default Light+",
-  "nightswitch.themeNight": "Ocean Dark Extended",
 
   // vim settings
   "vim.useSystemClipboard": true,
@@ -34,25 +28,13 @@
   "latex-workshop.message.update.show": false,
   "markdown-preview-enhanced.scrollSync": true,
   "markdown-preview-enhanced.previewTheme": "github-light.css",
-  "emeraldwalk.runonsave":
-  {
-    "commands": [
-    {
-      "match": ".*",
-      "isAsync": true,
-      "cmd": "bash ~/dotfiles/vscode/sync_extensions.sh"
-    }]
-  },
+
   "pasteImage.path": "./images",
   "nightswitch.autoSwitch": false,
   "python.formatting.provider": "black",
   "gitlens.views.fileHistory.enabled": true,
   "gitlens.views.lineHistory.enabled": true,
-  "theme-by-language.themes":
-  {
-    "*": "Ocean Dark Extended",
-    "markdown": "Atom One Dark",
-  },
+
   "window.titleBarStyle": "native",
   "C_Cpp.clang_format_style": "{BasedOnStyle: Chromium, ColumnLimit: 120, BreakBeforeBraces: Allman}",
   "C_Cpp.clang_format_fallbackStyle": "Chromium",
@@ -93,7 +75,7 @@
     "yaml",
     "yml"
   ],
-  "python.pythonPath": "~/miniconda3/bin/python",
+  "python.pythonPath": "/Users/mark/miniconda3/envs/random/bin/python",
   "terminal.integrated.inheritEnv": false,
   "python.condaPath": "~/miniconda3/bin/conda",
   "[javascript]": {
@@ -101,4 +83,26 @@
   },
   "python.linting.pylintEnabled": true,
   "python.linting.enabled": true,
+  "workbench.colorTheme": "Ocean Dark Extended",
+  "themeSwitcher.themesList": "Ocean Dark Extended,Atom One Dark,Atom One Light",
 }
+
+// Old settings
+
+  // "emeraldwalk.runonsave":
+  // {
+  //   "commands": [
+  //   {
+  //     "match": ".*",
+  //     "isAsync": true,
+  //     "cmd": "bash ~/dotfiles/vscode/sync_extensions.sh"
+  //   }]
+  // },
+  // "nightswitch.themeDay": "Atom One Light",
+  // "nightswitch.themeNight": "Ocean Dark Extended",
+  // "theme-by-language.themes":
+  // {
+
+  //   "*": "Ocean Dark Extended",
+  //   "markdown": "Atom One Dark",
+  // },
