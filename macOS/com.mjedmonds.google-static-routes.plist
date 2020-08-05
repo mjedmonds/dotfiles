@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>EnvironmentVariables</key>
+        <dict>
+        <key>PATH</key>
+        <string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:</string>
+        </dict>
+        <key>Label</key>
+        <string>com.mjedmonds.add-google-static-routes</string>
+        <key>Program</key>
+        <string>/Users/mark/dotfiles/scripts/add-google-static-routes.sh</string>
+        <key>RunAtLoad</key>
+        <true/>
+        <key>StandardOutPath</key>
+        <string>/tmp/com.mjedmonds.add-google-static-routes.stdout</string>
+        <key>StandardErrorPath</key>
+        <string>/tmp/com.mjedmonds.add-google-static-routes.stderr</string>
+    </dict>
+</plist>

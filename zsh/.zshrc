@@ -147,8 +147,6 @@ unsetopt nomatch
 
 # OS X sepcific settings
 if [[ "$OSTYPE" = "darwin"* ]]; then
-  #alias python="python3.5"
-  #alias pip="pip3.5"
   export LD_LIBRARY_PATH=/usr/lib:/usr/local/lib:$LD_LIBRARY_PATH
   export DYLD_FALLBACK_LIBRARY_PATH=/usr/local/lib:/usr/lib:$DYLD_FALLBACK_LIBRARY_PATH
 
@@ -160,8 +158,9 @@ if [[ "$OSTYPE" = "darwin"* ]]; then
   fi
 
   alias pycharm='/Applications/PyCharm.app/Contents/MacOS/pycharm'
-  alias remove_priv_frames="${HOME}/Dropbox/Developer/mark-rMBP-repos/music/music-management/remove_priv_frames.sh"
-  alias playlist_sync="${HOME}/Dropbox/Music/Music\ Temp/Edmonds/Playlist\ Rips/playlist_sync.sh"
+  alias remove-priv-frames="${HOME}/Dropbox/Developer/mark-rMBP-repos/music/music-management/remove_priv_frames.sh"
+  alias playlist-sync="${HOME}/Dropbox/Music/Music\ Temp/Edmonds/Playlist\ Rips/playlist_sync.sh"
+  alias add-google-static-routes="${HOME}/dotfiles/scripts/add-google-static-routes.sh"
 
   #export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 
