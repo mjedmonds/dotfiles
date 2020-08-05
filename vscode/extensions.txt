@@ -34,3 +34,8 @@ EFanZh.graphviz-preview
 Stephanvs.dot
 ajshort.msg
 esbenp.prettier-vscode
+AndrsDC.base16-themes
+msjsdiag.debugger-for-chrome
+nadako.vshaxe
+openfl.lime-vscode-extension
+JanBn.vscode-theme-switcher
