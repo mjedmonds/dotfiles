@@ -8,3 +8,10 @@ if [[ "$OSTYPE" = "darwin"* ]]; then
   # google scholar
   sudo route -nv add 142.250.0.0 ${gateway}
 fi
+if [[ "$OSTYPE" = "linux"* ]]; then
+  gateway=$(ip route list | awk ' /^default/ {print $3; exit(0)}')
+  # general google
+  sudo ip route add 172.217.0.0/16 via $gateway
+  # google scholar
+  sudo ip route add 142.250.0.0/16 via $gateway
+fi

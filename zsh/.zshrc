@@ -197,6 +197,13 @@ if [[ "$OSTYPE" = "linux"* ]]; then
   alias trash="trash-put"
   alias gvir="gvim --remote-tab"
 
+  # vpn aliases
+  alias wg-start="sudo systemctl start wg-quick@wg0"
+  alias wg-stop="sudo systemctl stop wg-quick@wg0"
+  alias wg-status="sudo systemctl status wg-quick@wg0"
+  alias add-google-static-routes="${HOME}/dotfiles/scripts/add-google-static-routes.sh"
+
+
   if [[ -d ~/Developer/sketch-1.7.6 ]]; then
     export SKETCH_DIR="${HOME}/Developer/sketch-1.7.6"
     export PATH="$PATH:$SKETCH_DIR/sketch-frontend"
