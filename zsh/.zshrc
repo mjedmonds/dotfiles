@@ -145,6 +145,10 @@ unsetopt nomatch
 
 #alias edit="~/Dropbox/Developer/emacsclient.sh"  # set to edit as a daemon
 
+alias add-static-route="${HOME}/dotfiles/scripts/add-static-route.sh"
+alias remove-static-route="${HOME}/dotfiles/scripts/remove-static-route.sh"
+alias add-google-static-routes="${HOME}/dotfiles/scripts/add-google-static-routes.sh"
+
 # OS X sepcific settings
 if [[ "$OSTYPE" = "darwin"* ]]; then
   export LD_LIBRARY_PATH=/usr/lib:/usr/local/lib:$LD_LIBRARY_PATH
@@ -160,7 +164,6 @@ if [[ "$OSTYPE" = "darwin"* ]]; then
   alias pycharm='/Applications/PyCharm.app/Contents/MacOS/pycharm'
   alias remove-priv-frames="${HOME}/Dropbox/Developer/mark-rMBP-repos/music/music-management/remove_priv_frames.sh"
   alias playlist-sync="${HOME}/Dropbox/Music/Music\ Temp/Edmonds/Playlist\ Rips/playlist_sync.sh"
-  alias add-google-static-routes="${HOME}/dotfiles/scripts/add-google-static-routes.sh"
 
   #export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 
@@ -201,7 +204,6 @@ if [[ "$OSTYPE" = "linux"* ]]; then
   alias wg-start="sudo systemctl start wg-quick@wg0"
   alias wg-stop="sudo systemctl stop wg-quick@wg0"
   alias wg-status="sudo systemctl status wg-quick@wg0"
-  alias add-google-static-routes="${HOME}/dotfiles/scripts/add-google-static-routes.sh"
 
 
   if [[ -d ~/Developer/sketch-1.7.6 ]]; then
