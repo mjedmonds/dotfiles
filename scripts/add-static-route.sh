@@ -13,9 +13,6 @@ function add_static_route_ubuntu {
 
 function add_static_route_macos {
   ip=$1
-  ip_base=$2
-
-  remove_static_route_macos $ip $ip_base
 
   ## add new static route
   gateway=$(netstat -rn | awk '/default/ {if ( index($2, ".") > 0 ){print $2} }')

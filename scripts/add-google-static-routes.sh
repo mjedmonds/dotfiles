@@ -21,24 +21,12 @@ IPs+=(216.58.192.0/22)
 # IPs+=(216.239.32.0/19)
 # IPs+=(216.58.192.0/22)
 
-if [[ "$OSTYPE" = "darwin"* ]]; then
-  ## add new static route
-  # general google
-  add_static_route_macos 172.217.0.0/16 172.250
-  # google scholar
-  add_static_route_macos 142.250.0.0/16 142.250
-fi
-if [[ "$OSTYPE" = "linux"* ]]; then
-
+for ip in ${IPs[@]}; do
   if [[ $remove_only -eq 1 ]]; then
-    for ip in ${IPs[@]}; do
-      bash "$script_full_path/remove-static-route.sh" $ip
-    done
+    bash "$script_full_path/remove-static-route.sh" $ip
   # otherwise add and remove
   else
-    for ip in ${IPs[@]}; do
-      bash "$script_full_path/remove-static-route.sh" $ip
-      bash "$script_full_path/add-static-route.sh" $ip
-    done
+    bash "$script_full_path/remove-static-route.sh" $ip
+    bash "$script_full_path/add-static-route.sh" $ip
   fi
-fi
+done
