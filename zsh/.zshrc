@@ -72,8 +72,6 @@ source $ZSH/oh-my-zsh.sh
 
 SPACESHIP_PROMPT_ORDER=(
   time     #
-  user     # before prompt char
-  host     #
   dir
   git
   ruby
@@ -81,6 +79,8 @@ SPACESHIP_PROMPT_ORDER=(
   swift
   golang
   docker
+  user     # before prompt char
+  host     #
   line_sep
   jobs
   exit_code
@@ -92,7 +92,8 @@ SPACESHIP_PROMPT_ORDER=(
 
 # USER
 SPACESHIP_USER_PREFIX="" # remove `with` before username
-SPACESHIP_USER_SUFFIX="" # remove space before host
+SPACESHIP_USER_SUFFIX=" " # remove space before host
+SPACESHIP_USER_COLOR="grey"
 
 # HOST
 # Result will look like this:
@@ -327,3 +328,7 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+  # Set Spaceship ZSH as a prompt
+  autoload -U promptinit; promptinit
+  prompt spaceship

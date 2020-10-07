@@ -1,6 +1,6 @@
 {
   "editor.tabSize": 2,
-  "editor.lineHeight": 17,
+  "editor.lineHeight": 22,
   "editor.wordWrap": "on",
   "editor.fontFamily": "'Source Code Pro', 'JetBrains Mono', 'DejaVu Sans Mono', 'DejaVu Sans Code', 'Menlo', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
   "editor.fontLigatures": true,
@@ -83,8 +83,9 @@
   },
   "python.linting.pylintEnabled": true,
   "python.linting.enabled": true,
-  "workbench.colorTheme": "Ocean Dark Extended",
+  "workbench.colorTheme": "Atom One Dark",
   "themeSwitcher.themesList": "Ocean Dark Extended,Atom One Dark,Atom One Light",
+  "debug.console.fontSize": 16,
 }
 
 // Old settings
