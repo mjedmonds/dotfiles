@@ -161,6 +161,9 @@ SPACESHIP_PYENV_PREFIX="python:("
 SPACESHIP_PYENV_SUFFIX=") "
 SPACESHIP_PYENV_SYMBOL=""
 
+# autoload -U promptinit; promptinit
+# prompt spaceship
+
 # dotfiles directory
 DOTFILES="${HOME}/dotfiles"
 
@@ -329,6 +332,3 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-  # Set Spaceship ZSH as a prompt
-  autoload -U promptinit; promptinit
-  prompt spaceship
