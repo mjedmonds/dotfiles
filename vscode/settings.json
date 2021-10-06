@@ -2,11 +2,10 @@
   "editor.tabSize": 2,
   "editor.lineHeight": 22,
   "editor.wordWrap": "on",
-  "editor.fontFamily": "'Source Code Pro', 'JetBrains Mono', 'DejaVu Sans Mono', 'DejaVu Sans Code', 'Menlo', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-  "editor.fontLigatures": true,
-  "editor.fontSize": 15,
+  "editor.fontFamily": "'JetBrains Mono', 'Source Code Pro', 'DejaVu Sans Mono', 'DejaVu Sans Code', 'Menlo', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  "editor.fontLigatures": false,
+  "editor.fontSize": 14,
   "files.trimTrailingWhitespace": true,
-  "window.zoomLevel": 0,
   // filetype specific settings
   "[markdown]":
   {
@@ -30,9 +29,7 @@
   "markdown-preview-enhanced.previewTheme": "github-light.css",
 
   "pasteImage.path": "./images",
-  "nightswitch.autoSwitch": false,
   "python.formatting.provider": "black",
-  "gitlens.views.fileHistory.enabled": true,
   "gitlens.views.lineHistory.enabled": true,
 
   "window.titleBarStyle": "native",
@@ -83,9 +80,24 @@
   },
   "python.linting.pylintEnabled": true,
   "python.linting.enabled": true,
-  "workbench.colorTheme": "Atom One Dark",
+  "workbench.colorTheme": "Atom One Light",
   "themeSwitcher.themesList": "Ocean Dark Extended,Atom One Dark,Atom One Light",
   "debug.console.fontSize": 16,
+  "python.languageServer": "Pylance",
+  "beautify.config": "",
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
+  "python.defaultInterpreterPath": "/Users/mark/miniconda3/envs/random/bin/python",
+  "mssql.connections": [
+    {
+      "server": "{{put-server-name-here}}",
+      "database": "{{put-database-name-here}}",
+      "user": "{{put-username-here}}",
+      "password": "{{put-password-here}}"
+    }
+  ],
+  "editor.inlineSuggest.enabled": true,
 }
 
 // Old settings

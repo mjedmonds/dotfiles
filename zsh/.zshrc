@@ -216,7 +216,7 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 alias ll="ls -alh"
 
 # youtube downloader alias
-alias ytrip="youtube-dl -f 'bestaudio' --extract-audio --audio-format mp3 --audio-quality 0 --output \"%(title)s.%(ext)s\""
+alias ytrip="youtube-dl --prefer-ffmpeg --format 'bestvideo+bestaudio[ext=m4a]/bestvideo+bestaudio/best' --merge-output-format mp4--output \"%(title)s.%(ext)s\""
 
 # alias for cleaning draw.io SVGs for powerpoint
 alias draw-io-clean-svg="${DOTFILES}/scripts/draw-io-clean-svg.sh"
@@ -254,7 +254,7 @@ if [[ "$OSTYPE" = "darwin"* ]]; then
   fi
 
   alias pycharm='/Applications/PyCharm.app/Contents/MacOS/pycharm'
-  alias remove-priv-frames="${HOME}/Dropbox/Developer/mark-rMBP-repos/music/music-management/remove_priv_frames.sh"
+  alias postprocessmusic="${HOME}/Dropbox/Developer/mark-rMBP-repos/music/music-management/postprocessmusic.sh"
   alias playlist-sync="${HOME}/Dropbox/Music/Music\ Temp/Edmonds/Playlist\ Rips/playlist_sync.sh"
 
   #export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
