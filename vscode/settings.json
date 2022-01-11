@@ -80,7 +80,7 @@
   },
   "python.linting.pylintEnabled": true,
   "python.linting.enabled": true,
-  "workbench.colorTheme": "Atom One Light",
+  "workbench.colorTheme": "Atom One Dark",
   "themeSwitcher.themesList": "Ocean Dark Extended,Atom One Dark,Atom One Light",
   "debug.console.fontSize": 16,
   "python.languageServer": "Pylance",
@@ -94,7 +94,7 @@
       "server": "{{put-server-name-here}}",
       "database": "{{put-database-name-here}}",
       "user": "{{put-username-here}}",
-      "password": "{{put-password-here}}"
+      "password": ""
     }
   ],
   "editor.inlineSuggest.enabled": true,

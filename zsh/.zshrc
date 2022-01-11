@@ -74,6 +74,7 @@ SPACESHIP_PROMPT_ORDER=(
   time     #
   dir
   git
+  conda
   ruby
   xcode
   swift
@@ -84,7 +85,6 @@ SPACESHIP_PROMPT_ORDER=(
   line_sep
   jobs
   exit_code
-  conda
   venv
   pyenv
   char
@@ -148,8 +148,8 @@ SPACESHIP_DOCKER_SUFFIX=") "
 SPACESHIP_DOCKER_SYMBOL=""
 
 # CONDA
-SPACESHIP_CONDA_PREFIX=""
-SPACESHIP_CONDA_SUFFIX=" "
+SPACESHIP_CONDA_PREFIX="conda:("
+SPACESHIP_CONDA_SUFFIX=") "
 SPACESHIP_CONDA_SYMBOL=""
 
 # VENV
@@ -215,6 +215,20 @@ fi
 # colored completion - use my LS_COLORS
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
+# This speeds up pasting w/ autosuggest
+# https://github.com/zsh-users/zsh-autosuggestions/issues/238
+function pasteinit() {
+  OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
+  zle -N self-insert url-quote-magic # I wonder if you'd need `.url-quote-magic`?
+}
+
+function pastefinish() {
+  zle -N self-insert $OLD_SELF_INSERT
+}
+zstyle :bracketed-paste-magic paste-init pasteinit
+zstyle :bracketed-paste-magic paste-finish pastefinish
+## end speedup paste zsh
+
 # alias for better ls
 alias ll="ls -alh"
 
@@ -261,9 +275,6 @@ if [[ "$OSTYPE" = "darwin"* ]]; then
   alias playlist-sync="${HOME}/Dropbox/Music/Music\ Temp/Edmonds/Playlist\ Rips/playlist_sync.sh"
 
   #export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
-
-  # opam configuration
-  test -r /Users/mark/.opam/opam-init/init.zsh && . /Users/mark/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
 fi
 
